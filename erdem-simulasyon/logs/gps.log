@@ -1,0 +1,391 @@
+[2025-11-10 01:23:18.440] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 85.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 85.5}
+[2025-11-10 01:23:18.446] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 86.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 86.0}
+[2025-11-10 01:23:18.963] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 86.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 86.5}
+[2025-11-10 01:23:18.966] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 87.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 87.0}
+[2025-11-10 01:23:19.477] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 87.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 87.5}
+[2025-11-10 01:23:19.482] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 88.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 88.0}
+[2025-11-10 01:23:19.991] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 88.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 88.5}
+[2025-11-10 01:23:19.995] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 89.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 89.0}
+[2025-11-10 01:23:20.502] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 89.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 89.5}
+[2025-11-10 01:23:20.504] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 90.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 90.0}
+[2025-11-10 01:23:21.012] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 90.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 90.5}
+[2025-11-10 01:23:21.016] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 91.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 91.0}
+[2025-11-10 01:23:21.527] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 91.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 91.5}
+[2025-11-10 01:23:21.531] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 92.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 92.0}
+[2025-11-10 01:23:22.044] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 92.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 92.5}
+[2025-11-10 01:23:22.048] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 93.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 93.0}
+[2025-11-10 01:23:22.553] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 93.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 93.5}
+[2025-11-10 01:23:22.558] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 94.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 94.0}
+[2025-11-10 01:23:23.066] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 94.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 94.5}
+[2025-11-10 01:23:23.069] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 95.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 95.0}
+[2025-11-10 01:23:23.579] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 95.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 95.5}
+[2025-11-10 01:23:23.583] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 96.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 96.0}
+[2025-11-10 01:23:24.094] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 96.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 96.5}
+[2025-11-10 01:23:24.098] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 97.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 97.0}
+[2025-11-10 01:23:24.609] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 97.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 97.5}
+[2025-11-10 01:23:24.613] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 98.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 98.0}
+[2025-11-10 01:23:25.124] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 98.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 98.5}
+[2025-11-10 01:23:25.126] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 99.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 99.0}
+[2025-11-10 01:23:25.635] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 99.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 99.5}
+[2025-11-10 01:23:25.639] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:26.150] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:26.153] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:26.666] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:26.669] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:27.178] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:27.181] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:27.691] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:27.694] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:28.204] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:28.208] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:28.717] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:28.720] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:29.229] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:29.233] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:29.742] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:29.745] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:30.257] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:30.260] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:30.778] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:30.782] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:31.292] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:31.296] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:31.804] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:31.807] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:32.316] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:32.320] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:32.828] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:32.830] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:33.339] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:33.342] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:33.853] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:33.857] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:34.369] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:34.372] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:34.882] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:34.884] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:35.392] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:35.396] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:35.902] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:35.905] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:36.412] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:36.414] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:36.921] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:36.924] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:37.433] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:37.435] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:37.943] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:37.946] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:42.463] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:46.978] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:51.494] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:23:56.009] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:24:00.524] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:24:05.040] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:24:09.555] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:24:14.068] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 01:24:15.604] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 85 km/h but charging! SoC: 100.0% | Data: {"lat": 41.00854, "lon": 28.978740000000002, "speed": 85, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:16.609] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 50 km/h but charging! SoC: 100.0% | Data: {"lat": 41.00874, "lon": 28.97894, "speed": 50, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:18.142] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 83 km/h but charging! SoC: 100.0% | Data: {"lat": 41.009072, "lon": 28.979272, "speed": 83, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:19.146] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 68 km/h but charging! SoC: 100.0% | Data: {"lat": 41.009344000000006, "lon": 28.979544, "speed": 68, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:20.663] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 81 km/h but charging! SoC: 100.0% | Data: {"lat": 41.009668000000005, "lon": 28.979868, "speed": 81, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:21.665] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 72 km/h but charging! SoC: 100.0% | Data: {"lat": 41.009956, "lon": 28.980156, "speed": 72, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:23.180] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 85 km/h but charging! SoC: 100.0% | Data: {"lat": 41.010296000000004, "lon": 28.980496000000002, "speed": 85, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:24.183] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 52 km/h but charging! SoC: 100.0% | Data: {"lat": 41.010504000000005, "lon": 28.980704000000003, "speed": 52, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:25.698] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 66 km/h but charging! SoC: 100.0% | Data: {"lat": 41.010768000000006, "lon": 28.980968000000004, "speed": 66, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:26.700] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 73 km/h but charging! SoC: 100.0% | Data: {"lat": 41.01106000000001, "lon": 28.981260000000006, "speed": 73, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:28.214] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 79 km/h but charging! SoC: 100.0% | Data: {"lat": 41.011376000000006, "lon": 28.981576000000008, "speed": 79, "soc": 100, "anomaly": true}
+[2025-11-10 01:24:29.216] [GPS] [CRITICAL] ANOMALY DETECTED: Vehicle moving at 61 km/h but charging! SoC: 100.0% | Data: {"lat": 41.01162000000001, "lon": 28.981820000000006, "speed": 61, "soc": 100, "anomaly": true}
+[2025-11-10 20:38:03.702] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 85.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 85.5}
+[2025-11-10 20:38:03.706] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 86.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 86.0}
+[2025-11-10 20:38:04.215] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 86.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 86.5}
+[2025-11-10 20:38:04.217] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 87.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 87.0}
+[2025-11-10 20:38:04.725] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 87.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 87.5}
+[2025-11-10 20:38:04.727] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 88.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 88.0}
+[2025-11-10 20:38:05.236] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 88.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 88.5}
+[2025-11-10 20:38:05.239] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 89.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 89.0}
+[2025-11-10 20:38:05.746] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 89.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 89.5}
+[2025-11-10 20:38:05.750] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 90.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 90.0}
+[2025-11-10 20:38:06.259] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 90.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 90.5}
+[2025-11-10 20:38:06.263] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 91.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 91.0}
+[2025-11-10 20:38:06.770] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 91.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 91.5}
+[2025-11-10 20:38:06.772] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 92.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 92.0}
+[2025-11-10 20:38:07.284] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 92.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 92.5}
+[2025-11-10 20:38:07.286] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 93.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 93.0}
+[2025-11-10 20:38:07.793] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 93.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 93.5}
+[2025-11-10 20:38:07.797] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 94.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 94.0}
+[2025-11-10 20:38:08.305] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 94.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 94.5}
+[2025-11-10 20:38:08.308] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 95.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 95.0}
+[2025-11-10 20:38:08.814] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 95.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 95.5}
+[2025-11-10 20:38:08.817] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 96.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 96.0}
+[2025-11-10 20:38:09.326] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 96.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 96.5}
+[2025-11-10 20:38:09.328] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 97.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 97.0}
+[2025-11-10 20:38:09.836] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 97.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 97.5}
+[2025-11-10 20:38:09.839] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 98.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 98.0}
+[2025-11-10 20:38:10.347] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 98.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 98.5}
+[2025-11-10 20:38:10.351] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 99.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 99.0}
+[2025-11-10 20:38:10.862] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 99.5% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 99.5}
+[2025-11-10 20:38:10.865] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:11.372] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:11.375] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:11.880] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:11.884] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:12.392] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:12.395] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:12.903] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:12.904] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:13.415] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:13.417] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:13.927] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:13.929] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:14.436] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:14.438] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:14.943] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:14.944] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:15.450] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:15.452] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:15.961] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:15.964] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:16.475] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:16.477] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:16.985] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:16.986] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:17.493] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:17.495] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:18.003] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:18.006] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:18.514] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:18.516] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:19.022] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:19.025] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:19.533] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:19.536] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:20.043] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:20.045] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:20.552] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:20.556] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:21.064] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:21.066] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:21.573] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:21.576] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:22.083] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:22.085] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:22.595] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:22.599] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:23.108] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:23.111] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:23.618] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:23.621] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:28.139] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:32.654] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:37.171] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:41.687] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:46.204] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:50.717] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:55.230] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:38:59.743] [GPS] [INFO] Vehicle stationary at (41.008200, 28.978400), SoC: 100.0% | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 0, "soc": 100}
+[2025-11-10 20:39:01.271] [GPS] [WARNING] GPS DATA MANIPULATION DETECTED: Injecting false speed data | Data: {"attack": "GPS spoofing", "method": "CAN injection"}
+[2025-11-10 20:39:01.273] [GPS] [WARNING] SPEED MANIPULATION: Injecting false speed 4.5 km/h (Phase 1/3) | Data: {"lat": 41.0082, "lon": 28.9784, "speed": 4.5, "phase": "acceleration"}
+[2025-11-10 20:39:02.276] [GPS] [WARNING] SPEED MANIPULATION: Injecting false speed 9.0 km/h (Phase 2/3) | Data: {"lat": 41.00820561444485, "lon": 28.978407587087627, "speed": 9.0, "phase": "acceleration"}
+[2025-11-10 20:39:03.800] [GPS] [WARNING] SPEED MANIPULATION: Injecting false speed 13.5 km/h (Phase 3/3) | Data: {"lat": 41.00821684333454, "lon": 28.97842276126288, "speed": 13.5, "phase": "acceleration"}
+[2025-11-10 20:39:04.803] [GPS] [ERROR] ANOMALY ESCALATING: Vehicle shows 18.0 km/h but still charging! (Phase 1/3) | Data: {"lat": 41.008233686669065, "lon": 28.97844552252576, "speed": 18.0, "soc": 100, "phase": "escalation"}
+[2025-11-10 20:39:06.329] [GPS] [ERROR] ANOMALY ESCALATING: Vehicle shows 22.5 km/h but still charging! (Phase 2/3) | Data: {"lat": 41.00825614444844, "lon": 28.978475870876267, "speed": 22.5, "soc": 100, "phase": "escalation"}
+[2025-11-10 20:39:07.332] [GPS] [ERROR] ANOMALY ESCALATING: Vehicle shows 27.0 km/h but still charging! (Phase 3/3) | Data: {"lat": 41.008284216672656, "lon": 28.9785138063144, "speed": 27.0, "soc": 100, "phase": "escalation"}
+[2025-11-10 20:39:08.857] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 29.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00831790334172, "lon": 28.97855932884016, "speed": 29.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 20:39:09.860] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 31.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008354397233205, "lon": 28.978608644909734, "speed": 31.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 20:39:11.383] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 33.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00839369834711, "lon": 28.97866175452312, "speed": 33.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 20:39:12.387] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 36.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008435806683444, "lon": 28.97871865768032, "speed": 36.0, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 20:39:13.912] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 38.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00848072224219, "lon": 28.978779354381334, "speed": 38.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 20:39:14.915] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 40.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00852844502336, "lon": 28.978843844626162, "speed": 40.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:01:03.989] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:03.992] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:04.658] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:04.724] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:05.312] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:05.346] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:05.949] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:05.982] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:06.577] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:06.591] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:07.147] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:07.182] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:07.765] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:07.787] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:08.401] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:08.432] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:08.977] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:08.992] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:09.547] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:09.575] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:10.117] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:10.123] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:10.651] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:10.657] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:11.225] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:11.252] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:11.776] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:11.783] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:12.309] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:12.318] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:12.869] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:12.887] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:13.443] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:13.452] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:13.986] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:13.992] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:14.522] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:14.530] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:15.050] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:15.061] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:15.576] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:15.581] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:16.104] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:16.110] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:16.629] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:16.636] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:17.154] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:17.158] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:17.693] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:17.706] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:18.248] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:18.252] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:18.784] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:18.789] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:19.325] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:19.346] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:19.866] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:19.875] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:20.422] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:20.450] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:21.009] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:21.047] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:21.605] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:21.612] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:22.126] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:22.130] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:22.642] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:22.647] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:23.166] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:23.173] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:23.692] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:23.697] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:28.237] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:32.779] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:37.325] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:41.858] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:46.383] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:50.906] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:55.421] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:01:59.954] [GPS] [INFO] Vehicle stationary at (41.008579, 28.978912), SoC: 100.0% | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 0, "soc": 100}
+[2025-11-10 23:02:01.496] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 2.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00857897502695, "lon": 28.9789121284148, "speed": 2.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:02.509] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 4.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00858178224937, "lon": 28.978915921958617, "speed": 4.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:04.076] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 6.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00858739669422, "lon": 28.978923509046243, "speed": 6.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:05.083] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 9.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008595818361485, "lon": 28.978934889677685, "speed": 9.0, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:06.620] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 11.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008607047251175, "lon": 28.97895006385294, "speed": 11.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:07.631] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 13.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00862108336329, "lon": 28.978969031572007, "speed": 13.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:09.259] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 15.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008637926697816, "lon": 28.978991792834886, "speed": 15.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:10.264] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 18.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008657577254766, "lon": 28.97901834764158, "speed": 18.0, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:11.817] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 20.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00868003503414, "lon": 28.979048695992088, "speed": 20.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:12.823] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 22.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008705300035935, "lon": 28.97908283788641, "speed": 22.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:14.411] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 24.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00873337226015, "lon": 28.979120773324542, "speed": 24.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:02:15.417] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 27.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00876425170679, "lon": 28.97916250230649, "speed": 27.0, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:03:31.185] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:31.188] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:31.691] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:31.693] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:32.198] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:32.202] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:32.709] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:32.712] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:33.219] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:33.220] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:33.724] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:33.725] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:34.231] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:34.233] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:34.738] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:34.739] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:35.245] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:35.247] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:35.758] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:35.759] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:36.265] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:36.268] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:36.775] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:36.778] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:37.285] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:37.287] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:37.793] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:37.795] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:38.300] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:38.302] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:38.810] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:38.811] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:39.315] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:39.315] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:39.824] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:39.826] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:40.335] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:40.336] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:40.841] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:40.842] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:41.351] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:41.353] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:41.858] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:41.861] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:42.369] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:42.371] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:42.876] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:42.879] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:43.385] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:43.387] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:43.894] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:43.895] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:44.404] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:44.407] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:44.914] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:44.917] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:45.425] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:45.426] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:45.939] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:45.941] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:46.448] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:46.450] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:46.956] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:46.958] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:47.465] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:47.468] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:47.974] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:47.977] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:48.485] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:48.488] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:48.994] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:48.995] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:49.501] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:49.503] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:50.008] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:50.010] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:50.514] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:50.515] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:51.022] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:51.023] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:03:55.536] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:00.048] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:04.559] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:09.072] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:13.585] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:18.095] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:22.607] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:27.117] [GPS] [INFO] Vehicle stationary at (41.008798, 28.979208), SoC: 100.0% | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 0, "soc": 100}
+[2025-11-10 23:04:28.636] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 2.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00879793837586, "lon": 28.97920802483225, "speed": 2.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:29.639] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 4.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00880074559828, "lon": 28.979211818376065, "speed": 4.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:31.159] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 6.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008806360043124, "lon": 28.97921940546369, "speed": 6.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:32.162] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 9.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00881478171039, "lon": 28.979230786095133, "speed": 9.0, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:33.677] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 11.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00882601060008, "lon": 28.979245960270386, "speed": 11.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:34.679] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 13.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008840046712194, "lon": 28.979264927989455, "speed": 13.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:36.195] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 15.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00885689004672, "lon": 28.979287689252335, "speed": 15.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:37.199] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 18.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00887654060367, "lon": 28.97931424405903, "speed": 18.0, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:38.717] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 20.2 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.008898998383046, "lon": 28.979344592409536, "speed": 20.25, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:39.718] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 22.5 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00892426338484, "lon": 28.979378734303857, "speed": 22.5, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:41.240] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 24.8 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.00895233560906, "lon": 28.97941666974199, "speed": 24.75, "soc": 100, "anomaly": true, "phase": "sustained"}
+[2025-11-10 23:04:42.242] [GPS] [CRITICAL] CRITICAL ANOMALY: Vehicle moving at 27.0 km/h but charging! SoC: 100.0% (IMPOSSIBLE) | Data: {"lat": 41.0089832150557, "lon": 28.97945839872394, "speed": 27.0, "soc": 100, "anomaly": true, "phase": "sustained"}
