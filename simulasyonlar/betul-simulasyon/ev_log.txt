@@ -1,8 +1,0 @@
-[2025-12-25 22:28:01.644336] Şarj isteği gönderiliyor: {'ev_id': 'EV_42', 'station_id': 'STATION_001', 'action': 'START_CHARGING'}
-[2025-12-25 22:28:01.648349] CSMS yanıtı alındı: {"status": "REJECTED", "reason": "Unknown station"}
-[2025-12-25 22:32:09.998419] Şarj isteği gönderiliyor: {'ev_id': 'EV_42', 'station_id': 'STATION_001', 'action': 'START_CHARGING'}
-[2025-12-25 22:32:09.998419] CSMS yanıtı alındı: {"status": "REJECTED", "reason": "Unknown station"}
-[2025-12-28 01:31:06.856174] Şarj isteği gönderiliyor: {'ev_id': 'EV_42', 'station_id': 'STATION_001', 'action': 'START_CHARGING'}
-[2025-12-28 01:31:08.922343] CSMS yanıtı alındı: 
-[2025-12-28 14:53:47.705332] Şarj isteği gönderiliyor: {'ev_id': 'EV_42', 'station_id': 'STATION_001', 'action': 'START_CHARGING'}
-[2025-12-28 14:53:47.710335] CSMS yanıtı alındı: {"status": "REJECTED", "reason": "Unknown station"}
