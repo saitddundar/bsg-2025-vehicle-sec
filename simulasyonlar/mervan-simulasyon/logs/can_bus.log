@@ -1,0 +1,825 @@
+[2025-11-10 01:23:18.432] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:18.435] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:18.438] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:18.954] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:18.959] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:18.961] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:19.471] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:19.474] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:19.476] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:19.986] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:19.987] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:19.989] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:20.497] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:20.498] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:20.500] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:21.007] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:21.010] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:21.011] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:21.520] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:21.523] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:21.524] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:22.038] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:22.040] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:22.042] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:22.550] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:22.551] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:22.552] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:23.060] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:23.062] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:23.064] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:23.573] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:23.575] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:23.577] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:24.089] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:24.091] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:24.093] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:24.603] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:24.606] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:24.607] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:25.119] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:25.120] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:25.122] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:25.629] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:25.630] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:25.633] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:26.144] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:26.146] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:26.148] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:26.659] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:26.662] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:26.664] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:27.173] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:27.174] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:27.177] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:27.685] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:27.687] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:27.689] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:28.198] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:28.201] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:28.202] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:28.711] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:28.713] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:28.714] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:29.225] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:29.227] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:29.228] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:29.736] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:29.738] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:29.740] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:30.249] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:30.252] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:30.255] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:30.769] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:30.771] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:30.774] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:31.285] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:31.286] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:31.290] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:31.800] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:31.800] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:31.802] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:32.310] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:32.313] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:32.315] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:32.823] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:32.825] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:32.827] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:33.335] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:33.336] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:33.338] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:33.847] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:33.849] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:33.852] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:34.362] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:34.364] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:34.367] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:34.876] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:34.878] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:34.880] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:35.388] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:35.389] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:35.391] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:35.899] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:35.900] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:35.902] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:36.408] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:36.409] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:36.410] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:36.918] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:36.919] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:36.920] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:37.428] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:37.431] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:37.432] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:37.938] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:37.940] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:23:37.941] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 01:24:15.578] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.580] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.582] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.584] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.586] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.588] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.589] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.592] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.595] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.596] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:15.597] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:15.598] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:15.600] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:15.601] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:15.603] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:18.118] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.120] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.121] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.124] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.126] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.127] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.128] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.130] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.133] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.134] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:18.135] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:18.136] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:18.138] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:18.139] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:18.141] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:20.654] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.654] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.655] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.655] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.655] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.656] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.656] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.656] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.658] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.659] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:20.659] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:20.660] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:20.662] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:20.662] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:20.663] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:23.170] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.170] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.171] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.172] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.174] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.174] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.175] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.175] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.176] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.176] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:23.177] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:23.177] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:23.178] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:23.179] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:23.180] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:25.688] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.688] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.689] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.690] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.691] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.691] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.692] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.692] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.693] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.693] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:25.694] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:25.695] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:25.695] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:25.696] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:25.696] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:28.204] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.204] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.205] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.206] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.206] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.207] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.207] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.208] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.209] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.209] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 01:24:28.210] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:28.211] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:28.212] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:28.212] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 01:24:28.212] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:38:03.697] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:03.699] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:03.701] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:04.210] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:04.211] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:04.213] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:04.719] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:04.721] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:04.723] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:05.230] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:05.232] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:05.234] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:05.740] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:05.742] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:05.744] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:06.255] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:06.256] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:06.257] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:06.764] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:06.766] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:06.768] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:07.279] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:07.280] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:07.282] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:07.788] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:07.791] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:07.793] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:08.300] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:08.301] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:08.303] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:08.810] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:08.812] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:08.813] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:09.321] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:09.322] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:09.324] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:09.830] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:09.832] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:09.833] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:10.342] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:10.344] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:10.346] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:10.856] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:10.859] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:10.861] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:11.367] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:11.369] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:11.370] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:11.878] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:11.878] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:11.879] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:12.387] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:12.389] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:12.391] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:12.897] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:12.900] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:12.902] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:13.407] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:13.409] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:13.410] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:13.922] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:13.924] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:13.925] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:14.432] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:14.433] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:14.435] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:14.941] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:14.941] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:14.942] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:15.447] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:15.448] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:15.450] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:15.955] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:15.958] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:15.960] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:16.470] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:16.472] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:16.473] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:16.981] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:16.982] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:16.983] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:17.489] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:17.490] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:17.491] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:17.998] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:18.000] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:18.002] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:18.509] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:18.510] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:18.512] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:19.018] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:19.020] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:19.021] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:19.528] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:19.529] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:19.532] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:20.038] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:20.040] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:20.041] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:20.548] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:20.550] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:20.551] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:21.058] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:21.061] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:21.063] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:21.568] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:21.570] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:21.572] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:22.078] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:22.079] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:22.081] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:22.589] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:22.591] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:22.594] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:23.103] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:23.106] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:23.107] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:23.613] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:23.615] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:38:23.616] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 20:39:01.252] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.253] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.254] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.256] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.257] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.259] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.261] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.262] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.263] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.264] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:01.265] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:01.266] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:01.266] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:01.268] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:01.270] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:03.781] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.783] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.785] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.786] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.787] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.788] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.789] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.791] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.792] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.794] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:03.794] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:03.795] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:03.796] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:03.798] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:03.799] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:06.308] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.309] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.310] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.310] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.312] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.313] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.314] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.315] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.316] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.317] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:06.318] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:06.319] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:06.320] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:06.325] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:06.327] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:08.837] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.838] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.839] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.841] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.842] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.843] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.844] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.846] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.847] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.848] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:08.850] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:08.851] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:08.853] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:08.855] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:08.856] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:11.367] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.369] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.370] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.371] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.373] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.374] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.375] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.376] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.376] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.377] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:11.378] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:11.378] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:11.381] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:11.382] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:11.382] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:13.893] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.894] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.895] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.896] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.897] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.897] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.898] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.899] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.901] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.903] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 20:39:13.905] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:13.906] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:13.908] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:13.909] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 20:39:13.910] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:01:03.985] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:03.987] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:03.988] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:04.558] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:04.612] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:04.637] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:05.265] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:05.278] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:05.294] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:05.901] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:05.911] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:05.922] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:06.533] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:06.555] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:06.566] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:07.106] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:07.120] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:07.129] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:07.723] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:07.740] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:07.752] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:08.339] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:08.360] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:08.388] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:08.953] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:08.960] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:08.969] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:09.517] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:09.526] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:09.536] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:10.098] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:10.108] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:10.113] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:10.634] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:10.641] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:10.645] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:11.187] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:11.207] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:11.217] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:11.760] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:11.765] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:11.769] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:12.300] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:12.303] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:12.305] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:12.834] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:12.839] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:12.862] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:13.414] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:13.423] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:13.435] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:13.976] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:13.981] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:13.984] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:14.501] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:14.509] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:14.516] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:15.036] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:15.039] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:15.046] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:15.566] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:15.569] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:15.573] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:16.085] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:16.088] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:16.098] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:16.615] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:16.618] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:16.622] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:17.148] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:17.150] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:17.152] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:17.670] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:17.673] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:17.687] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:18.237] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:18.240] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:18.244] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:18.775] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:18.779] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:18.781] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:19.299] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:19.310] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:19.319] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:19.857] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:19.860] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:19.862] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:20.384] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:20.401] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:20.403] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:20.975] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:20.981] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:21.000] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:21.579] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:21.590] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:21.599] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:22.118] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:22.122] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:22.124] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:22.633] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:22.634] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:22.637] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:23.155] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:23.160] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:23.163] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:23.682] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:23.684] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:01:23.689] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:02:01.467] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.468] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.469] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.470] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.472] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.473] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.475] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.477] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.479] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.482] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:01.485] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:01.487] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:01.489] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:01.492] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:01.494] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:04.020] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.025] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.029] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.034] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.037] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.040] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.043] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.045] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.047] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.051] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:04.057] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:04.060] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:04.064] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:04.072] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:04.073] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:06.591] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.593] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.595] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.598] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.600] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.602] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.603] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.605] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.607] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.609] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:06.611] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:06.612] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:06.613] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:06.615] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:06.617] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:09.152] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.154] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.157] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.174] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.191] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.204] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.222] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.231] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.235] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.239] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:09.244] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:09.246] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:09.251] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:09.253] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:09.257] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:11.773] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.776] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.779] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.782] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.791] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.793] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.795] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.798] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.801] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.804] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:11.806] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:11.809] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:11.812] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:11.814] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:11.815] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:14.356] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.361] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.364] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.367] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.371] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.373] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.375] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.377] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.379] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.383] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:02:14.386] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:14.389] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:14.391] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:14.396] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:02:14.403] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:03:31.182] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:31.183] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:31.184] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:31.690] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:31.690] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:31.690] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:32.195] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:32.196] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:32.197] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:32.705] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:32.705] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:32.707] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:33.215] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:33.217] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:33.218] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:33.722] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:33.723] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:33.724] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:34.229] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:34.230] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:34.230] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:34.735] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:34.737] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:34.737] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:35.242] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:35.243] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:35.244] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:35.752] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:35.754] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:35.756] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:36.262] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:36.263] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:36.264] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:36.771] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:36.773] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:36.774] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:37.280] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:37.281] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:37.283] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:37.789] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:37.791] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:37.793] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:38.296] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[87, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [87, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:38.298] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:38.299] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:38.804] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:38.806] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:38.808] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:39.312] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[81, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [81, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:39.314] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:39.314] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:39.819] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:39.823] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:39.823] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:40.331] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:40.332] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:40.334] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:40.837] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:40.838] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:40.840] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:41.345] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:41.347] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:41.349] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:41.855] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[84, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [84, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:41.856] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:41.857] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:42.363] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:42.366] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:42.368] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:42.873] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[90, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [90, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:42.874] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:42.875] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:43.382] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:43.383] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:43.384] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:43.889] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:43.891] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:43.893] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:44.401] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:44.403] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:44.404] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:44.910] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[83, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [83, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:44.911] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:44.912] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:45.419] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 25, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 25, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:45.421] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:45.423] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:45.932] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:45.934] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:45.937] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:46.443] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:46.444] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:46.445] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:46.953] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[86, 0, 24, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [86, 0, 24, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:46.954] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:46.955] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:47.461] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[89, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [89, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:47.463] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:47.464] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:47.971] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[82, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [82, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:47.971] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:47.973] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:48.479] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:48.479] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:48.483] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:48.989] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:48.992] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:48.993] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:49.496] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:49.497] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:49.499] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:50.005] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[85, 0, 23, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [85, 0, 23, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:50.006] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:50.007] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:50.512] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[80, 0, 26, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [80, 0, 26, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:50.513] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:50.513] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:51.017] [CAN] [INFO] TX: ID=0x1F0 DLC=8 Data=[88, 0, 27, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x1F0", "dlc": 8, "data": [88, 0, 27, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:51.020] [CAN] [INFO] TX: ID=0x100 DLC=8 Data=[0, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x100", "dlc": 8, "data": [0, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:03:51.021] [CAN] [INFO] TX: ID=0x200 DLC=8 Data=[80, 0, 0, 0, 0, 0, 0, 0] | Data: {"message": {"id": "0x200", "dlc": 8, "data": [80, 0, 0, 0, 0, 0, 0, 0], "status": "TX", "blocked": false}}
+[2025-11-10 23:04:28.623] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.625] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.625] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.626] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.626] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.627] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.629] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.631] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.631] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.632] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:28.633] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:28.634] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:28.634] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:28.635] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:28.635] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:31.145] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.146] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.146] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.148] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.149] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.151] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.152] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.152] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.153] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.153] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:31.155] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:31.156] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:31.157] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:31.158] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:31.159] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:33.666] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.667] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.668] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.668] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.669] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.670] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.671] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.672] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.673] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.674] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:33.675] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:33.675] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:33.676] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:33.676] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:33.677] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:36.184] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.184] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.185] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.185] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.186] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.186] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.187] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.189] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.190] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.191] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:36.192] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:36.192] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:36.193] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:36.194] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:36.195] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:38.706] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.706] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.707] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.708] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.708] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.709] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.709] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.710] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.711] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.712] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:38.713] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:38.713] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:38.714] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:38.716] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:38.716] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:41.226] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #1 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.228] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #2 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.229] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #3 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.229] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #4 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.230] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #5 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.230] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #6 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.232] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #7 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.232] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #8 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.234] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #9 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.235] [CAN] [CRITICAL] ATTACK: 0x000 FLOOD #10 - Arbitration Lock Active | Data: {"id": "0x000", "priority": "MAXIMUM"}
+[2025-11-10 23:04:41.236] [CAN] [ERROR] BLOCKED: BMS (ID=0x1F0) - Arbitration Lost | Data: {"id": "0x1F0", "ecu": "BMS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:41.237] [CAN] [ERROR] BLOCKED: ABS (ID=0x100) - Arbitration Lost | Data: {"id": "0x100", "ecu": "ABS", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:41.238] [CAN] [ERROR] BLOCKED: TCM (ID=0x200) - Arbitration Lost | Data: {"id": "0x200", "ecu": "TCM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:41.239] [CAN] [ERROR] BLOCKED: ECM (ID=0x250) - Arbitration Lost | Data: {"id": "0x250", "ecu": "ECM", "reason": "Arbitration Lost to 0x000"}
+[2025-11-10 23:04:41.240] [CAN] [ERROR] BLOCKED: HVAC (ID=0x300) - Arbitration Lost | Data: {"id": "0x300", "ecu": "HVAC", "reason": "Arbitration Lost to 0x000"}

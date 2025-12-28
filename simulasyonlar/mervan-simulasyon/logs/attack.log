@@ -1,0 +1,212 @@
+[2025-11-10 01:23:38.450] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 01:23:38.953] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 01:23:39.957] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 01:23:40.461] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 01:23:42.965] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 01:23:43.468] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 01:23:44.472] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 01:23:44.976] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 01:23:47.480] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 01:23:47.983] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 01:23:48.988] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 01:23:49.493] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 01:23:51.997] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 01:23:52.498] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 01:23:53.502] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 01:23:54.005] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 01:23:56.513] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 01:23:57.015] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 01:23:57.517] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 01:23:58.522] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 01:24:01.026] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 01:24:01.528] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 01:24:02.030] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 01:24:03.036] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 01:24:05.543] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 01:24:06.046] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 01:24:06.548] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 01:24:07.552] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 01:24:10.056] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 01:24:10.558] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 01:24:11.060] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 01:24:12.066] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 01:24:14.572] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 01:24:15.075] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 01:24:15.607] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 5 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 5, "attack_active": true}
+[2025-11-10 01:24:17.113] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 01:24:17.615] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 01:24:18.144] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 10 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 10, "attack_active": true}
+[2025-11-10 01:24:19.649] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 01:24:20.151] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 01:24:20.664] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 15 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 15, "attack_active": true}
+[2025-11-10 01:24:22.166] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 01:24:22.667] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 01:24:23.181] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 20 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 20, "attack_active": true}
+[2025-11-10 01:24:24.685] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 01:24:25.187] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 01:24:25.699] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 25 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 25, "attack_active": true}
+[2025-11-10 01:24:27.201] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 01:24:27.703] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 01:24:28.214] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 30 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 30, "attack_active": true}
+[2025-11-10 01:24:29.719] [ATTACK] [CRITICAL] Stage 4 START: Hard Brick - Permanent Denial of Service (P-DoS) | Data: {"stage": 4, "attack_type": "P-DoS", "severity": "CRITICAL"}
+[2025-11-10 01:24:32.228] [ATTACK] [CRITICAL] HARD BRICK COMPLETE: Vehicle inoperable - Requires physical intervention | Data: {"status": "BRICKED", "dtc_count": 5, "recovery": "Physical service required"}
+[2025-11-10 01:24:32.230] [ATTACK] [CRITICAL] P-DoS SUCCESSFUL: Permanent damage inflicted - Attack demonstration complete | Data: {"attack_complete": true, "damage": "Permanent", "cost": "High"}
+[2025-11-10 20:38:24.125] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 20:38:24.627] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 20:38:25.632] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 20:38:26.135] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 20:38:28.641] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 20:38:29.143] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 20:38:30.147] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 20:38:30.651] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 20:38:33.156] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 20:38:33.659] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 20:38:34.664] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 20:38:35.168] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 20:38:37.673] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 20:38:38.176] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 20:38:39.180] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 20:38:39.684] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 20:38:42.193] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 20:38:42.694] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 20:38:43.197] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 20:38:44.202] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 20:38:46.706] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 20:38:47.209] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 20:38:47.711] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 20:38:48.715] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 20:38:51.219] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 20:38:51.723] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 20:38:52.225] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 20:38:53.229] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 20:38:55.732] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 20:38:56.234] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 20:38:56.736] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 20:38:57.740] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 20:39:00.247] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 20:39:00.749] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 20:39:01.274] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 5 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 5, "attack_active": true}
+[2025-11-10 20:39:02.778] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 20:39:03.280] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 20:39:03.801] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 10 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 10, "attack_active": true}
+[2025-11-10 20:39:05.305] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 20:39:05.807] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 20:39:06.329] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 15 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 15, "attack_active": true}
+[2025-11-10 20:39:07.833] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 20:39:08.335] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 20:39:08.858] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 20 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 20, "attack_active": true}
+[2025-11-10 20:39:10.363] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 20:39:10.865] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 20:39:11.385] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 25 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 25, "attack_active": true}
+[2025-11-10 20:39:12.888] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 20:39:13.391] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 20:39:13.913] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 30 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 30, "attack_active": true}
+[2025-11-10 20:39:15.420] [ATTACK] [CRITICAL] Stage 4 START: Hard Brick - Permanent Denial of Service (P-DoS) | Data: {"stage": 4, "attack_type": "P-DoS", "severity": "CRITICAL"}
+[2025-11-10 20:39:17.928] [ATTACK] [CRITICAL] HARD BRICK COMPLETE: Vehicle inoperable - Requires physical intervention | Data: {"status": "BRICKED", "dtc_count": 5, "recovery": "Physical service required"}
+[2025-11-10 20:39:17.930] [ATTACK] [CRITICAL] P-DoS SUCCESSFUL: Permanent damage inflicted - Attack demonstration complete | Data: {"attack_complete": true, "damage": "Permanent", "cost": "High"}
+[2025-11-10 23:01:24.204] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:01:24.707] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:01:25.724] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:01:26.231] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:01:28.746] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:01:29.251] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:01:30.263] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:01:30.778] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:01:33.289] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:01:33.796] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:01:34.813] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:01:35.320] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:01:37.834] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:01:38.339] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:01:39.349] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:01:39.855] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:01:42.364] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:01:42.868] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:01:43.370] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:01:44.379] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:01:46.889] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:01:47.393] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:01:47.896] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:01:48.903] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:01:51.408] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:01:51.911] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:01:52.413] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:01:53.418] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:01:55.929] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:01:56.436] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:01:56.939] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:01:57.951] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:02:00.462] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:02:00.965] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:02:01.497] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 35 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 35, "attack_active": true}
+[2025-11-10 23:02:03.016] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:02:03.518] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:02:04.080] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 40 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 40, "attack_active": true}
+[2025-11-10 23:02:05.586] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:02:06.088] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:02:06.621] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 45 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 45, "attack_active": true}
+[2025-11-10 23:02:08.144] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:02:08.646] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:02:09.261] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 50 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 50, "attack_active": true}
+[2025-11-10 23:02:10.767] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:02:11.270] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:02:11.819] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 55 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 55, "attack_active": true}
+[2025-11-10 23:02:13.344] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:02:13.851] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:02:14.413] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 60 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 60, "attack_active": true}
+[2025-11-10 23:02:15.927] [ATTACK] [CRITICAL] Stage 4 START: Hard Brick - Permanent Denial of Service (P-DoS) | Data: {"stage": 4, "attack_type": "P-DoS", "severity": "CRITICAL"}
+[2025-11-10 23:02:18.445] [ATTACK] [CRITICAL] HARD BRICK COMPLETE: Vehicle inoperable - Requires physical intervention | Data: {"status": "BRICKED", "dtc_count": 5, "recovery": "Physical service required"}
+[2025-11-10 23:02:18.461] [ATTACK] [CRITICAL] P-DoS SUCCESSFUL: Permanent damage inflicted - Attack demonstration complete | Data: {"attack_complete": true, "damage": "Permanent", "cost": "High"}
+[2025-11-10 23:03:51.526] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:03:52.027] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:03:53.031] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:03:53.535] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:03:56.038] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:03:56.540] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:03:57.544] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:03:58.046] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:04:00.549] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:04:01.050] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:04:02.054] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:04:02.558] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:04:05.062] [ATTACK] [WARNING] Stage 1 START: Initiating Man-in-the-Middle attack | Data: {"stage": 1, "attack_type": "MitM"}
+[2025-11-10 23:04:05.563] [ATTACK] [CRITICAL] ARP SPOOFING: Attacker MAC: DE:AD:BE:EF:13:37 → Target: EVSE (192.168.1.100) | Data: {"attack": "ARP Spoofing", "attacker_mac": "DE:AD:BE:EF:13:37", "target_ip": "192.168.1.100"}
+[2025-11-10 23:04:06.566] [ATTACK] [CRITICAL] MITM INTERCEPTION: Legitimate request intercepted and modified | Data: {"attack": "MitM", "action": "URL Manipulation"}
+[2025-11-10 23:04:07.070] [ATTACK] [CRITICAL] MALICIOUS PAYLOAD: Firmware URL replaced with: https://malicious-c2-server.onion/rootkit.bin | Data: {"attack": "Firmware Injection", "url": "https://malicious-c2-server.onion/rootkit.bin"}
+[2025-11-10 23:04:09.575] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:04:10.076] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:04:10.577] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:04:11.584] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:04:14.088] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:04:14.589] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:04:15.090] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:04:16.093] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:04:18.596] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:04:19.099] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:04:19.600] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:04:20.606] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:04:23.110] [ATTACK] [CRITICAL] Stage 2 START: Firmware manipulation and rootkit installation | Data: {"stage": 2, "attack_type": "Firmware Manipulation"}
+[2025-11-10 23:04:23.611] [ATTACK] [CRITICAL] ROOTKIT INSTALLED: /lib/systemd/system-evse-daemon (Persistent backdoor) | Data: {"attack": "Rootkit", "path": "/lib/systemd/system-evse-daemon", "persistence": true}
+[2025-11-10 23:04:24.113] [ATTACK] [CRITICAL] ZOMBIE EVSE: Device now under attacker control - Sending beacon to C2 | Data: {"attack": "Zombie", "c2_server": "malicious-c2-server.onion", "status": "connected"}
+[2025-11-10 23:04:25.116] [ATTACK] [CRITICAL] C2 COMMAND RECEIVED: Weaponize EVSE - Prepare CAN bus attack on next vehicle connection | Data: {"c2_command": "weaponize", "target": "CAN bus", "trigger": "next_vehicle"}
+[2025-11-10 23:04:27.620] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:04:28.122] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:04:28.637] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 65 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 65, "attack_active": true}
+[2025-11-10 23:04:30.141] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:04:30.644] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:04:31.160] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 70 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 70, "attack_active": true}
+[2025-11-10 23:04:32.664] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:04:33.165] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:04:33.678] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 75 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 75, "attack_active": true}
+[2025-11-10 23:04:35.181] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:04:35.683] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:04:36.196] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 80 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 80, "attack_active": true}
+[2025-11-10 23:04:37.701] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:04:38.204] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:04:38.717] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 85 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 85, "attack_active": true}
+[2025-11-10 23:04:40.221] [ATTACK] [CRITICAL] Stage 3 START: CAN bus DoS attack - 0x000 ID arbitration lock | Data: {"stage": 3, "attack_type": "CAN DoS", "method": "0x000 Priority Flood"}
+[2025-11-10 23:04:40.723] [ATTACK] [WARNING] VEHICLE CONNECTED: Rootkit activated - Accessing CAN transceiver via charging cable | Data: {"vehicle_connected": true, "can_access": "via_charging_cable"}
+[2025-11-10 23:04:41.241] [ATTACK] [CRITICAL] CAN BUS OVERLOAD: Bus load 98% - 90 ECUs blocked | Data: {"bus_load": 98, "blocked_ecus": 90, "attack_active": true}
+[2025-11-10 23:04:42.745] [ATTACK] [CRITICAL] Stage 4 START: Hard Brick - Permanent Denial of Service (P-DoS) | Data: {"stage": 4, "attack_type": "P-DoS", "severity": "CRITICAL"}
+[2025-11-10 23:04:45.254] [ATTACK] [CRITICAL] HARD BRICK COMPLETE: Vehicle inoperable - Requires physical intervention | Data: {"status": "BRICKED", "dtc_count": 5, "recovery": "Physical service required"}
+[2025-11-10 23:04:45.255] [ATTACK] [CRITICAL] P-DoS SUCCESSFUL: Permanent damage inflicted - Attack demonstration complete | Data: {"attack_complete": true, "damage": "Permanent", "cost": "High"}
