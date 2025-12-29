@@ -1,0 +1,7 @@
+Bu simülasyon üç ana bileşenden oluşmaktadır: EV, MITM ve CSMS.
+
+Elektrikli Araç (EV), gerçek batarya doluluk oranını (SoC) sisteme gönderir.
+MITM (Man-in-the-Middle) saldırganı, ağ üzerinden geçen bu veriyi değiştirerek
+yanlış SoC bilgisi iletir.
+Merkezi Şarj Yönetim Sistemi (CSMS), gerçek ve raporlanan SoC değerlerini
+karşılaştırır ve tutarsızlık tespit ettiğinde şarj oturumunu durdurur.
