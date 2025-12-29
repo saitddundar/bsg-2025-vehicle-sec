@@ -1,0 +1,5 @@
+[CSMS] Sunucu aktif, veri bekleniyor...
+[CSMS] Gerçek SoC: %60 | Raporlanan SoC: %90
+
+🚨 PHANTOM SOC (KAPASİTE SAHTEKÂRLIĞI) TESPİT EDİLDİ 🚨
+➡️ Şarj oturumu durduruldu
