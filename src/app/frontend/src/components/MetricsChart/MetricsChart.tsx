@@ -4,19 +4,24 @@ import './MetricsChart.css';
 interface MetricsChartProps {
     isRunning: boolean;
     anomalyState: 'normal' | 'suspicious' | 'attack';
+    voltage?: number;
+    frequency?: number;
+    power?: number;
 }
 
-export function MetricsChart({ isRunning, anomalyState }: MetricsChartProps) {
-    const [selectedMetric, setSelectedMetric] = useState<'voltage' | 'current' | 'temp'>('voltage');
+export function MetricsChart({ isRunning, anomalyState, voltage, frequency, power }: MetricsChartProps) {
+    const [selectedMetric, setSelectedMetric] = useState<'voltage' | 'hz' | 'kw'>('voltage');
+
 
     // Generate stable mock path
     const points = useMemo(() => {
-        return Array.from({ length: 40 }, (_, i) => {
-            const base = selectedMetric === 'voltage' ? 230 : selectedMetric === 'current' ? 32 : 38;
-            const noise = Math.random() * 4 - 2;
-            const anomaly = (anomalyState !== 'normal' && i > 25) ? (selectedMetric === 'voltage' ? 25 : 15) : 0;
-            return base + noise + anomaly;
+        return Array.from({ length: 40 }, (_) => {
+            const base = selectedMetric === 'voltage' ? (voltage || 230) : selectedMetric === 'hz' ? (frequency || 50) : (power || 0);
+            const noise = isRunning ? (Math.random() * 2 - 1) : 0;
+            return base + noise;
         });
+
+
     }, [selectedMetric, anomalyState, isRunning]);
 
     const max = Math.max(...points, 255);
@@ -43,9 +48,10 @@ export function MetricsChart({ isRunning, anomalyState }: MetricsChartProps) {
                 </div>
                 <div className="metric-switcher">
                     <button className={selectedMetric === 'voltage' ? 'active' : ''} onClick={() => setSelectedMetric('voltage')}>V</button>
-                    <button className={selectedMetric === 'current' ? 'active' : ''} onClick={() => setSelectedMetric('current')}>A</button>
-                    <button className={selectedMetric === 'temp' ? 'active' : ''} onClick={() => setSelectedMetric('temp')}>°C</button>
+                    <button className={selectedMetric === 'hz' ? 'active' : ''} onClick={() => setSelectedMetric('hz')}>Hz</button>
+                    <button className={selectedMetric === 'kw' ? 'active' : ''} onClick={() => setSelectedMetric('kw')}>kW</button>
                 </div>
+
             </div>
 
             <div className="chart-wrapper">

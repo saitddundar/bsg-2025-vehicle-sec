@@ -87,6 +87,18 @@
     color: var(--text-dim);
 }
 
+.empty-state-msg {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+}
+
+
 /* CENTER COLUMN: SCROLLABLE */
 .scrollable-center {
     display: flex;
@@ -167,15 +179,17 @@
 }
 
 .console-window {
-    width: 800px;
-    height: 500px;
-    background: #050608;
+    width: 90vw;
+    height: 80vh;
+    max-width: 1200px;
+    background: #02040a;
     border: 1px solid var(--accent-primary);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
 }
+
 
 .window-header {
     height: 40px;
@@ -190,7 +204,10 @@
 .window-content {
     flex: 1;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .label {
     font-size: 0.65rem;

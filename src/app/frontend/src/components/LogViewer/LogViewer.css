@@ -1,8 +1,10 @@
 .console-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
     overflow: hidden;
 }
+
 
 .header-title {
     display: flex;
@@ -13,27 +15,32 @@
 .console-output {
     flex: 1;
     padding: 1rem;
-    background: #050608;
+    background: #02040a;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    min-height: 0;
+    /* Critical for flex scrolling */
 }
 
 .log-line {
     display: flex;
     gap: 1rem;
     line-height: 1.4;
+    white-space: pre-wrap;
+    /* Preserve spaces in banner */
 }
 
 .line-num {
     color: var(--text-dim);
-    width: 20px;
+    width: 24px;
     text-align: right;
     flex-shrink: 0;
     opacity: 0.5;
+    user-select: none;
 }
 
 .line-text {
@@ -45,9 +52,15 @@
     color: var(--accent-warning);
 }
 
-.line-text.err {
+.line-text.error {
     color: var(--accent-danger);
+    font-weight: 500;
 }
+
+.line-text.success {
+    color: #10b981;
+}
+
 
 .empty-state {
     height: 100%;

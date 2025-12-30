@@ -161,17 +161,13 @@ def print_banner():
     """Header banner"""
     print("\n" + "="*70)
     print("""
-    ██╗   ██╗██████╗  ██████╗     ███████╗██╗███╗   ███╗
-    ██║   ██║╚════██╗██╔════╝     ██╔════╝██║████╗ ████║
-    ██║   ██║ █████╔╝██║  ███╗    ███████╗██║██╔████╔██║
-    ╚██╗ ██╔╝██╔═══╝ ██║   ██║    ╚════██║██║██║╚██╔╝██║
-     ╚████╔╝ ███████╗╚██████╔╝    ███████║██║██║ ╚═╝ ██║
-      ╚═══╝  ╚══════╝ ╚═════╝     ╚══════╝╚═╝╚═╝     ╚═╝
-                                                        
+    [V] [2] [G]    [S] [I] [M]
+    
     V2G Protocol Manipulation Simulation
     Microgrid Destabilization Attack Demo
     """)
     print("="*70)
+
 
 
 def print_grid_status(grid: MicrogridState, anomalies=None):

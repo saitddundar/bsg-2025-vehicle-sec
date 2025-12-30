@@ -4,9 +4,11 @@ import './VehicleInfo.css';
 interface VehicleInfoProps {
     vehicle: any;
     isConnected: boolean;
+    soc?: number;
+    power?: number;
 }
 
-export function VehicleInfo({ isConnected }: VehicleInfoProps) {
+export function VehicleInfo({ isConnected, soc = 78.2, power = 11.4 }: VehicleInfoProps) {
     return (
         <div className="spec-card glass-card">
             <div className="card-header">
@@ -27,28 +29,28 @@ export function VehicleInfo({ isConnected }: VehicleInfoProps) {
                         <Battery size={16} className="spec-icon" />
                         <div className="spec-data">
                             <span className="spec-label">SOC</span>
-                            <span className="spec-value">78.2%</span>
+                            <span className="spec-value">{soc}%</span>
                         </div>
                     </div>
                     <div className="spec-item">
                         <Zap size={16} className="spec-icon" />
                         <div className="spec-data">
                             <span className="spec-label">LINE LOAD</span>
-                            <span className="spec-value">11.4 kW</span>
+                            <span className="spec-value">{power.toFixed(1)} kW</span>
                         </div>
                     </div>
                     <div className="spec-item">
                         <Gauge size={16} className="spec-icon" />
                         <div className="spec-data">
-                            <span className="spec-label">V-DIFF</span>
-                            <span className="spec-value">+0.4V</span>
+                            <span className="spec-label">PROTO</span>
+                            <span className="spec-value">ISO 15118</span>
                         </div>
                     </div>
                     <div className="spec-item">
                         <Terminal size={16} className="spec-icon" />
                         <div className="spec-data">
-                            <span className="spec-label">PROTO</span>
-                            <span className="spec-value">ISO 15118</span>
+                            <span className="spec-label">STATUS</span>
+                            <span className="spec-value">{isConnected ? (power > 0 ? 'DISCHARGING' : 'CHARGING') : 'IDLE'}</span>
                         </div>
                     </div>
                 </div>
@@ -56,5 +58,6 @@ export function VehicleInfo({ isConnected }: VehicleInfoProps) {
         </div>
     );
 }
+
 
 export default VehicleInfo;
