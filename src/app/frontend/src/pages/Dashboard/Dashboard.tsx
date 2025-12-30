@@ -123,14 +123,30 @@ export function Dashboard() {
                     </div>
                 </section>
 
-                {/* Right Column: Console -> Diagnosis -> Asset */}
+                {/* Right Column: Console -> [Reports] -> Asset */}
                 <aside className="column-right">
-                    <div className="right-section console">
+                    <div className="right-section console-fixed">
                         <LogViewer isRunning={!!activeSim} logs={[]} />
                     </div>
-                    <div className="right-section diagnosis">
-                        <AnomalyScore score={activeSim ? (anomalyState === 'attack' ? 92 : anomalyState === 'suspicious' ? 45 : 12) : 0} />
+
+                    <div className="right-section reports-row">
+                        <div className="report-item">
+                            <ThreatSummary
+                                isActive={anomalyState !== 'normal'}
+                                threatType={activeSim?.name || 'Inert State'}
+                                confidence={anomalyState === 'attack' ? 'high' : 'medium'}
+                                attackVector="TCP/IP Protocol Injection"
+                                potentialImpact={[
+                                    { type: 'Battery Degradation', severity: 'high' },
+                                    { type: 'Grid Instability', severity: 'medium' }
+                                ]}
+                            />
+                        </div>
+                        <div className="report-item">
+                            <AnomalyScore score={activeSim ? (anomalyState === 'attack' ? 92 : anomalyState === 'suspicious' ? 45 : 12) : 0} />
+                        </div>
                     </div>
+
                     <div className="right-section asset">
                         <VehicleInfo vehicle={null} isConnected={!!activeSim} />
                     </div>

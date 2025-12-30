@@ -9,16 +9,16 @@
 .dashboard-content {
     flex: 1;
     display: grid;
-    grid-template-columns: 300px 1fr 450px;
-    /* Center reduced, Right increased */
+    grid-template-columns: 280px 1fr 650px;
+    /* Wider right column for side-by-side reports */
     gap: 1.25rem;
     padding: 1.25rem;
     overflow: hidden;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
     .dashboard-content {
-        grid-template-columns: 280px 1fr 400px;
+        grid-template-columns: 260px 1fr 600px;
     }
 }
 
@@ -107,7 +107,7 @@
     height: 100%;
 }
 
-/* ===== RIGHT COLUMN: STACKED (Console -> Diagnosis -> Asset) ===== */
+/* ===== RIGHT COLUMN: STACKED & SIDE-BY-SIDE ===== */
 .column-right {
     display: flex;
     flex-direction: column;
@@ -120,20 +120,33 @@
     flex-shrink: 0;
 }
 
-.right-section.console {
-    height: 30%;
-    min-height: 200px;
+.console-fixed {
+    height: 250px;
+    /* Fixed height for console */
+    flex-shrink: 0;
 }
 
-.right-section.diagnosis {
-    min-height: 220px;
+.reports-row {
+    display: flex;
+    gap: 1.25rem;
+    height: 320px;
+    /* Fixed height for report row */
+}
+
+.report-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.report-item>* {
+    height: 100%;
 }
 
 .right-section.asset {
     min-height: 200px;
 }
 
-/* Global scroll styling for columns */
+/* Global scroll styling */
 .column-left,
 .column-right {
     scrollbar-gutter: stable;
