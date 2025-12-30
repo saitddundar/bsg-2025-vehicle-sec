@@ -9,45 +9,45 @@
 .dashboard-content {
     flex: 1;
     display: grid;
-    grid-template-columns: 280px 1fr 340px;
+    grid-template-columns: 300px 1fr 450px;
+    /* Center reduced, Right increased */
     gap: 1.25rem;
     padding: 1.25rem;
     overflow: hidden;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
     .dashboard-content {
-        grid-template-columns: 240px 1fr 300px;
+        grid-template-columns: 280px 1fr 400px;
     }
 }
 
-.nav-column {
+/* ===== LEFT COLUMN: 50/50 ===== */
+.column-left {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    overflow-y: auto;
-    padding-right: 4px;
+    gap: 1.25rem;
+    overflow: hidden;
 }
 
-.section-group {
+.section-half {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 0;
+}
+
+.scenarios {
     gap: 0.75rem;
 }
 
-.section-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding-left: 0.5rem;
-}
-
 .scenario-list {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .scenario-card {
@@ -60,17 +60,16 @@
     border: 1px solid var(--border-color);
     border-radius: 10px;
     transition: all 0.2s;
+    flex-shrink: 0;
 }
 
 .scenario-card:hover {
-    background: var(--bg-hover);
     border-color: var(--accent-primary);
 }
 
 .scenario-card.active {
-    background: var(--bg-hover);
     border-color: var(--accent-primary);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+    background: var(--bg-hover);
 }
 
 .scenario-info {
@@ -90,55 +89,26 @@
     margin-top: 2px;
 }
 
-.scenario-card.active .scenario-name {
-    color: var(--accent-primary);
-}
-
-.side-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 0.75rem;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    border-radius: 8px;
-    transition: all 0.2s;
-}
-
-.nav-item.active {
-    background: var(--bg-hover);
-    color: var(--accent-primary);
-}
-
-.nav-item:not(.active):hover {
-    background: var(--bg-hover) calc(1);
-    color: var(--text-main);
-}
-
-/* ===== CENTER COLUMN ===== */
-.main-column {
+/* ===== CENTER COLUMN: 50/50 ===== */
+.column-center {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     min-width: 0;
 }
 
-.topology-box {
-    flex: 1.2;
-}
-
-.metrics-box {
+.center-half {
     flex: 1;
+    min-height: 0;
 }
 
-/* ===== RIGHT COLUMN ===== */
-.data-column {
+.topology,
+.metrics {
+    height: 100%;
+}
+
+/* ===== RIGHT COLUMN: STACKED (Console -> Diagnosis -> Asset) ===== */
+.column-right {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -146,19 +116,34 @@
     padding-right: 4px;
 }
 
-.info-blocks {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-.scroll-blocks {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-.scroll-blocks>* {
-    height: 250px;
+.right-section {
     flex-shrink: 0;
+}
+
+.right-section.console {
+    height: 30%;
+    min-height: 200px;
+}
+
+.right-section.diagnosis {
+    min-height: 220px;
+}
+
+.right-section.asset {
+    min-height: 200px;
+}
+
+/* Global scroll styling for columns */
+.column-left,
+.column-right {
+    scrollbar-gutter: stable;
+}
+
+.section-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding-left: 0.5rem;
 }

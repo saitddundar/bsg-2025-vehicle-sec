@@ -10,13 +10,13 @@ import {
     ThreatSummary,
     AttackTimeline,
 } from '../../components';
-import { Play, Square, Settings, Database, Activity, LayoutGrid } from 'lucide-react';
+import { Play, Square } from 'lucide-react';
 import type { Simulation } from '../../types';
 import './Dashboard.css';
 
 const SCOPE_SIMULATIONS: Simulation[] = [
     {
-        id: 'sait-simulation',
+        id: 'v2g-injection',
         name: 'V2G Manipulation',
         description: 'Intercepting V2G handshake to manipulate grid discharge',
         path: '', author: 'BSG', status: 'idle', scripts: []
@@ -31,6 +31,12 @@ const SCOPE_SIMULATIONS: Simulation[] = [
         id: 'can-flood',
         name: 'CAN Bus DoS',
         description: 'Flooding vehicle bus to disable safety systems during charging',
+        path: '', author: 'BSG', status: 'idle', scripts: []
+    },
+    {
+        id: 'firmware-tampering',
+        name: 'Firmware Spoof',
+        description: 'Injecting malicious firmware metadata into CSMS handshake',
         path: '', author: 'BSG', status: 'idle', scripts: []
     }
 ];
@@ -70,9 +76,9 @@ export function Dashboard() {
             <Header activeSimulation={activeSim?.name} anomalyState={anomalyState} />
 
             <main className="dashboard-content">
-                {/* Left Column: Navigation & Scenarios */}
-                <aside className="nav-column">
-                    <div className="section-group">
+                {/* Left Column: Attack Scenarios (Top) & Kill Chain (Bottom) */}
+                <aside className="column-left">
+                    <div className="section-half scenarios">
                         <span className="section-label">Attack Scenarios</span>
                         <div className="scenario-list">
                             {SCOPE_SIMULATIONS.map(sim => (
@@ -91,17 +97,7 @@ export function Dashboard() {
                         </div>
                     </div>
 
-                    <div className="section-group">
-                        <span className="section-label">Resources</span>
-                        <nav className="side-nav">
-                            <button className="nav-item active"><LayoutGrid size={16} /> Overview</button>
-                            <button className="nav-item"><Database size={16} /> Protocol Library</button>
-                            <button className="nav-item"><Settings size={16} /> Device Management</button>
-                            <button className="nav-item"><Activity size={16} /> Global Stats</button>
-                        </nav>
-                    </div>
-
-                    <div className="section-group spacer">
+                    <div className="section-half kill-chain">
                         <AttackTimeline
                             recon={elapsed > 5}
                             injection={elapsed > 15}
@@ -110,9 +106,9 @@ export function Dashboard() {
                     </div>
                 </aside>
 
-                {/* Center Column: Core Analysis */}
-                <section className="main-column">
-                    <div className="topology-box">
+                {/* Center Column: Network Arch & Live Parameters (50/50 Height) */}
+                <section className="column-center">
+                    <div className="center-half topology">
                         <NetworkTopology
                             vehicleStatus={anomalyState === 'attack' ? 'attack' : 'normal'}
                             evseStatus={anomalyState === 'suspicious' ? 'warning' : 'normal'}
@@ -122,30 +118,21 @@ export function Dashboard() {
                             flowDirection={activeSim ? (anomalyState === 'attack' ? 'discharging' : 'charging') : 'idle'}
                         />
                     </div>
-                    <div className="metrics-box">
+                    <div className="center-half metrics">
                         <MetricsChart isRunning={!!activeSim} anomalyState={anomalyState} />
                     </div>
                 </section>
 
-                {/* Right Column: Alerts & Logs */}
-                <aside className="data-column">
-                    <div className="info-blocks">
-                        <VehicleInfo vehicle={null} isConnected={!!activeSim} />
-                        <AnomalyScore score={activeSim ? (anomalyState === 'attack' ? 92 : anomalyState === 'suspicious' ? 45 : 12) : 0} />
-                        <ThreatSummary
-                            isActive={anomalyState !== 'normal'}
-                            threatType={activeSim?.name || 'Inert State'}
-                            confidence={anomalyState === 'attack' ? 'high' : 'medium'}
-                            attackVector="TCP/IP Protocol Injection"
-                            potentialImpact={[
-                                { type: 'Battery Degradation', severity: 'high' },
-                                { type: 'Grid Instability', severity: 'medium' }
-                            ]}
-                        />
-                    </div>
-                    <div className="scroll-blocks">
+                {/* Right Column: Console -> Diagnosis -> Asset */}
+                <aside className="column-right">
+                    <div className="right-section console">
                         <LogViewer isRunning={!!activeSim} logs={[]} />
-                        <PacketInspector isRunning={!!activeSim} packets={[]} />
+                    </div>
+                    <div className="right-section diagnosis">
+                        <AnomalyScore score={activeSim ? (anomalyState === 'attack' ? 92 : anomalyState === 'suspicious' ? 45 : 12) : 0} />
+                    </div>
+                    <div className="right-section asset">
+                        <VehicleInfo vehicle={null} isConnected={!!activeSim} />
                     </div>
                 </aside>
             </main>
