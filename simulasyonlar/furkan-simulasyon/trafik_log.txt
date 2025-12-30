@@ -24,4 +24,3 @@
 {"status": "Uploaded", "timestamp": "2025-12-29T15:22:15Z", "vendor": "Wallbox-X", "diag_ext": "b1"}
 {"status": "Uploaded", "timestamp": "2025-12-29T15:22:20Z", "vendor": "Wallbox-X", "diag_ext": "b1"}
 {"status": "Uploaded", "timestamp": "2025-12-29T15:22:25Z", "vendor": "Wallbox-X", "diag_ext": "b1"}
-
