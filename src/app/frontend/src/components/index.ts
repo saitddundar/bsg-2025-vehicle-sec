@@ -11,3 +11,5 @@ export { AnomalyScore } from './AnomalyScore';
 export { MetricsChart } from './MetricsChart';
 export { PacketInspector } from './PacketInspector';
 export { SimulationSelector } from './SimulationSelector';
+export { ThreatSummary } from './ThreatSummary';
+export { AttackTimeline } from './AttackTimeline';

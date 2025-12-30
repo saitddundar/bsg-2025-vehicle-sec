@@ -1,168 +1,88 @@
-.vehicle-info {
-    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 1rem;
+.spec-card {
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
+    gap: 1.25rem;
+}
+
+.connection-pill {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.connection-pill.online {
+    background: rgba(52, 211, 153, 0.1);
+    color: var(--accent-success);
+}
+
+.connection-pill.offline {
+    background: var(--bg-hover);
+    color: var(--text-dim);
+}
+
+.spec-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.main-spec {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.asset-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
-.vehicle-info-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.info-title {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: #6e7681;
-}
-
-.connection-status {
+.spec-item {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
-}
-
-.connection-status.connected {
-    background: rgba(16, 185, 129, 0.12);
-    color: #10b981;
-}
-
-.connection-status.disconnected {
-    background: rgba(107, 114, 128, 0.12);
-    color: #6b7280;
-}
-
-.vehicle-identity {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg-hover);
     padding: 0.75rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-.vehicle-badge {
+.spec-icon {
+    color: var(--accent-primary);
+    opacity: 0.8;
+}
+
+.spec-data {
     display: flex;
     flex-direction: column;
 }
 
-.brand {
-    font-size: 0.7rem;
-    color: #8b949e;
+.spec-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-dim);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
 }
 
-.model {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #f0f6fc;
-}
-
-.vehicle-year {
-    font-size: 0.7rem;
-    color: #6e7681;
-    background: rgba(110, 118, 129, 0.15);
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-}
-
-.battery-section {
-    padding: 0.75rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.battery-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.battery-icon {
-    color: #10b981;
-}
-
-.battery-label {
-    flex: 1;
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-.battery-value {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #f0f6fc;
-    font-family: 'SF Mono', 'Monaco', monospace;
-}
-
-.battery-bar {
-    height: 10px;
-    background: #21262d;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 0.35rem;
-}
-
-.battery-fill {
-    height: 100%;
-    border-radius: 5px;
-    transition: width 0.5s ease, background 0.3s ease;
-}
-
-.battery-capacity {
-    font-size: 0.65rem;
-    color: #6e7681;
-    text-align: right;
-}
-
-.vehicle-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.stat-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
-}
-
-.stat-row:last-child {
-    border-bottom: none;
-}
-
-.stat-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 6px;
-    color: #8b949e;
-}
-
-.stat-label {
-    flex: 1;
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
-.stat-value {
+.spec-value {
     font-size: 0.85rem;
-    font-weight: 500;
-    color: #f0f6fc;
+    font-weight: 700;
+    color: var(--text-main);
+    font-family: var(--font-mono);
 }

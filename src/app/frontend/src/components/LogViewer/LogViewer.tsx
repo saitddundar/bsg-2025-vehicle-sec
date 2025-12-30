@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Terminal, Copy } from 'lucide-react';
 import './LogViewer.css';
 
 interface LogViewerProps {
@@ -6,53 +6,37 @@ interface LogViewerProps {
     isRunning: boolean;
 }
 
-export function LogViewer({ logs, isRunning }: LogViewerProps) {
-    const logContainerRef = useRef<HTMLDivElement>(null);
-    const [autoScroll, setAutoScroll] = useState(true);
+const MOCK_LOGS = [
+    "[14:02:11] INITIALIZING ISO-15118 HANDSHAKE",
+    "[14:02:12] SDP REQUEST BROADCAST SENT",
+    "[14:02:12] SECC RESPONSE RECEIVED: ADDR=0xFE80::1",
+    "[14:02:13] SUPPORTED APP PROTOCOL SENT",
+    "[14:02:13] SESSION SETUP INITIATED",
+    "[14:02:14] WARNING: UNEXPECTED SEQUENCE TIMEOUT",
+    "[14:02:15] MONITORING ACTIVE - BUFFER POOLING..."
+];
 
-    useEffect(() => {
-        if (autoScroll && logContainerRef.current) {
-            logContainerRef.current.scrollTop = logContainerRef.current.scrollHeight;
-        }
-    }, [logs, autoScroll]);
-
-    const getLogClass = (log: string): string => {
-        if (log.includes('[ERROR]') || log.includes('error')) return 'log-error';
-        if (log.includes('[WARNING]') || log.includes('[!]')) return 'log-warning';
-        if (log.includes('[OK]') || log.includes('[SUCCESS]')) return 'log-success';
-        if (log.includes('[ATTACK]') || log.includes('[!!!]')) return 'log-attack';
-        return 'log-info';
-    };
-
+export function LogViewer({ isRunning }: LogViewerProps) {
     return (
-        <div className="log-viewer">
-            <div className="log-viewer-header">
-                <h3>Console Output</h3>
-                <div className="log-viewer-controls">
-                    {isRunning && <span className="running-indicator">● Running</span>}
-                    <label className="auto-scroll-toggle">
-                        <input
-                            type="checkbox"
-                            checked={autoScroll}
-                            onChange={(e) => setAutoScroll(e.target.checked)}
-                        />
-                        Auto-scroll
-                    </label>
-                    <span className="log-count">{logs.length} lines</span>
+        <div className="console-card glass-card">
+            <div className="card-header">
+                <div className="header-title">
+                    <Terminal size={14} />
+                    <span className="card-label">System Console</span>
                 </div>
+                <button className="icon-btn-small"><Copy size={12} /></button>
             </div>
-            <div className="log-container" ref={logContainerRef}>
-                {logs.length === 0 ? (
-                    <div className="log-empty">
-                        No logs yet. Run a simulation to see output here.
-                    </div>
-                ) : (
-                    logs.map((log, index) => (
-                        <div key={index} className={`log-line ${getLogClass(log)}`}>
-                            <span className="log-line-number">{index + 1}</span>
-                            <span className="log-line-content">{log}</span>
+
+            <div className="console-output">
+                {isRunning ? (
+                    MOCK_LOGS.map((log, i) => (
+                        <div key={i} className="log-line">
+                            <span className="line-num">{i + 1}</span>
+                            <span className={`line-text ${log.includes('WARNING') ? 'warn' : ''}`}>{log}</span>
                         </div>
                     ))
+                ) : (
+                    <div className="empty-state">Awaiting process initiation...</div>
                 )}
             </div>
         </div>

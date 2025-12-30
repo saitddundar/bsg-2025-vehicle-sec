@@ -1,188 +1,107 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import './MetricsChart.css';
-
-interface MetricData {
-    voltage: number[];
-    current: number[];
-    temperature: number[];
-    timestamps: string[];
-}
 
 interface MetricsChartProps {
     isRunning: boolean;
-    hasAnomaly: boolean;
-    anomalyIndex?: number;
+    anomalyState: 'normal' | 'suspicious' | 'attack';
 }
 
-const generateMockData = (hasAnomaly: boolean, anomalyIndex: number = -1): MetricData => {
-    const timestamps = Array.from({ length: 20 }, (_, i) => {
-        const d = new Date();
-        d.setSeconds(d.getSeconds() - (20 - i) * 3);
-        return d.toLocaleTimeString('en-US', { hour12: false, second: '2-digit', minute: '2-digit' });
-    });
+export function MetricsChart({ isRunning, anomalyState }: MetricsChartProps) {
+    const [selectedMetric, setSelectedMetric] = useState<'voltage' | 'current' | 'temp'>('voltage');
 
-    return {
-        voltage: timestamps.map((_, i) => {
-            const base = 230 + Math.random() * 4 - 2;
-            return hasAnomaly && i >= anomalyIndex && i < anomalyIndex + 3 ? base + 25 : base;
-        }),
-        current: timestamps.map((_, i) => {
-            const base = 32 + Math.random() * 2 - 1;
-            return hasAnomaly && i >= anomalyIndex && i < anomalyIndex + 3 ? base + 15 : base;
-        }),
-        temperature: timestamps.map((_, i) => {
-            const base = 35 + Math.random() * 3;
-            return hasAnomaly && i >= anomalyIndex && i < anomalyIndex + 3 ? base + 12 : base;
-        }),
-        timestamps,
+    // Generate stable mock path
+    const points = useMemo(() => {
+        return Array.from({ length: 40 }, (_, i) => {
+            const base = selectedMetric === 'voltage' ? 230 : selectedMetric === 'current' ? 32 : 38;
+            const noise = Math.random() * 4 - 2;
+            const anomaly = (anomalyState !== 'normal' && i > 25) ? (selectedMetric === 'voltage' ? 25 : 15) : 0;
+            return base + noise + anomaly;
+        });
+    }, [selectedMetric, anomalyState, isRunning]);
+
+    const max = Math.max(...points, 255);
+    const min = Math.min(...points, 200);
+
+    const getY = (val: number) => 150 - ((val - min) / (max - min)) * 150;
+    const getX = (i: number) => (i / (points.length - 1)) * 500;
+
+    const pathData = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${getX(i)} ${getY(p)}`).join(' ');
+    const areaData = `${pathData} L 500 150 L 0 150 Z`;
+
+    const getStrokeColor = () => {
+        if (anomalyState === 'attack') return 'var(--accent-danger)';
+        if (anomalyState === 'suspicious') return 'var(--accent-warning)';
+        return 'var(--accent-primary)';
     };
-};
-
-export function MetricsChart({ isRunning, hasAnomaly, anomalyIndex = 12 }: MetricsChartProps) {
-    const [data, setData] = useState<MetricData>(() => generateMockData(hasAnomaly, anomalyIndex));
-    const [selectedMetric, setSelectedMetric] = useState<'voltage' | 'current' | 'temperature'>('voltage');
-
-    useEffect(() => {
-        if (!isRunning) return;
-
-        const interval = setInterval(() => {
-            setData(generateMockData(hasAnomaly, anomalyIndex));
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [isRunning, hasAnomaly, anomalyIndex]);
-
-    const metricConfig = {
-        voltage: { label: 'Voltage', unit: 'V', color: '#22d3ee', threshold: 253 },
-        current: { label: 'Current', unit: 'A', color: '#3b82f6', threshold: 45 },
-        temperature: { label: 'Temperature', unit: '°C', color: '#f97316', threshold: 45 },
-    };
-
-    const config = metricConfig[selectedMetric];
-    const values = data[selectedMetric];
-    const max = Math.max(...values) * 1.1;
-    const min = Math.min(...values) * 0.9;
 
     return (
-        <div className="metrics-chart">
-            <div className="chart-header">
-                <span className="chart-title">PHYSICAL PARAMETERS</span>
-                <div className="metric-tabs">
-                    {Object.entries(metricConfig).map(([key, cfg]) => (
-                        <button
-                            key={key}
-                            className={`metric-tab ${selectedMetric === key ? 'active' : ''}`}
-                            onClick={() => setSelectedMetric(key as typeof selectedMetric)}
-                            style={{ '--tab-color': cfg.color } as React.CSSProperties}
-                        >
-                            {cfg.label}
-                        </button>
-                    ))}
+        <div className="metrics-card glass-card">
+            <div className="card-header">
+                <div className="title-group">
+                    <span className="card-label">Physical Telemetry</span>
+                    <h3 className="card-title">Live Parameter Analysis</h3>
+                </div>
+                <div className="metric-switcher">
+                    <button className={selectedMetric === 'voltage' ? 'active' : ''} onClick={() => setSelectedMetric('voltage')}>V</button>
+                    <button className={selectedMetric === 'current' ? 'active' : ''} onClick={() => setSelectedMetric('current')}>A</button>
+                    <button className={selectedMetric === 'temp' ? 'active' : ''} onClick={() => setSelectedMetric('temp')}>°C</button>
                 </div>
             </div>
 
-            <div className="chart-container">
-                <div className="chart-y-axis">
+            <div className="chart-wrapper">
+                <div className="y-axis-labels">
                     <span>{max.toFixed(0)}</span>
                     <span>{((max + min) / 2).toFixed(0)}</span>
                     <span>{min.toFixed(0)}</span>
                 </div>
 
-                <div className="chart-area">
-                    <svg viewBox="0 0 400 150" preserveAspectRatio="none" className="chart-svg">
-                        {/* Threshold line */}
-                        <line
-                            x1="0"
-                            y1={150 - ((config.threshold - min) / (max - min)) * 150}
-                            x2="400"
-                            y2={150 - ((config.threshold - min) / (max - min)) * 150}
-                            stroke="#ef4444"
-                            strokeWidth="1"
-                            strokeDasharray="4,4"
-                            opacity="0.5"
-                        />
+                <svg viewBox="0 0 500 150" className="telemetry-svg" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stopColor={getStrokeColor()} stopOpacity="0.2" />
+                            <stop offset="100%" stopColor={getStrokeColor()} stopOpacity="0" />
+                        </linearGradient>
+                    </defs>
 
-                        {/* Anomaly zone highlight */}
-                        {hasAnomaly && (
-                            <rect
-                                x={(anomalyIndex / 20) * 400}
-                                y="0"
-                                width={(3 / 20) * 400}
-                                height="150"
-                                fill="rgba(239, 68, 68, 0.15)"
-                            />
-                        )}
+                    {/* Grid lines */}
+                    <line x1="0" y1="37" x2="500" y2="37" className="grid-line" />
+                    <line x1="0" y1="75" x2="500" y2="75" className="grid-line" />
+                    <line x1="0" y1="112" x2="500" y2="112" className="grid-line" />
 
-                        {/* Line chart */}
-                        <polyline
-                            fill="none"
-                            stroke={config.color}
-                            strokeWidth="2"
-                            points={values
-                                .map((v, i) => {
-                                    const x = (i / (values.length - 1)) * 400;
-                                    const y = 150 - ((v - min) / (max - min)) * 150;
-                                    return `${x},${y}`;
-                                })
-                                .join(' ')}
-                        />
+                    {/* Area */}
+                    <path d={areaData} fill="url(#chartGradient)" />
 
-                        {/* Gradient fill */}
-                        <defs>
-                            <linearGradient id={`gradient-${selectedMetric}`} x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0%" stopColor={config.color} stopOpacity="0.3" />
-                                <stop offset="100%" stopColor={config.color} stopOpacity="0" />
-                            </linearGradient>
-                        </defs>
-                        <polygon
-                            fill={`url(#gradient-${selectedMetric})`}
-                            points={`0,150 ${values
-                                .map((v, i) => {
-                                    const x = (i / (values.length - 1)) * 400;
-                                    const y = 150 - ((v - min) / (max - min)) * 150;
-                                    return `${x},${y}`;
-                                })
-                                .join(' ')} 400,150`}
-                        />
+                    {/* Line */}
+                    <path
+                        d={pathData}
+                        fill="none"
+                        stroke={getStrokeColor()}
+                        strokeWidth="1.5"
+                        className="telemetry-path"
+                    />
 
-                        {/* Data points */}
-                        {values.map((v, i) => {
-                            const x = (i / (values.length - 1)) * 400;
-                            const y = 150 - ((v - min) / (max - min)) * 150;
-                            const isOutlier = v > config.threshold;
-                            return (
-                                <circle
-                                    key={i}
-                                    cx={x}
-                                    cy={y}
-                                    r={isOutlier ? 5 : 3}
-                                    fill={isOutlier ? '#ef4444' : config.color}
-                                    className={isOutlier ? 'outlier-point' : ''}
-                                />
-                            );
-                        })}
-                    </svg>
-                </div>
+                    {/* Threshold line */}
+                    <line
+                        x1="0" y1={getY(250)} x2="500" y2={getY(250)}
+                        className="threshold-marker"
+                        stroke="var(--accent-danger)"
+                        strokeDasharray="4,4"
+                    />
+                </svg>
             </div>
 
-            <div className="chart-stats">
-                <div className="stat-box">
-                    <span className="stat-label">Current</span>
-                    <span className="stat-value" style={{ color: config.color }}>
-                        {values[values.length - 1].toFixed(1)} {config.unit}
-                    </span>
+            <div className="metrics-footer">
+                <div className="stat-pill">
+                    <span className="pill-label">CURRENT</span>
+                    <span className="pill-value">{points[points.length - 1].toFixed(2)}</span>
                 </div>
-                <div className="stat-box">
-                    <span className="stat-label">Average</span>
-                    <span className="stat-value">
-                        {(values.reduce((a, b) => a + b) / values.length).toFixed(1)} {config.unit}
-                    </span>
+                <div className="stat-pill">
+                    <span className="pill-label">MEAN</span>
+                    <span className="pill-value">{(points.reduce((a, b) => a + b) / points.length).toFixed(2)}</span>
                 </div>
-                <div className="stat-box">
-                    <span className="stat-label">Threshold</span>
-                    <span className="stat-value" style={{ color: '#ef4444' }}>
-                        {config.threshold} {config.unit}
-                    </span>
+                <div className="stat-pill danger">
+                    <span className="pill-label">DEV</span>
+                    <span className="pill-value">{(points[points.length - 1] - 230).toFixed(1)}%</span>
                 </div>
             </div>
         </div>
