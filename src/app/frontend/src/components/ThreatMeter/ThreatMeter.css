@@ -1,0 +1,141 @@
+.threat-meter {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.threat-meter::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glow-color);
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.threat-meter-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.threat-icon {
+    font-size: 1.25rem;
+}
+
+.threat-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #8b949e;
+    flex: 1;
+}
+
+.anomaly-badge {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    background: rgba(239, 68, 68, 0.15);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.anomaly-count {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ef4444;
+}
+
+.anomaly-label {
+    font-size: 0.65rem;
+    color: #8b949e;
+}
+
+.threat-bar-container {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.75rem;
+}
+
+.threat-bar-bg {
+    height: 12px;
+    background: #21262d;
+    border-radius: 6px;
+    overflow: visible;
+    position: relative;
+}
+
+.threat-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.threat-bar-indicator {
+    position: absolute;
+    top: -4px;
+    width: 4px;
+    height: 20px;
+    background: #f0f6fc;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.threat-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.threat-bar-labels span {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #6e7681;
+    letter-spacing: 0.05em;
+}
+
+.threat-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.threat-level-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid;
+    letter-spacing: 0.1em;
+}
+
+.current-threat {
+    font-size: 0.8rem;
+    color: #f97316;
+    font-weight: 500;
+    animation: pulse-text 2s infinite;
+}
+
+@keyframes pulse-text {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}

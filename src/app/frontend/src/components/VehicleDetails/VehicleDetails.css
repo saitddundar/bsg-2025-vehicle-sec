@@ -1,0 +1,97 @@
+.vehicle-details {
+    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 6rem;
+    /* Space for dock */
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #30363d;
+}
+
+.details-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin: 0;
+}
+
+.simulation-tag {
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: rgba(139, 148, 158, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-category {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid;
+}
+
+.category-icon {
+    font-size: 1rem;
+}
+
+.category-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #c9d1d9;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.spec-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+.spec-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.spec-label {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.spec-value {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #f0f6fc;
+    text-align: right;
+}

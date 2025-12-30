@@ -1,0 +1,308 @@
+.network-topology {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.topology-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.topology-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #8b949e;
+}
+
+.connection-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.connection-badge.secure {
+    background: rgba(34, 211, 238, 0.15);
+    color: #22d3ee;
+}
+
+.connection-badge.compromised {
+    background: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+}
+
+.connection-badge.intercepted {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.topology-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.topology-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.topology-node:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.05);
+}
+
+.node-icon {
+    font-size: 1.75rem;
+}
+
+.node-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #c9d1d9;
+    letter-spacing: 0.05em;
+}
+
+.node-status-ring {
+    position: absolute;
+    inset: -3px;
+    border: 2px solid;
+    border-radius: 14px;
+    opacity: 0.6;
+}
+
+.topology-node.attack .node-status-ring {
+    animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+.node-tooltip {
+    position: absolute;
+    bottom: -30px;
+    background: #21262d;
+    color: #f0f6fc;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.connection-line {
+    flex: 1;
+    height: 20px;
+    position: relative;
+    margin: 0 0.25rem;
+}
+
+.connection-line svg {
+    width: 100%;
+    height: 100%;
+}
+
+.animated-line {
+    stroke-dashoffset: 0;
+    animation: dash 2s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -24;
+    }
+}
+
+.data-packet {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    animation: move-packet 2s linear infinite;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.data-packet.reverse {
+    animation: move-packet-reverse 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes move-packet {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(100% - 8px);
+        opacity: 0;
+    }
+}
+
+@keyframes move-packet-reverse {
+    0% {
+        left: calc(100% - 8px);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 0;
+        opacity: 0;
+    }
+}
+
+.attacker-node {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid #ef4444;
+    border-radius: 10px;
+    z-index: 5;
+    animation: attacker-appear 0.5s ease;
+}
+
+@keyframes attacker-appear {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.attacker-icon {
+    font-size: 1.25rem;
+}
+
+.attacker-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #ef4444;
+    letter-spacing: 0.1em;
+}
+
+.attack-type {
+    font-size: 0.55rem;
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.2);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+.attacker-pulse {
+    position: absolute;
+    inset: -6px;
+    border: 2px solid #ef4444;
+    border-radius: 12px;
+    animation: attacker-pulse 1.5s infinite;
+}
+
+@keyframes attacker-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0;
+    }
+}
+
+.topology-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #30363d;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    color: #8b949e;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
