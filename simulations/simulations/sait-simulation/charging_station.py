@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Şarj İstasyonu (EVSE) Simülatörü
-V2G Protocol Manipulation Simülasyonu
+Charging Station (EVSE) Simulator
+V2G Protocol Manipulation Simulation
 
-Bu simülatör:
-1. CSMS'e bağlanır ve kendini tanıtır
-2. EV bağlantısını simüle eder
-3. V2G (Vehicle-to-Grid) enerji transferini destekler
-4. Şarj/Deşarj durumunu raporlar
+This simulator:
+1. Connects to CSMS and registers itself
+2. Simulates EV connection
+3. Supports V2G (Vehicle-to-Grid) energy transfer
+4. Reports charge/discharge status
 """
 
 import asyncio
@@ -20,7 +20,7 @@ from ocpp.v16 import ChargePoint as cp
 from ocpp.v16 import call
 from ocpp.v16.enums import RegistrationStatus, ChargePointStatus
 
-# Loglama ayarları
+# Logging configuration
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -29,14 +29,14 @@ logger = logging.getLogger(__name__)
 
 
 class V2GMode(Enum):
-    """V2G Çalışma Modları"""
+    """V2G Operating Modes"""
     IDLE = "idle"
-    CHARGING = "charging"      # Şebekeden araca
-    DISCHARGING = "discharging"  # Araçtan şebekeye (V2G)
+    CHARGING = "charging"      # Grid to Vehicle
+    DISCHARGING = "discharging"  # Vehicle to Grid (V2G)
 
 
 class ChargingStation(cp):
-    """OCPP 1.6 Şarj İstasyonu"""
+    """OCPP 1.6 Charging Station"""
     
     def __init__(self, station_id, websocket):
         super().__init__(station_id, websocket)
@@ -46,35 +46,35 @@ class ChargingStation(cp):
         self.energy_exported = 0.0  # Wh
         self.current_power = 0.0    # W
         self.ev_connected = False
-        self.ev_soc = 80  # Batarya durumu (%)
+        self.ev_soc = 80  # Battery state (%)
         self.max_charge_power = 22000  # W (22 kW)
         self.max_discharge_power = 11000  # W (11 kW)
     
     async def send_boot_notification(self):
-        """CSMS'e kendini tanıt"""
+        """Register with CSMS"""
         request = call.BootNotification(
             charge_point_model="V2G-Station-Pro",
             charge_point_vendor="BSG-Energy"
         )
         
-        logger.info("📡 CSMS'e BootNotification gönderiliyor...")
+        logger.info("[BOOT] Sending BootNotification to CSMS...")
         
         try:
             response = await self.call(request)
             
             if response.status == RegistrationStatus.accepted:
-                logger.info(f"✅ CSMS tarafından kabul edildi!")
-                logger.info(f"   Heartbeat aralığı: {response.interval}s")
+                logger.info(f"[OK] Accepted by CSMS!")
+                logger.info(f"   Heartbeat interval: {response.interval}s")
                 return response.interval
             else:
-                logger.error(f"❌ CSMS tarafından reddedildi: {response.status}")
+                logger.error(f"[ERROR] Rejected by CSMS: {response.status}")
                 return None
         except Exception as e:
-            logger.error(f"❌ BootNotification hatası: {e}")
+            logger.error(f"[ERROR] BootNotification error: {e}")
             return None
     
     async def send_heartbeat_loop(self, interval):
-        """Düzenli heartbeat gönder"""
+        """Send regular heartbeat"""
         while True:
             await asyncio.sleep(interval)
             
@@ -82,12 +82,12 @@ class ChargingStation(cp):
             
             try:
                 response = await self.call(request)
-                logger.debug(f"💓 Heartbeat - Sunucu zamanı: {response.current_time}")
+                logger.debug(f"[HEARTBEAT] Server time: {response.current_time}")
             except Exception as e:
-                logger.error(f"❌ Heartbeat hatası: {e}")
+                logger.error(f"[ERROR] Heartbeat error: {e}")
     
     async def send_status_notification(self, status):
-        """Durum bildirimi gönder"""
+        """Send status notification"""
         request = call.StatusNotification(
             connector_id=1,
             error_code='NoError',
@@ -96,17 +96,17 @@ class ChargingStation(cp):
         
         try:
             await self.call(request)
-            logger.info(f"📊 Durum güncellendi: {status}")
+            logger.info(f"[STATUS] Status updated: {status}")
         except Exception as e:
-            logger.error(f"❌ StatusNotification hatası: {e}")
+            logger.error(f"[ERROR] StatusNotification error: {e}")
     
     async def send_meter_values(self):
-        """Enerji sayaç değerlerini gönder"""
+        """Send energy meter values"""
         timestamp = datetime.now(timezone.utc).isoformat()
         
         sampled_values = []
         
-        # Import (Şebekeden araca)
+        # Import (Grid to Vehicle)
         if self.v2g_mode == V2GMode.CHARGING:
             sampled_values.append({
                 'value': str(int(self.energy_imported)),
@@ -116,7 +116,7 @@ class ChargingStation(cp):
                 'unit': 'Wh'
             })
         
-        # Export (Araçtan şebekeye - V2G)
+        # Export (Vehicle to Grid - V2G)
         if self.v2g_mode == V2GMode.DISCHARGING:
             sampled_values.append({
                 'value': str(int(self.energy_exported)),
@@ -126,7 +126,7 @@ class ChargingStation(cp):
                 'unit': 'Wh'
             })
         
-        # Anlık güç
+        # Instantaneous power
         sampled_values.append({
             'value': str(int(abs(self.current_power))),
             'context': 'Sample.Periodic',
@@ -148,10 +148,10 @@ class ChargingStation(cp):
         try:
             await self.call(request)
         except Exception as e:
-            logger.error(f"❌ MeterValues hatası: {e}")
+            logger.error(f"[ERROR] MeterValues error: {e}")
     
     async def send_v2g_data(self, data):
-        """V2G özel verisi gönder"""
+        """Send V2G custom data"""
         request = call.DataTransfer(
             vendor_id='BSG-Energy',
             message_id='V2G_Status',
@@ -161,21 +161,21 @@ class ChargingStation(cp):
         try:
             response = await self.call(request)
             if response.status == 'Accepted':
-                logger.info(f"📦 V2G verisi gönderildi")
+                logger.info(f"[V2G] V2G data sent")
         except Exception as e:
-            logger.error(f"❌ DataTransfer hatası: {e}")
+            logger.error(f"[ERROR] DataTransfer error: {e}")
     
     async def simulate_charging(self):
-        """Şarj simülasyonu"""
+        """Charging simulation"""
         self.v2g_mode = V2GMode.CHARGING
         self.current_power = self.max_charge_power
         
         logger.info(f"\n{'='*60}")
-        logger.info(f"🔋 ŞARJ BAŞLADI")
+        logger.info(f"[CHARGE] CHARGING STARTED")
         logger.info(f"{'='*60}")
-        logger.info(f"   Mod: Grid → Vehicle (G2V)")
-        logger.info(f"   Güç: {self.current_power/1000:.1f} kW")
-        logger.info(f"   Batarya: {self.ev_soc}%")
+        logger.info(f"   Mode: Grid -> Vehicle (G2V)")
+        logger.info(f"   Power: {self.current_power/1000:.1f} kW")
+        logger.info(f"   Battery: {self.ev_soc}%")
         logger.info(f"{'='*60}\n")
         
         await self.send_status_notification('Charging')
@@ -183,30 +183,30 @@ class ChargingStation(cp):
         while self.ev_soc < 100 and self.v2g_mode == V2GMode.CHARGING:
             await asyncio.sleep(5)
             
-            # Enerji hesapla (5 saniyede)
+            # Calculate energy (in 5 seconds)
             energy_wh = (self.current_power * 5) / 3600
             self.energy_imported += energy_wh
-            self.ev_soc += 0.5  # Her 5 saniyede %0.5
+            self.ev_soc += 0.5  # 0.5% every 5 seconds
             
-            logger.info(f"⚡ Şarj ediyor... SoC: {self.ev_soc:.1f}% | Enerji: {self.energy_imported/1000:.2f} kWh")
+            logger.info(f"[CHARGE] Charging... SoC: {self.ev_soc:.1f}% | Energy: {self.energy_imported/1000:.2f} kWh")
             
             await self.send_meter_values()
     
     async def simulate_discharging(self, power_kw=11, duration_min=10):
-        """V2G Deşarj simülasyonu (Vehicle-to-Grid)"""
+        """V2G Discharge simulation (Vehicle-to-Grid)"""
         self.v2g_mode = V2GMode.DISCHARGING
-        self.current_power = power_kw * 1000  # kW → W
+        self.current_power = power_kw * 1000  # kW -> W
         
         logger.info(f"\n{'='*60}")
-        logger.info(f"🔋 V2G DEŞARJ BAŞLADI")
+        logger.info(f"[V2G] V2G DISCHARGE STARTED")
         logger.info(f"{'='*60}")
-        logger.info(f"   Mod: Vehicle → Grid (V2G)")
-        logger.info(f"   Güç: {power_kw:.1f} kW")
-        logger.info(f"   Süre: {duration_min} dakika")
-        logger.info(f"   Batarya: {self.ev_soc}%")
+        logger.info(f"   Mode: Vehicle -> Grid (V2G)")
+        logger.info(f"   Power: {power_kw:.1f} kW")
+        logger.info(f"   Duration: {duration_min} minutes")
+        logger.info(f"   Battery: {self.ev_soc}%")
         logger.info(f"{'='*60}\n")
         
-        await self.send_status_notification('Charging')  # OCPP'de V2G için özel durum yok
+        await self.send_status_notification('Charging')  # No specific V2G status in OCPP
         
         start_time = asyncio.get_event_loop().time()
         end_time = start_time + (duration_min * 60)
@@ -214,16 +214,16 @@ class ChargingStation(cp):
         while asyncio.get_event_loop().time() < end_time and self.ev_soc > 20:
             await asyncio.sleep(5)
             
-            # Enerji hesapla
+            # Calculate energy
             energy_wh = (self.current_power * 5) / 3600
             self.energy_exported += energy_wh
-            self.ev_soc -= 0.3  # Her 5 saniyede %0.3
+            self.ev_soc -= 0.3  # 0.3% every 5 seconds
             
-            logger.info(f"⚡ V2G Deşarj... SoC: {self.ev_soc:.1f}% | Şebekeye: {self.energy_exported/1000:.2f} kWh")
+            logger.info(f"[V2G] Discharging... SoC: {self.ev_soc:.1f}% | To Grid: {self.energy_exported/1000:.2f} kWh")
             
             await self.send_meter_values()
             
-            # V2G durumu gönder
+            # Send V2G status
             await self.send_v2g_data({
                 'mode': 'V2G',
                 'power_kw': power_kw,
@@ -233,64 +233,64 @@ class ChargingStation(cp):
         
         self.v2g_mode = V2GMode.IDLE
         self.current_power = 0
-        logger.info(f"\n✅ V2G deşarj tamamlandı! Toplam: {self.energy_exported/1000:.2f} kWh")
+        logger.info(f"\n[OK] V2G discharge complete! Total: {self.energy_exported/1000:.2f} kWh")
     
     async def start(self):
-        """İstasyonu başlat"""
+        """Start station"""
         # Boot notification
         interval = await self.send_boot_notification()
         
         if interval:
-            # Durum bildirimi
+            # Status notification
             await self.send_status_notification('Available')
             
-            # EV bağlantısı simüle et
+            # Simulate EV connection
             await asyncio.sleep(3)
             self.ev_connected = True
-            logger.info("🔌 EV bağlandı!")
+            logger.info("[CONNECT] EV connected!")
             await self.send_status_notification('Preparing')
             
-            # Heartbeat ve simülasyon paralel çalışsın
+            # Run heartbeat and simulation in parallel
             await asyncio.gather(
                 self.send_heartbeat_loop(interval),
                 self._main_loop(),
                 return_exceptions=True
             )
         else:
-            logger.error("❌ Boot başarısız, istasyon durduruluyor")
+            logger.error("[ERROR] Boot failed, stopping station")
     
     async def _main_loop(self):
-        """Ana çalışma döngüsü"""
+        """Main operation loop"""
         await asyncio.sleep(5)
         
-        # Önce biraz şarj
+        # First charge
         await self.simulate_charging()
         
         await asyncio.sleep(3)
         
-        # Sonra V2G deşarj
+        # Then V2G discharge
         await self.simulate_discharging(power_kw=11, duration_min=5)
         
         await self.send_status_notification('Available')
         
-        # Bekle
+        # Wait
         while True:
             await asyncio.sleep(60)
 
 
 async def main():
-    """Ana program"""
+    """Main program"""
     station_id = "EVSE_001"
     csms_url = f"ws://localhost:9000/{station_id}"
     
     logger.info("="*60)
-    logger.info("🔌 ŞARJ İSTASYONU BAŞLATILIYOR")
+    logger.info("[START] CHARGING STATION STARTING")
     logger.info("="*60)
     logger.info(f"   Station ID: {station_id}")
     logger.info(f"   CSMS URL: {csms_url}")
-    logger.info(f"   V2G Desteği: Aktif")
-    logger.info(f"   Max Şarj: 22 kW")
-    logger.info(f"   Max Deşarj (V2G): 11 kW")
+    logger.info(f"   V2G Support: Active")
+    logger.info(f"   Max Charge: 22 kW")
+    logger.info(f"   Max Discharge (V2G): 11 kW")
     logger.info("="*60)
     
     try:
@@ -298,7 +298,7 @@ async def main():
             csms_url,
             subprotocols=['ocpp1.6']
         ) as ws:
-            logger.info("✅ CSMS'e bağlandı!")
+            logger.info("[OK] Connected to CSMS!")
             
             station = ChargingStation(station_id, ws)
             
@@ -309,13 +309,13 @@ async def main():
             )
             
     except websockets.exceptions.WebSocketException as e:
-        logger.error(f"❌ Bağlantı hatası: CSMS çalışmıyor olabilir ({e})")
+        logger.error(f"[ERROR] Connection error: CSMS may not be running ({e})")
     except Exception as e:
-        logger.error(f"❌ İstasyon hatası: {e}", exc_info=True)
+        logger.error(f"[ERROR] Station error: {e}", exc_info=True)
 
 
 if __name__ == '__main__':
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n👋 İstasyon kapatıldı")
+        print("\n[STOP] Station stopped")

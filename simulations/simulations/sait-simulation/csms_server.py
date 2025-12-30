@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 CSMS (Central System Management Server) - OCPP 1.6
-V2G Protocol Manipulation Simülasyonu için Merkezi Sunucu
+Central Server for V2G Protocol Manipulation Simulation
 
-Bu sunucu:
-1. Şarj istasyonlarından gelen bağlantıları kabul eder
-2. V2G (Vehicle-to-Grid) enerji transfer komutlarını koordine eder
-3. Mikro şebeke durumunu izler
+This server:
+1. Accepts connections from charging stations
+2. Coordinates V2G (Vehicle-to-Grid) energy transfer commands
+3. Monitors microgrid status
 """
 
 import asyncio
@@ -20,7 +20,7 @@ from ocpp.v16 import ChargePoint as cp
 from ocpp.v16.enums import RegistrationStatus, ChargePointStatus
 from ocpp.routing import on
 
-# Loglama ayarları
+# Logging configuration
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -29,12 +29,12 @@ logger = logging.getLogger(__name__)
 
 
 class MicrogridState:
-    """Mikro şebeke durumu"""
+    """Microgrid state"""
     def __init__(self):
         self.frequency = 50.0  # Hz (Nominal)
         self.voltage = 230.0   # V (Nominal)
         self.total_load = 0.0  # kW
-        self.v2g_power = 0.0   # kW (negatif: araçtan şebekeye)
+        self.v2g_power = 0.0   # kW (negative: vehicle to grid)
         self.connected_evs = {}
         self.alerts = []
     
@@ -49,12 +49,12 @@ class MicrogridState:
         }
 
 
-# Global mikro şebeke durumu
+# Global microgrid state
 microgrid = MicrogridState()
 
 
 class ChargePointHandler(cp):
-    """OCPP 1.6 Şarj İstasyonu Yöneticisi"""
+    """OCPP 1.6 Charge Point Handler"""
     
     def __init__(self, id, connection):
         super().__init__(id, connection)
@@ -65,9 +65,9 @@ class ChargePointHandler(cp):
     
     @on('BootNotification')
     async def on_boot_notification(self, charge_point_vendor, charge_point_model, **kwargs):
-        """Şarj istasyonu başlatıldığında"""
-        logger.info(f"🔌 İSTASYON BAĞLANDI: {self.id}")
-        logger.info(f"   Üretici: {charge_point_vendor}")
+        """When charging station boots"""
+        logger.info(f"[CONNECT] STATION CONNECTED: {self.id}")
+        logger.info(f"   Vendor: {charge_point_vendor}")
         logger.info(f"   Model: {charge_point_model}")
         
         microgrid.connected_evs[self.id] = {
@@ -85,15 +85,15 @@ class ChargePointHandler(cp):
     
     @on('Heartbeat')
     async def on_heartbeat(self):
-        """Heartbeat - İstasyon hala aktif"""
+        """Heartbeat - Station is still active"""
         return call_result.Heartbeat(
             current_time=datetime.now(timezone.utc).isoformat()
         )
     
     @on('StatusNotification')
     async def on_status_notification(self, connector_id, error_code, status, **kwargs):
-        """İstasyon durum bildirimi"""
-        logger.info(f"📊 DURUM DEĞİŞİKLİĞİ: {self.id}")
+        """Station status notification"""
+        logger.info(f"[STATUS] STATUS CHANGE: {self.id}")
         logger.info(f"   Connector: {connector_id}")
         logger.info(f"   Status: {status}")
         
@@ -104,36 +104,36 @@ class ChargePointHandler(cp):
     
     @on('MeterValues')
     async def on_meter_values(self, connector_id, meter_value, **kwargs):
-        """Sayaç değerleri - Enerji akışı"""
+        """Meter values - Energy flow"""
         for val in meter_value:
             for sample in val.get('sampled_value', []):
                 measurand = sample.get('measurand', 'Energy.Active.Import.Register')
                 value = float(sample.get('value', 0))
                 unit = sample.get('unit', 'Wh')
                 
-                # V2G tespit et
+                # Detect V2G
                 if 'Export' in measurand:
                     self.energy_exported = value
-                    power_direction = "→ ŞEBEKe (V2G)"
+                    power_direction = "-> GRID (V2G)"
                     microgrid.v2g_power = value / 1000  # kW
                 else:
                     self.energy_imported = value
-                    power_direction = "← ARAÇ"
+                    power_direction = "<- VEHICLE"
                 
-                logger.info(f"⚡ ENERJİ AKIŞI: {self.id}")
+                logger.info(f"[ENERGY] ENERGY FLOW: {self.id}")
                 logger.info(f"   Measurand: {measurand}")
-                logger.info(f"   Değer: {value} {unit}")
-                logger.info(f"   Yön: {power_direction}")
+                logger.info(f"   Value: {value} {unit}")
+                logger.info(f"   Direction: {power_direction}")
                 
-                # Anomali kontrolü
+                # Anomaly check
                 self._check_v2g_anomaly(measurand, value)
         
         return call_result.MeterValues()
     
     @on('DataTransfer')
     async def on_data_transfer(self, vendor_id, message_id=None, data=None):
-        """Özel veri transferi - V2G komutları için"""
-        logger.info(f"📦 DATA TRANSFER: {self.id}")
+        """Custom data transfer - For V2G commands"""
+        logger.info(f"[DATA] DATA TRANSFER: {self.id}")
         logger.info(f"   Vendor: {vendor_id}")
         logger.info(f"   Message ID: {message_id}")
         
@@ -142,7 +142,7 @@ class ChargePointHandler(cp):
                 payload = json.loads(data) if isinstance(data, str) else data
                 logger.info(f"   Data: {json.dumps(payload, indent=2)}")
                 
-                # V2G komutlarını işle
+                # Process V2G commands
                 if message_id == 'V2G_SetDischargeSchedule':
                     return await self._handle_v2g_schedule(payload)
                 elif message_id == 'V2G_StartDischarge':
@@ -153,9 +153,9 @@ class ChargePointHandler(cp):
         return call_result.DataTransfer(status='Accepted')
     
     async def _handle_v2g_schedule(self, payload):
-        """V2G deşarj programını işle"""
+        """Process V2G discharge schedule"""
         schedule = payload.get('schedule', [])
-        logger.info(f"🔋 V2G PROGRAM ALINDI: {self.id}")
+        logger.info(f"[V2G] V2G SCHEDULE RECEIVED: {self.id}")
         
         for slot in schedule:
             start = slot.get('start_time')
@@ -170,17 +170,17 @@ class ChargePointHandler(cp):
         }))
     
     async def _handle_v2g_start(self, payload):
-        """V2G deşarj başlat"""
+        """Start V2G discharge"""
         power_kw = payload.get('power_kw', 0)
         duration_min = payload.get('duration_minutes', 60)
         
-        logger.info(f"🔋 V2G DEŞARJ BAŞLADI: {self.id}")
-        logger.info(f"   Güç: {power_kw} kW")
-        logger.info(f"   Süre: {duration_min} dakika")
+        logger.info(f"[V2G] V2G DISCHARGE STARTED: {self.id}")
+        logger.info(f"   Power: {power_kw} kW")
+        logger.info(f"   Duration: {duration_min} minutes")
         
-        # Mikro şebeke güncelle
+        # Update microgrid
         microgrid.v2g_power += power_kw
-        microgrid.total_load -= power_kw  # V2G yük azaltır
+        microgrid.total_load -= power_kw  # V2G reduces load
         
         return call_result.DataTransfer(status='Accepted', data=json.dumps({
             'v2g_status': 'discharging',
@@ -188,80 +188,80 @@ class ChargePointHandler(cp):
         }))
     
     def _check_v2g_anomaly(self, measurand, value):
-        """V2G anomalisi kontrolü"""
-        # Ani yüksek enerji transferi
-        if 'Export' in measurand and value > 50000:  # 50 kWh üzeri
+        """V2G anomaly check"""
+        # Sudden high energy transfer
+        if 'Export' in measurand and value > 50000:  # Over 50 kWh
             alert = {
                 'timestamp': datetime.now(timezone.utc).isoformat(),
                 'station_id': self.id,
                 'type': 'HIGH_V2G_EXPORT',
                 'value': value,
-                'message': f'Anormal yüksek V2G enerji transferi: {value} Wh'
+                'message': f'Abnormally high V2G energy transfer: {value} Wh'
             }
             microgrid.alerts.append(alert)
-            logger.warning(f"🚨 ANOMALİ: {alert['message']}")
+            logger.warning(f"[ALERT] ANOMALY: {alert['message']}")
 
 
 async def on_connect(websocket):
-    """Yeni bağlantı işleyicisi"""
+    """New connection handler"""
     try:
-        # websockets v11+ için path alma
+        # Get path for websockets v11+
         charge_point_id = websocket.request.path.strip('/')
         
         if not charge_point_id:
             charge_point_id = f"CP_{datetime.now().strftime('%H%M%S')}"
-            logger.warning(f"⚠️ Path boş, varsayılan ID: {charge_point_id}")
+            logger.warning(f"[WARN] Path empty, using default ID: {charge_point_id}")
         
-        logger.info(f"🔗 Bağlantı isteği: {charge_point_id}")
+        logger.info(f"[CONNECT] Connection request: {charge_point_id}")
         
         cp_handler = ChargePointHandler(charge_point_id, websocket)
         
         await cp_handler.start()
         
     except websockets.exceptions.ConnectionClosedOK:
-        logger.info(f"ℹ️ {charge_point_id} bağlantıyı kapattı")
+        logger.info(f"[INFO] {charge_point_id} closed connection")
     except websockets.exceptions.ConnectionClosedError as e:
-        logger.error(f"⚠️ {charge_point_id} bağlantı hatası: {e}")
+        logger.error(f"[ERROR] {charge_point_id} connection error: {e}")
     except Exception as e:
-        logger.error(f"❌ Bağlantı hatası: {e}", exc_info=True)
+        logger.error(f"[ERROR] Connection error: {e}", exc_info=True)
     finally:
-        # Bağlı EV'leri temizle
+        # Clean up connected EVs
         if charge_point_id in microgrid.connected_evs:
             del microgrid.connected_evs[charge_point_id]
 
 
 async def microgrid_status_task():
-    """Periyodik mikro şebeke durumu yazdır"""
+    """Periodic microgrid status print"""
     while True:
         await asyncio.sleep(15)
         
         status = microgrid.to_dict()
         logger.info(f"\n{'='*60}")
-        logger.info(f"🌐 MİKRO ŞEBEKE DURUMU")
+        logger.info(f"[GRID] MICROGRID STATUS")
         logger.info(f"{'='*60}")
-        logger.info(f"   Frekans: {status['frequency']:.2f} Hz")
-        logger.info(f"   Voltaj: {status['voltage']:.1f} V")
-        logger.info(f"   Toplam Yük: {status['total_load']:.2f} kW")
-        logger.info(f"   V2G Güç: {status['v2g_power']:.2f} kW")
-        logger.info(f"   Bağlı EV: {status['connected_evs']}")
-        logger.info(f"   Durum: {status['status']}")
+        logger.info(f"   Frequency: {status['frequency']:.2f} Hz")
+        logger.info(f"   Voltage: {status['voltage']:.1f} V")
+        logger.info(f"   Total Load: {status['total_load']:.2f} kW")
+        logger.info(f"   V2G Power: {status['v2g_power']:.2f} kW")
+        logger.info(f"   Connected EVs: {status['connected_evs']}")
+        logger.info(f"   Status: {status['status']}")
         
         if microgrid.alerts:
-            logger.warning(f"   ⚠️ Aktif Uyarı: {len(microgrid.alerts)}")
+            logger.warning(f"   [!] Active Alerts: {len(microgrid.alerts)}")
         logger.info(f"{'='*60}\n")
 
 
 async def main():
-    """Ana sunucu başlatma"""
+    """Main server startup"""
     logger.info("="*60)
-    logger.info("🔋 V2G CSMS SUNUCUSU BAŞLATILIYOR")
+    logger.info("[START] V2G CSMS SERVER STARTING")
     logger.info("="*60)
-    logger.info("Protokol: OCPP 1.6")
+    logger.info("Protocol: OCPP 1.6")
     logger.info("Port: 9000")
-    logger.info("V2G Desteği: Aktif")
+    logger.info("V2G Support: Active")
     logger.info("="*60)
     
-    # WebSocket sunucusu
+    # WebSocket server
     server = await websockets.serve(
         on_connect,
         '0.0.0.0',
@@ -269,17 +269,17 @@ async def main():
         subprotocols=['ocpp1.6']
     )
     
-    logger.info("✅ Sunucu başarıyla başlatıldı!")
-    logger.info("📡 Bağlantı için: ws://localhost:9000/STATION_ID")
+    logger.info("[OK] Server started successfully!")
+    logger.info("[INFO] Connect to: ws://localhost:9000/STATION_ID")
     logger.info("")
     
-    # Mikro şebeke izleme görevi
+    # Microgrid monitoring task
     status_task = asyncio.create_task(microgrid_status_task())
     
     try:
         await server.wait_closed()
     except KeyboardInterrupt:
-        logger.info("\n👋 Sunucu kapatılıyor...")
+        logger.info("\n[STOP] Server shutting down...")
         status_task.cancel()
 
 
@@ -287,4 +287,4 @@ if __name__ == '__main__':
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n👋 Sunucu kapatıldı")
+        print("\n[STOP] Server stopped")
