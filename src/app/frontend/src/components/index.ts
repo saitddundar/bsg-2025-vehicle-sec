@@ -13,3 +13,5 @@ export { PacketInspector } from './PacketInspector';
 export { SimulationSelector } from './SimulationSelector';
 export { ThreatSummary } from './ThreatSummary';
 export { AttackTimeline } from './AttackTimeline';
+export { BottomBar } from './BottomBar';
+

@@ -1,162 +1,200 @@
-.dashboard-root {
+.dashboard-professional {
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: var(--bg-main);
-    transition: box-shadow 0.5s ease;
+    overflow: hidden;
+    position: relative;
 }
 
-.dashboard-content {
+.dashboard-grid-container {
     flex: 1;
     display: grid;
-    grid-template-columns: 280px 1fr 650px;
-    /* Wider right column for side-by-side reports */
-    gap: 1.25rem;
-    padding: 1.25rem;
+    grid-template-columns: 240px 1fr 300px;
+    gap: 1rem;
+    padding: 1rem;
     overflow: hidden;
 }
 
-@media (max-width: 1600px) {
-    .dashboard-content {
-        grid-template-columns: 260px 1fr 600px;
-    }
-}
-
-/* ===== LEFT COLUMN: 50/50 ===== */
-.column-left {
+/* LEFT COLUMN */
+.grid-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
     overflow: hidden;
 }
 
-.section-half {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-}
-
-.scenarios {
-    gap: 0.75rem;
-}
-
-.scenario-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    overflow-y: auto;
-    padding-right: 4px;
-}
-
-.scenario-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    padding: 0.75rem 1rem;
+.sidebar-section {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    transition: all 0.2s;
-    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.scenario-card:hover {
-    border-color: var(--accent-primary);
+.scenarios-fixed {
+    flex: 0 0 380px;
+    /* Fixed height for the container */
+    display: flex;
+    flex-direction: column;
 }
 
-.scenario-card.active {
+
+.scenario-limited-list {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+
+.kill-chain-box {
+    flex: 1;
+}
+
+.kill-chain-scroll {
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.scenario-card-pro {
+    text-align: left;
+    padding: 0.75rem;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.scenario-card-pro.active {
     border-color: var(--accent-primary);
     background: var(--bg-hover);
 }
 
-.scenario-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.scenario-name {
-    font-size: 0.85rem;
-    font-weight: 600;
+.scen-name {
+    font-size: 0.8rem;
+    font-weight: 700;
     color: var(--text-main);
 }
 
-.scenario-desc {
-    font-size: 0.7rem;
+.scen-desc {
+    font-size: 0.65rem;
     color: var(--text-dim);
-    margin-top: 2px;
 }
 
-/* ===== CENTER COLUMN: 50/50 ===== */
-.column-center {
+/* CENTER COLUMN: SCROLLABLE */
+.scrollable-center {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    min-width: 0;
-}
-
-.center-half {
-    flex: 1;
-    min-height: 0;
-}
-
-.topology,
-.metrics {
-    height: 100%;
-}
-
-/* ===== RIGHT COLUMN: STACKED & SIDE-BY-SIDE ===== */
-.column-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
     overflow-y: auto;
     padding-right: 4px;
 }
 
-.right-section {
+.main-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
     flex-shrink: 0;
+    min-height: 400px;
+    /* Force minimum height so scrolling occurs */
 }
 
-.console-fixed {
-    height: 250px;
-    /* Fixed height for console */
-    flex-shrink: 0;
+.box-header {
+    padding: 0.75rem 1.25rem;
+    background: var(--bg-hover);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.reports-row {
+.box-body {
+    padding: 1rem;
+    height: calc(100% - 40px);
+}
+
+/* RIGHT COLUMN */
+.grid-analytics {
     display: flex;
-    gap: 1.25rem;
-    height: 320px;
-    /* Fixed height for report row */
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
 }
 
-.report-item {
-    flex: 1;
-    min-width: 0;
+.collapsible-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.report-item>* {
-    height: 100%;
+.card-header {
+    padding: 0.6rem 1rem;
+    background: var(--bg-hover);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 }
 
-.right-section.asset {
-    min-height: 200px;
-}
-
-/* Global scroll styling */
-.column-left,
-.column-right {
-    scrollbar-gutter: stable;
-}
-
-.section-label {
-    font-size: 0.65rem;
+.console-launcher {
+    margin-top: auto;
+    padding: 0.75rem;
+    background: var(--bg-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.75rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--accent-primary);
+}
+
+/* CONSOLE MODAL */
+.console-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.console-window {
+    width: 800px;
+    height: 500px;
+    background: #050608;
+    border: 1px solid var(--accent-primary);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
+}
+
+.window-header {
+    height: 40px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #161b22;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.window-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.label {
+    font-size: 0.65rem;
+    font-weight: 800;
     color: var(--text-dim);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding-left: 0.5rem;
 }

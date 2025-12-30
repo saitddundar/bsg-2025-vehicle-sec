@@ -1,58 +1,23 @@
-.app-header {
-    height: 56px;
+.app-header-professional {
+    display: flex;
+    flex-direction: column;
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.header-top-row {
+    height: 48px;
+    padding: 0 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.5rem;
-    z-index: 1000;
 }
 
-.header-left {
+.header-section {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--accent-primary);
-}
-
-.logo-text {
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
-    color: var(--text-main);
-}
-
-.divider {
-    width: 1px;
-    height: 20px;
-    background: var(--border-color);
-}
-
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.breadcrumb-path {
-    color: var(--text-dim);
-}
-
-.breadcrumb-separator {
-    color: var(--border-color);
-}
-
-.breadcrumb-current {
-    color: var(--text-main);
+    gap: 1.5rem;
 }
 
 .header-center {
@@ -70,89 +35,99 @@
     font-size: 0.8rem;
     font-weight: 600;
     border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.simulation-status-tag.idle {
-    background: var(--bg-hover);
-    color: var(--text-dim);
-    border-color: var(--border-color);
 }
 
 .simulation-status-tag.normal {
-    background: rgba(52, 211, 153, 0.1);
     color: var(--accent-success);
-    border-color: rgba(52, 211, 153, 0.2);
 }
 
 .simulation-status-tag.suspicious {
-    background: rgba(251, 191, 36, 0.1);
     color: var(--accent-warning);
-    border-color: rgba(251, 191, 36, 0.2);
 }
 
 .simulation-status-tag.attack {
-    background: rgba(248, 113, 113, 0.1);
     color: var(--accent-danger);
-    border-color: rgba(248, 113, 113, 0.2);
 }
 
-.pulse-icon {
-    animation: pulse-subtle 2s infinite;
+.logo-area {
+    min-width: 200px;
 }
 
-.status-label {
-    opacity: 0.8;
-    font-weight: 400;
-}
-
-.simulation-name {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.header-right {
+.brand {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.6rem;
+    color: var(--accent-primary);
 }
 
-.action-icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.icon-btn {
-    position: relative;
-    color: var(--text-dim);
-    transition: color 0.2s;
-}
-
-.icon-btn:hover {
+.brand-name {
+    font-weight: 800;
+    font-size: 0.95rem;
     color: var(--text-main);
 }
 
-.notification-dot {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    width: 8px;
-    height: 8px;
-    background: var(--accent-danger);
-    border-radius: 50%;
-    border: 2px solid var(--bg-card);
-}
-
-.user-avatar {
-    width: 32px;
-    height: 32px;
-    background: var(--accent-secondary);
-    border-radius: 8px;
+.session-timer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    background: var(--bg-hover);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.kpi-area {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.kpi-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+.kpi-val {
+    font-family: var(--font-mono);
+    color: var(--text-main);
+}
+
+.alert-strip {
+    height: 28px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
     font-size: 0.75rem;
     font-weight: 700;
+}
+
+.alert-strip.normal {
+    background: rgba(52, 211, 153, 0.1);
+    color: var(--accent-success);
+}
+
+.alert-strip.suspicious {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--accent-warning);
+}
+
+.alert-strip.attack {
+    background: var(--accent-danger);
     color: white;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
 }
