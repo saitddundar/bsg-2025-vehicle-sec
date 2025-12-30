@@ -1,0 +1,78 @@
+.dashboard {
+    min-height: 100vh;
+    background: #0d1117;
+    color: #f0f6fc;
+}
+
+.dashboard-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    min-height: calc(100vh - 64px - 4rem);
+}
+
+@media (max-width: 1200px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.simulations-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #f0f6fc;
+}
+
+.simulation-count {
+    font-size: 0.85rem;
+    color: #6e7681;
+    background: rgba(110, 118, 129, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.simulations-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    padding-right: 0.5rem;
+}
+
+.simulations-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.simulations-grid::-webkit-scrollbar-track {
+    background: #161b22;
+    border-radius: 3px;
+}
+
+.simulations-grid::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 3px;
+}
+
+.logs-section {
+    height: calc(100vh - 200px);
+}
