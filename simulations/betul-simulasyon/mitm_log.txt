@@ -1,0 +1,15 @@
+[2025-12-25 22:26:46.537834] MITM proxy başlatıldı
+[2025-12-25 22:28:01.646342] EV'den gelen mesaj: {'ev_id': 'EV_42', 'station_id': 'STATION_EVIL', 'action': 'START_CHARGING'}
+[2025-12-25 22:28:01.646342] station_id değiştirildi: STATION_001 → STATION_EVIL
+[2025-12-25 22:28:01.648349] CSMS yanıtı: {"status": "REJECTED", "reason": "Unknown station"}
+[2025-12-25 22:32:00.413730] MITM proxy başlatıldı
+[2025-12-25 22:32:09.998419] EV'den gelen mesaj: {'ev_id': 'EV_42', 'station_id': 'STATION_EVIL', 'action': 'START_CHARGING'}
+[2025-12-25 22:32:09.998419] station_id değiştirildi: STATION_001 → STATION_EVIL
+[2025-12-25 22:32:09.998419] CSMS yanıtı: {"status": "REJECTED", "reason": "Unknown station"}
+[2025-12-28 01:30:48.352453] MITM proxy başlatıldı
+[2025-12-28 01:31:06.864220] EV'den gelen mesaj: {'ev_id': 'EV_42', 'station_id': 'STATION_EVIL', 'action': 'START_CHARGING'}
+[2025-12-28 01:31:06.864220] station_id değiştirildi: STATION_001 → STATION_EVIL
+[2025-12-28 14:53:33.960748] MITM proxy başlatıldı
+[2025-12-28 14:53:47.708345] EV'den gelen mesaj: {'ev_id': 'EV_42', 'station_id': 'STATION_EVIL', 'action': 'START_CHARGING'}
+[2025-12-28 14:53:47.708345] station_id değiştirildi: STATION_001 → STATION_EVIL
+[2025-12-28 14:53:47.709330] CSMS yanıtı: {"status": "REJECTED", "reason": "Unknown station"}

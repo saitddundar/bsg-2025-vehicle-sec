@@ -1,0 +1,4 @@
+websockets>=11.0
+ocpp>=0.22.0
+asyncio
+colorama
