@@ -87,15 +87,96 @@ export function DashboardNew() {
 
             {/* Tab Content */}
             <div className="tab-content">
-                {/* RUN CONTROL TAB */}
+                {/* CONTROL TAB */}
                 {activeTab === 'runcontrol' && (
-                    <div className="runcontrol-tab">
-                        <section className="panel full-height">
-                            <header className="panel-header">
-                                <h2>Control</h2>
+                    <div className="control-tab">
+                        {/* Scenario Selection */}
+                        <section className="control-scenarios">
+                            <header className="section-title">
+                                <h2>Attack Scenarios</h2>
+                                <span className="subtitle">Select a scenario to simulate</span>
                             </header>
-                            <div className="panel-content runcontrol-placeholder">
-                                <p>Control panel content will be added here</p>
+                            <div className="scenario-list">
+                                <button className="scenario-item">
+                                    <span className="scenario-name">V2G Protocol Manipulation</span>
+                                    <span className="scenario-author">Sait Dundar</span>
+                                </button>
+                                <button className="scenario-item">
+                                    <span className="scenario-name">Phantom SoC Report</span>
+                                    <span className="scenario-author">Kardelen Demir</span>
+                                </button>
+                                <button className="scenario-item">
+                                    <span className="scenario-name">Firmware P-DoS Attack</span>
+                                    <span className="scenario-author">Betül Altunyuva</span>
+                                </button>
+                                <button className="scenario-item">
+                                    <span className="scenario-name">OCPP Stealth Beaconing</span>
+                                    <span className="scenario-author">Göksu Kayar</span>
+                                </button>
+                                <button className="scenario-item">
+                                    <span className="scenario-name">Digital Twin Spoofing</span>
+                                    <span className="scenario-author">Mehmet Erdem Abacı</span>
+                                </button>
+                            </div>
+                        </section>
+
+                        {/* Metric Categories */}
+                        <section className="control-categories">
+                            <header className="section-title">
+                                <h2>Monitoring Categories</h2>
+                                <span className="subtitle">Click to view detailed metrics</span>
+                            </header>
+                            <div className="category-cards">
+                                {/* Category 1: EV & Charging Status */}
+                                <button className="category-card" onClick={() => setActiveTab('status')}>
+                                    <div className="card-icon ev-icon">
+                                        <Zap size={24} />
+                                    </div>
+                                    <div className="card-info">
+                                        <h3>EV & Charging Status</h3>
+                                        <p>Real-time voltage, current, SoC, energy metrics and CAN bus monitoring</p>
+                                    </div>
+                                    <ul className="card-metrics">
+                                        <li>Voltage & Current</li>
+                                        <li>Battery SoC</li>
+                                        <li>Energy (kWh)</li>
+                                        <li>CAN Commands</li>
+                                    </ul>
+                                </button>
+
+                                {/* Category 2: Cyber-Physical Consistency */}
+                                <button className="category-card" onClick={() => setActiveTab('status')}>
+                                    <div className="card-icon cyber-icon">
+                                        <Shield size={24} />
+                                    </div>
+                                    <div className="card-info">
+                                        <h3>Cyber-Physical Consistency</h3>
+                                        <p>Cross-validation between protocol data and physical sensor readings</p>
+                                    </div>
+                                    <ul className="card-metrics">
+                                        <li>Speed vs Charge State</li>
+                                        <li>GPS vs Station ID</li>
+                                        <li>VPP vs Grid Data</li>
+                                        <li>Discharge Power</li>
+                                    </ul>
+                                </button>
+
+                                {/* Category 3: Network & Protocol */}
+                                <button className="category-card" onClick={() => setActiveTab('logs')}>
+                                    <div className="card-icon network-icon">
+                                        <Activity size={24} />
+                                    </div>
+                                    <div className="card-info">
+                                        <h3>Network & Protocol</h3>
+                                        <p>CSMS level monitoring, protocol anomalies and authorization tracking</p>
+                                    </div>
+                                    <ul className="card-metrics">
+                                        <li>IP Cloning Detection</li>
+                                        <li>Signature Errors</li>
+                                        <li>Command Frequency</li>
+                                        <li>Heartbeat Flapping</li>
+                                    </ul>
+                                </button>
                             </div>
                         </section>
                     </div>
