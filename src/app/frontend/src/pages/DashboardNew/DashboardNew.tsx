@@ -9,10 +9,10 @@ interface LogEntry {
     message: string;
 }
 
-type TabType = 'status' | 'logs' | 'analytics';
+type TabType = 'runcontrol' | 'status' | 'logs' | 'analytics';
 
 export function DashboardNew() {
-    const [activeTab, setActiveTab] = useState<TabType>('status');
+    const [activeTab, setActiveTab] = useState<TabType>('runcontrol');
     const [logs, setLogs] = useState<LogEntry[]>([]);
 
     // Mock logs
@@ -40,17 +40,41 @@ export function DashboardNew() {
         }
     };
 
-    const tabs = [
+    // Tabs with Run Control in center as primary button
+    const leftTabs = [
         { id: 'status' as TabType, label: 'Status' },
         { id: 'logs' as TabType, label: 'Logs' },
+    ];
+
+    const rightTabs = [
         { id: 'analytics' as TabType, label: 'Analytics' },
     ];
 
     return (
         <div className="dashboard-new">
-            {/* Tab Navigation - Centered, No Box */}
+            {/* Tab Navigation - Run Control in Center */}
             <nav className="dashboard-tabs">
-                {tabs.map(tab => (
+                {/* Left tabs */}
+                {leftTabs.map(tab => (
+                    <button
+                        key={tab.id}
+                        className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+                        onClick={() => setActiveTab(tab.id)}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+
+                {/* Run Control - Center Primary Button */}
+                <button
+                    className={`tab-btn run-control ${activeTab === 'runcontrol' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('runcontrol')}
+                >
+                    Control
+                </button>
+
+                {/* Right tabs */}
+                {rightTabs.map(tab => (
                     <button
                         key={tab.id}
                         className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
@@ -63,6 +87,20 @@ export function DashboardNew() {
 
             {/* Tab Content */}
             <div className="tab-content">
+                {/* RUN CONTROL TAB */}
+                {activeTab === 'runcontrol' && (
+                    <div className="runcontrol-tab">
+                        <section className="panel full-height">
+                            <header className="panel-header">
+                                <h2>Control</h2>
+                            </header>
+                            <div className="panel-content runcontrol-placeholder">
+                                <p>Control panel content will be added here</p>
+                            </div>
+                        </section>
+                    </div>
+                )}
+
                 {/* STATUS TAB */}
                 {activeTab === 'status' && (
                     <div className="status-tab">
