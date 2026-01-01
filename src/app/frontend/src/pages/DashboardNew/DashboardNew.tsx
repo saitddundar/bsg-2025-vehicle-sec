@@ -1,10 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import {
-    Activity, Shield, Zap, CheckCircle,
+    Activity, Shield, Zap,
     Wifi,
-    Play, Pause, FileText, Search, X
+    Play, Pause, FileText, Search
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
     AreaChart, Area, ResponsiveContainer,
     XAxis, YAxis, Tooltip, ScatterChart, Scatter, Cell,
@@ -75,12 +74,33 @@ const MiniSparkline = ({ color }: { color: string }) => {
 
 export function DashboardNew() {
     const [activeTab, setActiveTab] = useState('control');
-    const [selectedScenarioId, setSelectedScenarioId] = useState<string | null>(null);
+    const [selectedScenarioId, setSelectedScenarioId] = useState<string | null>('v2g-mod');
     const [isRunning, setIsRunning] = useState(false);
     const [runTime, setRunTime] = useState(0);
     const [logs, setLogs] = useState<LogEntry[]>([]);
     const [search, setSearch] = useState('');
-    const [detailPanel, setDetailPanel] = useState<string | null>(null);
+    const [systemHealth, setSystemHealth] = useState(87);
+    const [riskLevel, setRiskLevel] = useState<'low' | 'medium' | 'high' | 'critical'>('medium');
+    const [eventStreamExpanded, setEventStreamExpanded] = useState(false);
+
+    const selectedScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId), [selectedScenarioId]);
+
+    // Update risk level based on selected scenario
+    useEffect(() => {
+        if (selectedScenario) {
+            if (selectedScenario.status === 'attack') {
+                setRiskLevel('critical');
+            } else if (selectedScenario.status === 'suspicious') {
+                setRiskLevel('high');
+            } else if (selectedScenario.severity === 'critical') {
+                setRiskLevel('high');
+            } else if (selectedScenario.severity === 'high') {
+                setRiskLevel('medium');
+            } else {
+                setRiskLevel('low');
+            }
+        }
+    }, [selectedScenario]);
 
     // Timer & Log Simulation
     useEffect(() => {
@@ -98,19 +118,22 @@ export function DashboardNew() {
                         "New session token generated"
                     ];
                     addLog(messages[Math.floor(Math.random() * messages.length)], 'info');
+                    if (logs.length > 0 && !eventStreamExpanded) {
+                        setEventStreamExpanded(true);
+                    }
                 }
+                // Simulate system health changes
+                setSystemHealth(prev => Math.max(50, Math.min(100, prev + (Math.random() - 0.5) * 2)));
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [isRunning]);
+    }, [isRunning, logs.length, eventStreamExpanded]);
 
     const formatRunTime = (seconds: number) => {
         const m = Math.floor(seconds / 60);
         const s = seconds % 60;
         return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     };
-
-    const selectedScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId), [selectedScenarioId]);
 
     const filteredScenarios = useMemo(() => {
         return scenarios.filter(s => s.name.toLowerCase().includes(search.toLowerCase()) || s.author.toLowerCase().includes(search.toLowerCase()));
@@ -128,345 +151,390 @@ export function DashboardNew() {
 
     return (
         <div className="dashboard-container">
-            {/* Nav */}
-            <nav className="dashboard-nav">
-                <button className={`nav-item ${activeTab === 'ev' ? 'active' : ''}`} onClick={() => setActiveTab('ev')}>EV/Charging</button>
-                <button className={`nav-item ${activeTab === 'cyber' ? 'active' : ''}`} onClick={() => setActiveTab('cyber')}>Cyber-Physical</button>
-                <button className={`nav-center-btn ${activeTab === 'control' ? 'active' : ''}`} onClick={() => setActiveTab('control')}>Control Central</button>
-                <button className={`nav-item ${activeTab === 'network' ? 'active' : ''}`} onClick={() => setActiveTab('network')}>Network</button>
-                <button className={`nav-item ${activeTab === 'logs' ? 'active' : ''}`} onClick={() => setActiveTab('logs')}>Logs</button>
+            {/* Compact Header */}
+            <nav className="dashboard-nav-compact">
+                <div className="nav-left">
+                    <span className="nav-logo">EV SECURITY</span>
+                </div>
+                <div className="nav-center">
+                    <button className={`nav-item-compact ${activeTab === 'ev' ? 'active' : ''}`} onClick={() => setActiveTab('ev')}>EV/Charging</button>
+                    <button className={`nav-item-compact ${activeTab === 'cyber' ? 'active' : ''}`} onClick={() => setActiveTab('cyber')}>Cyber-Physical</button>
+                    <button className={`nav-item-compact ${activeTab === 'control' ? 'active' : ''}`} onClick={() => setActiveTab('control')}>Control Central</button>
+                    <button className={`nav-item-compact ${activeTab === 'network' ? 'active' : ''}`} onClick={() => setActiveTab('network')}>Network</button>
+                    <button className={`nav-item-compact ${activeTab === 'logs' ? 'active' : ''}`} onClick={() => setActiveTab('logs')}>Logs</button>
+                </div>
+                <div className="nav-right">
+                    {selectedScenario && (
+                        <div className="header-scenario-info-compact">
+                            <span className="header-scenario-name">{selectedScenario.name}</span>
+                            <div className={`session-badge-compact ${isRunning ? 'active' : 'standby'}`}>
+                                {isRunning ? 'ACTIVE' : 'STANDBY'}
+                            </div>
+                        </div>
+                    )}
+                </div>
             </nav>
 
-            <div className="dashboard-main-layout">
-                {/* 1. SIDEBAR */}
-                <aside className="scenario-sidebar">
-                    <div className="sidebar-header">
-                        <div className="sidebar-header-top">
-                            <span className="sidebar-title"><Shield size={14} /> Attack Scenarios</span>
-                            <span style={{ fontSize: '0.65rem' }}>TOTAL: {scenarios.length}</span>
+            <div className="dashboard-main-layout-three-col">
+                {/* 1. LEFT: Attack Scenarios (Compact) */}
+                <aside className="scenario-sidebar-compact">
+                    <div className="sidebar-header-compact">
+                        <span className="sidebar-title-compact"><Shield size={12} /> SCENARIOS</span>
+                        <span className="sidebar-count">{scenarios.length}</span>
                         </div>
-                        <div className="search-container">
-                            <Search size={14} className="search-icon" />
+                    <div className="search-container-compact">
+                        <Search size={12} className="search-icon" />
                             <input
                                 type="text"
-                                className="sidebar-search"
-                                placeholder="Filter scenarios..."
+                            className="sidebar-search-compact"
+                            placeholder="Search..."
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                             />
-                        </div>
                     </div>
-                    <div className="scenario-list custom-scrollbar">
+                    <div className="scenario-list-compact custom-scrollbar">
                         {filteredScenarios.map(s => (
                             <button
                                 key={s.id}
-                                className={`scenario-card ${selectedScenarioId === s.id ? 'active' : ''}`}
+                                className={`scenario-card-compact ${selectedScenarioId === s.id ? 'active' : ''}`}
                                 onClick={() => setSelectedScenarioId(s.id)}
                             >
-                                <div className="scenario-info-left">
-                                    <div className="scenario-top-row">
-                                        <span className={`severity-badge ${s.severity}`}>{s.severity}</span>
-                                        <span className="scenario-name">{s.name}</span>
-                                    </div>
-                                    <span className="scenario-author">{s.author}</span>
+                                <div className={`status-led-compact ${s.status}`} />
+                                <div className="scenario-info-compact">
+                                    <span className={`severity-badge-compact ${s.severity}`}>{s.severity}</span>
+                                    <span className="scenario-name-compact">{s.name}</span>
                                 </div>
-                                <div className={`status-led ${s.status}`} />
                             </button>
                         ))}
                     </div>
                 </aside>
 
-                {/* 2. MAIN CONTENT */}
-                <main className="content-area">
-                    {selectedScenario ? (
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={selectedScenario.id}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="flex-1 flex flex-col overflow-hidden"
-                            >
-                                {/* Sticky Header */}
-                                <header className="sticky-header">
-                                    <div className="header-scenario-info">
-                                        <h1>{selectedScenario.name}</h1>
-                                        <div className={`session-badge ${isRunning ? 'active' : 'standby'}`}>
-                                            {isRunning ? 'active simulation' : 'ready to deploy'}
+                {/* 2. CENTER: Graphics & Animations */}
+                <main className="content-area-center">
+                    {activeTab === 'control' ? (
+                        <div className="control-central-view-compact">
+                            {/* System State Core - Centered */}
+                            <div className="system-state-core-center">
+                                <div className="core-container">
+                                    <div className="core-ring outer-ring" />
+                                    <div className="core-ring middle-ring" />
+                                    <div className="core-inner">
+                                        <div className="core-value">{systemHealth}</div>
+                                        <div className="core-label">SYSTEM HEALTH</div>
+                                        <div className="core-status">
+                                            <div className={`core-status-dot ${systemHealth > 80 ? 'healthy' : systemHealth > 60 ? 'warning' : 'critical'}`} />
+                                            <span>{systemHealth > 80 ? 'OPERATIONAL' : systemHealth > 60 ? 'DEGRADED' : 'CRITICAL'}</span>
                                         </div>
                                     </div>
-
-                                    <div className="header-kpis">
-                                        <div className="kpi-group">
-                                            <span className="kpi-label">Risk Vector</span>
-                                            <span className="kpi-value risk">{selectedScenario.severity}</span>
-                                        </div>
-                                        <div style={{ width: '1px', height: '24px', background: 'var(--border-subtle)' }} />
-                                        <div className="kpi-group">
-                                            <span className="kpi-label">Uptime</span>
-                                            <span className="kpi-value">{formatRunTime(runTime)}</span>
-                                        </div>
-                                        <div style={{ width: '1px', height: '24px', background: 'var(--border-subtle)' }} />
-                                        <div className="kpi-group">
-                                            <span className="kpi-label">Active Alerts</span>
-                                            <span className="kpi-value">0</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="header-actions">
-                                        <button
-                                            className={`btn-primary ${isRunning ? 'btn-pause' : 'btn-start'}`}
-                                            onClick={() => setIsRunning(!isRunning)}
-                                        >
-                                            {isRunning ? <><Pause size={18} fill="currentColor" /> PAUSE</> : <><Play size={18} fill="currentColor" /> DEPLOY</>}
-                                        </button>
-                                        <button className="btn-primary btn-secondary">
-                                            <FileText size={18} /> EXPORT
-                                        </button>
-                                    </div>
-                                </header>
-
-                                {/* Overview Scroll Content */}
-                                <div className="overview-scroll custom-scrollbar">
-                                    <div className="category-grid">
-                                        {/* EV WIDGET */}
-                                        <div className="category-widget ev" onClick={() => setDetailPanel('ev')}>
-                                            <div className="widget-left">
-                                                <div className="widget-left-icon"><Zap size={20} /></div>
-                                            </div>
-                                            <div className="widget-content">
-                                                <div className="widget-title">EV & Charging</div>
-                                                <div className="widget-subtitle">Energy Logic & VPP</div>
-
-                                                <div className="metrics-row">
-                                                    <div className="metric-box">
-                                                        <span className="m-label">Current SoC</span>
-                                                        <div><span className="m-value">67</span><span className="m-unit">%</span></div>
-                                                        <div style={{ height: 20, marginTop: 4, opacity: 0.8 }}><MiniSparkline color="var(--accent-ev)" /></div>
-                                                    </div>
-                                                    <div className="metric-box">
-                                                        <span className="m-label">VPP Flux</span>
-                                                        <div><span className="m-value">2.4</span><span className="m-unit">kW</span></div>
-                                                        <div style={{ height: 20, marginTop: 4, opacity: 0.8 }}><MiniSparkline color="#00FF94" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* CYBER WIDGET */}
-                                        <div className="category-widget cyber" onClick={() => setDetailPanel('cyber')}>
-                                            {selectedScenario.severity === 'critical' && <div className="pulse-alarm" />}
-                                            <div className="widget-left">
-                                                <div className="widget-left-icon"><Shield size={20} /></div>
-                                            </div>
-                                            <div className="widget-content">
-                                                <div className="widget-title">Cyber-Physical</div>
-                                                <div className="widget-subtitle">Sensor Consistency</div>
-
-                                                <div className="metrics-row">
-                                                    <div className="metric-box" style={{ gridColumn: 'span 2' }}>
-                                                        <span className="m-label">GPS vs CSMS Verif</span>
-                                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
-                                                            <div className="status-led normal" style={{ background: 'var(--status-success)', opacity: 1, boxShadow: '0 0 8px var(--status-success)' }} />
-                                                            <span className="m-value">MATCHED</span>
-                                                            <span className="m-unit">[Station_042]</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* NETWORK WIDGET */}
-                                        <div className="category-widget network" onClick={() => setDetailPanel('network')}>
-                                            <div className="widget-left">
-                                                <div className="widget-left-icon"><Wifi size={20} /></div>
-                                            </div>
-                                            <div className="widget-content">
-                                                <div className="widget-title">Network</div>
-                                                <div className="widget-subtitle">Protocol Analysis</div>
-
-                                                <div className="metrics-row">
-                                                    <div className="metric-box">
-                                                        <span className="m-label">Latency</span>
-                                                        <div><span className="m-value">42</span><span className="m-unit">ms</span></div>
-                                                    </div>
-                                                    <div className="metric-box">
-                                                        <span className="m-label">Throughput</span>
-                                                        <div><span className="m-value">1.4</span><span className="m-unit">MB/s</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Event Stream Panel */}
-                                    <section className="event-stream-section">
-                                        <div className="stream-header">
-                                            <div className="stream-title">
-                                                <Activity size={14} color="var(--accent-primary)" />
-                                                <span>Mission Control Event Stream</span>
-                                            </div>
-                                            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--status-success)', boxShadow: '0 0 8px var(--status-success)' }} />
-                                                    <span style={{ fontSize: '0.7rem', color: 'var(--status-success)', fontWeight: 700 }}>LIVE</span>
-                                                </div>
-                                                <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>// REPLAY READY</span>
-                                            </div>
-                                        </div>
-                                        <div className="stream-table custom-scrollbar">
-                                            {logs.length > 0 ? logs.map(l => (
-                                                <div key={l.id} className="log-row">
-                                                    <span className="log-ts">{l.timestamp}</span>
-                                                    <span className="log-src" style={{ color: l.level === 'warn' ? 'var(--status-warning)' : l.level === 'error' ? 'var(--status-danger)' : 'var(--accent-primary)' }}>
-                                                        {l.level === 'info' ? 'SYS_KERNEL' : l.level === 'warn' ? 'IDS_ALERT' : 'FIREWALL'}
-                                                    </span>
-                                                    <span className="log-msg">{l.message}</span>
-                                                </div>
-                                            )) : (
-                                                <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3, flexDirection: 'column', gap: 12 }}>
-                                                    <Activity size={32} />
-                                                    <span>Waiting for mission telemetry...</span>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </section>
                                 </div>
-                            </motion.div>
-                        </AnimatePresence>
-                    ) : (
-                        <div className="empty-state">
-                            <div className="empty-icon"><Shield size={64} style={{ color: 'var(--accent-primary)', opacity: 0.4 }} /></div>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase' }}>Command Center Ready</h2>
-                            <p style={{ maxWidth: '400px', fontSize: '0.9rem', color: 'var(--text-dim)' }}>
-                                Select an attack scenario from the left perimeter to begin protocol investigation and real-time anomaly tracking.
-                            </p>
-                            <div style={{ marginTop: '20px', display: 'flex', gap: '20px', fontSize: '0.75rem', fontWeight: 700 }}>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle size={14} style={{ color: 'var(--accent-success)' }} /> SECURE_ENV: UP</span>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle size={14} style={{ color: 'var(--accent-success)' }} /> DB_LINK: ACTIVE</span>
+                            </div>
+
+                            {/* Charts Section */}
+                            <div className="charts-section">
+                                <div className="chart-card">
+                                    <div className="chart-header">
+                                        <Zap size={16} className="chart-icon ev-icon" />
+                                        <span className="chart-title">Energy Flow</span>
+                                    </div>
+                                    <div className="chart-body">
+                                        <ResponsiveContainer width="100%" height="100%">
+                                            <AreaChart data={mockTimeSeries.slice(0, 12)}>
+                                                <defs>
+                                                    <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.3} />
+                                                        <stop offset="95%" stopColor="var(--accent-ev)" stopOpacity={0} />
+                                                    </linearGradient>
+                                                </defs>
+                                                <XAxis dataKey="time" hide />
+                                                <YAxis hide />
+                                                <Tooltip />
+                                                <Area type="monotone" dataKey="soc" stroke="var(--accent-ev)" strokeWidth={2} fillOpacity={1} fill="url(#energyGradient)" />
+                                            </AreaChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Event Stream - Collapsible */}
+                            <div className={`event-stream-timeline-compact ${eventStreamExpanded || logs.length > 0 ? 'expanded' : 'collapsed'}`}>
+                                <div className="event-stream-header-compact" onClick={() => setEventStreamExpanded(!eventStreamExpanded)}>
+                                    <div className="stream-header-left">
+                                        <Activity size={14} />
+                                        <span>EVENT STREAM</span>
+                                        {logs.length > 0 && <span className="event-count">({logs.length})</span>}
+                                    </div>
+                                    <div className="stream-header-right">
+                                        <div className={`live-indicator ${isRunning ? 'active' : ''}`} />
+                                        <span className="live-text">{isRunning ? 'LIVE' : 'STANDBY'}</span>
+                                    </div>
+                                </div>
+                                {(eventStreamExpanded || logs.length > 0) && (
+                                    <div className="event-stream-content-compact custom-scrollbar">
+                                        {logs.length > 0 ? (
+                                            logs.map(l => (
+                                                <div key={l.id} className="event-log-row-compact">
+                                                    <span className="event-timestamp">{l.timestamp}</span>
+                                                    <span className={`event-source ${l.level}`}>
+                                                        {l.level === 'info' ? 'SYS' : l.level === 'warn' ? 'IDS' : 'FIREWALL'}
+                                                    </span>
+                                                    <span className="event-message">{l.message}</span>
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <div className="event-stream-empty">
+                                                <Activity size={24} style={{ opacity: 0.3 }} />
+                                                <span>Waiting for telemetry...</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </div>
-                    )}
-                </main>
-            </div>
-
-            {/* SLIDE-OVER PANEL */}
-            <AnimatePresence>
-                {detailPanel && (
-                    <>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="slide-over-mask"
-                            onClick={() => setDetailPanel(null)}
-                        />
-                        <motion.aside
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="slide-panel"
-                        >
-                            <header className="slide-header">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                                    <div className={`widget-icon ${detailPanel}`}>
-                                        {detailPanel === 'ev' && <Zap size={24} />}
-                                        {detailPanel === 'cyber' && <Shield size={24} />}
-                                        {detailPanel === 'network' && <Wifi size={24} />}
-                                    </div>
-                                    <div>
-                                        <h2 style={{ fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px' }}>
-                                            {detailPanel === 'ev' && 'Energy Matrix'}
-                                            {detailPanel === 'cyber' && 'Consistency Engine'}
-                                            {detailPanel === 'network' && 'Protocol Inspector'}
-                                        </h2>
-                                        <p style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Real-time Deep Packet Correlation</p>
-                                    </div>
+                    ) : activeTab === 'ev' ? (
+                        <div className="detail-view">
+                            <div className="detail-header">
+                                <Zap size={24} className="detail-icon ev-icon" />
+                                <div>
+                                    <h1 className="detail-title">EV & CHARGING</h1>
+                                    <p className="detail-subtitle">Energy Logic & VPP Integration</p>
                                 </div>
-                                <button onClick={() => setDetailPanel(null)} className="nav-item"><X size={24} /></button>
-                            </header>
-
-                            <div className="slide-body custom-scrollbar">
-                                {/* Sample Chart 1: Time Series */}
+                            </div>
+                            <div className="detail-content">
                                 <div className="detail-chart-container">
-                                    <span className="mini-box-label">Spectral Flux Timeline</span>
+                                    <span className="mini-box-label">Energy Flow Timeline</span>
                                     <ResponsiveContainer width="100%" height="90%">
                                         <AreaChart data={mockTimeSeries}>
                                             <defs>
-                                                <linearGradient id="colorVal" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="5%" stopColor="var(--accent-primary)" stopOpacity={0.3} />
-                                                    <stop offset="95%" stopColor="var(--accent-primary)" stopOpacity={0} />
+                                                <linearGradient id="evGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.3} />
+                                                    <stop offset="95%" stopColor="var(--accent-ev)" stopOpacity={0} />
                                                 </linearGradient>
                                             </defs>
-                                            <XAxis dataKey="time" hide />
-                                            <YAxis hide />
+                                            <XAxis dataKey="time" />
+                                            <YAxis />
                                             <Tooltip />
-                                            <Area type="monotone" dataKey="value" stroke="var(--accent-primary)" strokeWidth={3} fillOpacity={1} fill="url(#colorVal)" />
-                                            {isRunning && <Area type="monotone" dataKey="anomalous" stroke="var(--accent-danger)" fill="var(--accent-danger)" fillOpacity={0.2} />}
+                                            <Area type="monotone" dataKey="soc" stroke="var(--accent-ev)" strokeWidth={3} fillOpacity={1} fill="url(#evGradient)" />
                                         </AreaChart>
                                     </ResponsiveContainer>
                                 </div>
+                            </div>
+                        </div>
+                    ) : activeTab === 'cyber' ? (
+                        <div className="detail-view">
+                            <div className="detail-header">
+                                <Shield size={24} className="detail-icon cyber-icon" />
+                                <div>
+                                    <h1 className="detail-title">CYBER-PHYSICAL</h1>
+                                    <p className="detail-subtitle">Sensor Consistency & Verification</p>
+                                </div>
+                            </div>
+                            <div className="detail-content">
+                                <div className="detail-chart-container">
+                                    <span className="mini-box-label">Cross-Sensor Correlation</span>
+                                    <ResponsiveContainer width="100%" height="90%">
+                                        <ScatterChart>
+                                            <XAxis type="number" dataKey="x" name="x" hide />
+                                            <YAxis type="number" dataKey="y" name="y" hide />
+                                            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                                            <Scatter name="Telemetry" data={mockScatterData} fill="var(--accent-cyber)">
+                                                {mockScatterData.map((_, index) => (
+                                                    <Cell key={`cell-${index}`} fill={index % 10 === 0 ? 'var(--status-danger)' : 'var(--accent-cyber)'} />
+                                                ))}
+                                            </Scatter>
+                                        </ScatterChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </div>
+                        </div>
+                    ) : activeTab === 'network' ? (
+                        <div className="detail-view">
+                            <div className="detail-header">
+                                <Wifi size={24} className="detail-icon network-icon" />
+                                <div>
+                                    <h1 className="detail-title">NETWORK</h1>
+                                    <p className="detail-subtitle">Protocol Analysis & Monitoring</p>
+                                </div>
+                            </div>
+                            <div className="detail-content">
+                                <div className="detail-chart-container">
+                                    <span className="mini-box-label">Network Traffic Distribution</span>
+                                    <ResponsiveContainer width="100%" height="90%">
+                                        <BarChart data={mockTimeSeries.slice(0, 8)}>
+                                            <XAxis dataKey="time" />
+                                            <YAxis />
+                                            <Tooltip />
+                                            <Bar dataKey="value" fill="var(--bg-hover)" />
+                                            <Bar dataKey="anomalous" fill="var(--status-danger)" />
+                                        </BarChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </div>
+                        </div>
+                    ) : activeTab === 'logs' ? (
+                        <div className="detail-view">
+                            <div className="detail-header">
+                                <Activity size={24} className="detail-icon" />
+                                <div>
+                                    <h1 className="detail-title">SYSTEM LOGS</h1>
+                                    <p className="detail-subtitle">Real-time Event Logging</p>
+                                </div>
+                            </div>
+                            <div className="detail-content">
+                                <div className="logs-container custom-scrollbar">
+                                    {logs.length > 0 ? (
+                                        logs.map(l => (
+                                            <div key={l.id} className="log-entry">
+                                                <span className="log-timestamp">{l.timestamp}</span>
+                                                <span className={`log-level ${l.level}`}>{l.level.toUpperCase()}</span>
+                                                <span className="log-message">{l.message}</span>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className="logs-empty">No logs available</div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="empty-state-center">
+                            <div className="empty-icon"><Shield size={64} style={{ color: 'var(--accent-primary)', opacity: 0.4 }} /></div>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, textTransform: 'uppercase' }}>Select a Scenario</h2>
+                            <p style={{ maxWidth: '400px', fontSize: '0.9rem', color: 'var(--text-dim)' }}>
+                                Choose an attack scenario from the left panel to begin analysis.
+                            </p>
+                        </div>
+                    )}
+                </main>
 
-                                {/* Sample Chart 2: Correlation Scatter / Bar */}
-                                {detailPanel === 'cyber' ? (
-                                    <div className="detail-chart-container">
-                                        <span className="mini-box-label">Cross-Sensor Correlation Map</span>
-                                        <ResponsiveContainer width="100%" height="90%">
-                                            <ScatterChart>
-                                                <XAxis type="number" dataKey="x" name="stature" hide />
-                                                <YAxis type="number" dataKey="y" name="weight" hide />
-                                                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                                                <Scatter name="Telemetry" data={mockScatterData} fill="var(--accent-primary)">
-                                                    {mockScatterData.map((_, index) => (
-                                                        <Cell key={`cell-${index}`} fill={index % 10 === 0 ? 'var(--accent-danger)' : 'var(--accent-primary)'} />
-                                                    ))}
-                                                </Scatter>
-                                            </ScatterChart>
-                                        </ResponsiveContainer>
+                {/* 3. RIGHT: Data Panel */}
+                <aside className="data-panel">
+                    <div className="data-panel-header">
+                        <span className="data-panel-title">SYSTEM DATA</span>
+                    </div>
+                    <div className="data-panel-content custom-scrollbar">
+                        {/* System Status */}
+                        <div className="data-section">
+                            <div className="data-section-header">
+                                <span className="data-section-title">STATUS</span>
+                            </div>
+                            <div className="data-metrics-grid">
+                                <div className="data-metric-item">
+                                    <span className="data-metric-label">Risk Level</span>
+                                    <div className={`risk-indicator-small ${riskLevel}`}>
+                                        <div className="risk-pulse-small" />
+                                        <span className="risk-text-small">{riskLevel.toUpperCase()}</span>
                                     </div>
-                                ) : (
-                                    <div className="detail-chart-container">
-                                        <span className="mini-box-label">Package Distribution</span>
-                                        <ResponsiveContainer width="100%" height="90%">
-                                            <BarChart data={mockTimeSeries.slice(0, 8)}>
-                                                <Bar dataKey="value" fill="var(--bg-hover)" />
-                                                <Bar dataKey="anomalous" fill="var(--accent-danger)" />
-                                                <Tooltip />
-                                            </BarChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                )}
+                                </div>
+                                <div className="data-metric-item">
+                                    <span className="data-metric-label">Uptime</span>
+                                    <span className="data-metric-value">{formatRunTime(runTime)}</span>
+                                </div>
+                                <div className="data-metric-item">
+                                    <span className="data-metric-label">Health</span>
+                                    <span className="data-metric-value">{systemHealth.toFixed(1)}%</span>
+                                </div>
+                                <div className="data-metric-item">
+                                    <span className="data-metric-label">Active Threats</span>
+                                    <span className="data-metric-value">{selectedScenario?.status === 'attack' ? '1' : '0'}</span>
+                                </div>
+                            </div>
+                        </div>
 
-                                {/* Metric KPI Grid */}
-                                <div className="category-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                                    <div className="mini-data-box">
-                                        <span className="mini-box-label">Integrity Status</span>
-                                        <span className="mini-box-value" style={{ color: 'var(--accent-success)' }}>SECURED</span>
+                        {/* EV Metrics */}
+                        <div className="data-section">
+                            <div className="data-section-header">
+                                <Zap size={14} className="data-section-icon ev-icon" />
+                                <span className="data-section-title">EV & CHARGING</span>
+                            </div>
+                            <div className="data-metrics-list">
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">State of Charge</span>
+                                    <span className="data-metric-value-large">67<span className="data-metric-unit">%</span></span>
+                                </div>
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">VPP Power Flow</span>
+                                    <span className="data-metric-value-large">2.4<span className="data-metric-unit">kW</span></span>
+                                </div>
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">Charging Rate</span>
+                                    <span className="data-metric-value-large">7.2<span className="data-metric-unit">kW</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Cyber-Physical Metrics */}
+                        <div className="data-section">
+                            <div className="data-section-header">
+                                <Shield size={14} className="data-section-icon cyber-icon" />
+                                <span className="data-section-title">CYBER-PHYSICAL</span>
+                            </div>
+                            <div className="data-metrics-list">
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">GPS Verification</span>
+                                    <div className="data-status">
+                                        <div className="status-dot-small success" />
+                                        <span className="data-status-text">MATCHED</span>
                                     </div>
-                                    <div className="mini-data-box">
-                                        <span className="mini-box-label">Data Sync Frequency</span>
-                                        <span className="mini-box-value">250ms</span>
+                                </div>
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">CAN Bus Integrity</span>
+                                    <div className="data-status">
+                                        <div className="status-dot-small success" />
+                                        <span className="data-status-text">SECURE</span>
                                     </div>
-                                    <div className="mini-data-box">
-                                        <span className="mini-box-label">Encryption Protocol</span>
-                                        <span className="mini-box-value">TLS 1.3</span>
-                                    </div>
-                                    <div className="mini-data-box">
-                                        <span className="mini-box-label">Hardware Hash</span>
-                                        <span className="mini-box-value" style={{ fontSize: '0.8rem' }}>0x8A4BD...2F</span>
+                                </div>
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">Firmware Hash</span>
+                                    <div className="data-status">
+                                        <div className="status-dot-small warning" />
+                                        <span className="data-status-text">PENDING</span>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="slide-footer">
-                                <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--accent-primary)', color: '#000' }}>
-                                    DOWNLOAD INCIDENT REPORT (CSV)
+                        {/* Network Metrics */}
+                        <div className="data-section">
+                            <div className="data-section-header">
+                                <Wifi size={14} className="data-section-icon network-icon" />
+                                <span className="data-section-title">NETWORK</span>
+                            </div>
+                            <div className="data-metrics-list">
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">Latency</span>
+                                    <span className="data-metric-value">42<span className="data-metric-unit">ms</span></span>
+                                </div>
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">Throughput</span>
+                                    <span className="data-metric-value">1.4<span className="data-metric-unit">MB/s</span></span>
+                                </div>
+                                <div className="data-metric-row">
+                                    <span className="data-metric-label">Packet Loss</span>
+                                    <span className="data-metric-value">0.02<span className="data-metric-unit">%</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Control Actions */}
+                        <div className="data-section">
+                            <div className="data-section-header">
+                                <span className="data-section-title">CONTROLS</span>
+                            </div>
+                            <div className="data-actions">
+                                <button
+                                    className={`data-action-btn ${isRunning ? 'btn-pause' : 'btn-start'}`}
+                                    onClick={() => setIsRunning(!isRunning)}
+                                >
+                                    {isRunning ? <><Pause size={16} /> PAUSE</> : <><Play size={16} /> DEPLOY</>}
+                                </button>
+                                <button className="data-action-btn btn-secondary">
+                                    <FileText size={16} /> EXPORT
                                 </button>
                             </div>
-                        </motion.aside>
-                    </>
-                )}
-            </AnimatePresence>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
     );
 }
