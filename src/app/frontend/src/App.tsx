@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
+import { DashboardNew } from './pages/DashboardNew';
 import { Documents } from './pages/Documents';
 import { Logs } from './pages/Logs';
 import './App.css';
@@ -10,6 +11,8 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
+      case 'dashboard':
+        return <DashboardNew />;
       case 'docs':
         return <Documents />;
       case 'logs':

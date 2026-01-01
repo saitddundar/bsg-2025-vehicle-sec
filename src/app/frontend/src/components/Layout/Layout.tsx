@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { Home, FileText, ScrollText, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Home, LayoutDashboard, FileText, ScrollText, ChevronLeft, ChevronRight } from 'lucide-react';
 import './Layout.css';
 
 interface LayoutProps {
@@ -13,6 +13,7 @@ export function Layout({ children, activePage, onNavigate }: LayoutProps) {
 
     const navItems = [
         { id: 'home', label: 'Home', icon: Home },
+        { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { id: 'docs', label: 'Docs', icon: FileText },
         { id: 'logs', label: 'Logs', icon: ScrollText },
     ];
