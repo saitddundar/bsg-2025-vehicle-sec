@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './MetricsChart.css';
 
 interface MetricsChartProps {
@@ -12,17 +12,60 @@ interface MetricsChartProps {
 export function MetricsChart({ isRunning, anomalyState, voltage, frequency, power }: MetricsChartProps) {
     const [selectedMetric, setSelectedMetric] = useState<'voltage' | 'hz' | 'kw'>('voltage');
 
+    // History buffers for each metric - store last 40 values
+    const voltageHistory = useRef<number[]>([]);
+    const frequencyHistory = useRef<number[]>([]);
+    const powerHistory = useRef<number[]>([]);
 
-    // Generate stable mock path
-    const points = useMemo(() => {
-        return Array.from({ length: 40 }, (_) => {
-            const base = selectedMetric === 'voltage' ? (voltage || 230) : selectedMetric === 'hz' ? (frequency || 50) : (power || 0);
-            const noise = isRunning ? (Math.random() * 2 - 1) : 0;
-            return base + noise;
-        });
+    // Add incoming values to history
+    useEffect(() => {
+        if (!isRunning) {
+            // Reset histories when simulation stops
+            voltageHistory.current = [];
+            frequencyHistory.current = [];
+            powerHistory.current = [];
+            return;
+        }
 
+        // Push new values with scenario-based noise
+        const getNoise = () => {
+            if (anomalyState === 'attack') return (Math.random() - 0.5) * 20; // High volatility during attack
+            if (anomalyState === 'suspicious') return (Math.random() - 0.5) * 8; // Medium noise
+            return (Math.random() - 0.5) * 2; // Normal slight variation
+        };
 
-    }, [selectedMetric, anomalyState, isRunning]);
+        const vVal = (voltage || 230) + getNoise();
+        const fVal = (frequency || 50) + getNoise() * 0.1;
+        const pVal = (power || 0) + getNoise() * 0.5;
+
+        voltageHistory.current = [...voltageHistory.current.slice(-39), vVal];
+        frequencyHistory.current = [...frequencyHistory.current.slice(-39), fVal];
+        powerHistory.current = [...powerHistory.current.slice(-39), pVal];
+    }, [voltage, frequency, power, isRunning, anomalyState]);
+
+    // Get current history based on selected metric
+    const getHistory = () => {
+        switch (selectedMetric) {
+            case 'voltage': return voltageHistory.current;
+            case 'hz': return frequencyHistory.current;
+            case 'kw': return powerHistory.current;
+        }
+    };
+
+    // Generate points based on actual data or idle state
+    const points = (() => {
+        const history = getHistory();
+        const baseValue = selectedMetric === 'voltage' ? 230 : selectedMetric === 'hz' ? 50 : 0;
+
+        if (!isRunning || history.length === 0) {
+            // Idle state - flat line at base value
+            return Array.from({ length: 40 }, () => baseValue);
+        }
+
+        // Pad with base values if history is short
+        const padded = [...Array(Math.max(0, 40 - history.length)).fill(baseValue), ...history];
+        return padded.slice(-40);
+    })();
 
     const max = Math.max(...points, 255);
     const min = Math.min(...points, 200);
