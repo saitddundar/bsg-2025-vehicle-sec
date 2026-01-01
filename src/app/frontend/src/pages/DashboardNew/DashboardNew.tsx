@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Activity, Shield, Zap, Clock, AlertTriangle, CheckCircle, BarChart3, Cpu, Radio, Database, Wifi, MapPin, Battery, Gauge } from 'lucide-react';
+import { Activity, Shield, Zap, Clock, AlertTriangle, CheckCircle, Cpu, Radio, Database, Wifi, MapPin, Battery, Gauge, Play, Pause, FileText, TrendingUp, TrendingDown } from 'lucide-react';
 import './DashboardNew.css';
 
 interface LogEntry {
@@ -9,40 +9,66 @@ interface LogEntry {
     message: string;
 }
 
-type TabType = 'runcontrol' | 'evcharging' | 'cyberphysical' | 'network' | 'logs' | 'analytics';
+type TabType = 'runcontrol' | 'evcharging' | 'cyberphysical' | 'network' | 'logs';
 
-// All attack scenarios from docs
+// All attack scenarios
 const scenarios = [
     { id: 'v2g', name: 'V2G Protocol Manipulation', author: 'Sait Dundar', severity: 'critical' },
-    { id: 'phantom-soc', name: 'Phantom SoC Report (Capacity Fraud)', author: 'Kardelen Demir', severity: 'high' },
-    { id: 'firmware-pdos', name: 'Malicious Firmware P-DoS Attack', author: 'Betül Altunyuva', severity: 'critical' },
+    { id: 'phantom-soc', name: 'Phantom SoC Report', author: 'Kardelen Demir', severity: 'high' },
+    { id: 'firmware-pdos', name: 'Firmware P-DoS Attack', author: 'Betül Altunyuva', severity: 'critical' },
     { id: 'ocpp-beaconing', name: 'OCPP Stealth Beaconing', author: 'Göksu Kayar', severity: 'high' },
     { id: 'digital-twin', name: 'Digital Twin Spoofing', author: 'Mehmet Erdem Abacı', severity: 'medium' },
-    { id: 'siren-attack', name: 'Siren Attack (Grid Destabilization)', author: 'BSG Team', severity: 'critical' },
-    { id: 'display-manipulation', name: 'Display Message Manipulation', author: 'BSG Team', severity: 'medium' },
-    { id: 'charging-while-moving', name: 'Charging While Moving Anomaly', author: 'BSG Team', severity: 'high' },
+    { id: 'siren-attack', name: 'Siren Attack', author: 'BSG Team', severity: 'critical' },
+    { id: 'display-manipulation', name: 'Display Manipulation', author: 'BSG Team', severity: 'medium' },
+    { id: 'charging-moving', name: 'Charging While Moving', author: 'BSG Team', severity: 'high' },
     { id: 'ghost-ecu', name: 'Ghost ECU Injection', author: 'BSG Team', severity: 'critical' },
 ];
+
+// Mini sparkline component (placeholder - will be replaced with real charts)
+function Sparkline({ trend, color }: { trend: 'up' | 'down' | 'stable'; color: string }) {
+    return (
+        <div className="sparkline" style={{ color }}>
+            {trend === 'up' && <TrendingUp size={16} />}
+            {trend === 'down' && <TrendingDown size={16} />}
+            {trend === 'stable' && <Activity size={16} />}
+        </div>
+    );
+}
 
 export function DashboardNew() {
     const [activeTab, setActiveTab] = useState<TabType>('runcontrol');
     const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
+    const [isRunning, setIsRunning] = useState(false);
+    const [runTime, setRunTime] = useState(0);
     const [logs, setLogs] = useState<LogEntry[]>([]);
+
+    // Timer for running scenario
+    useEffect(() => {
+        let interval: NodeJS.Timeout;
+        if (isRunning) {
+            interval = setInterval(() => setRunTime(t => t + 1), 1000);
+        }
+        return () => clearInterval(interval);
+    }, [isRunning]);
 
     // Mock logs
     useEffect(() => {
         const mockLogs: LogEntry[] = [
             { id: '1', timestamp: formatTime(new Date()), level: 'info', message: 'Dashboard initialized' },
             { id: '2', timestamp: formatTime(new Date(Date.now() - 5000)), level: 'info', message: 'Connected to backend API' },
-            { id: '3', timestamp: formatTime(new Date(Date.now() - 15000)), level: 'info', message: 'System health check passed' },
-            { id: '4', timestamp: formatTime(new Date(Date.now() - 30000)), level: 'warning', message: 'High memory usage detected' },
-            { id: '5', timestamp: formatTime(new Date(Date.now() - 60000)), level: 'info', message: 'Database connection established' },
+            { id: '3', timestamp: formatTime(new Date(Date.now() - 15000)), level: 'warning', message: 'High memory usage detected' },
         ];
         setLogs(mockLogs);
     }, []);
 
     function formatTime(date: Date) {
         return date.toLocaleTimeString('en-GB', { hour12: false });
+    }
+
+    function formatRunTime(seconds: number) {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     }
 
     const getLevelIcon = (level: string) => {
@@ -65,35 +91,18 @@ export function DashboardNew() {
         { id: 'logs' as TabType, label: 'Logs' },
     ];
 
+    const selectedScenarioData = scenarios.find(s => s.id === selectedScenario);
+
     return (
         <div className="dashboard-new">
             {/* Tab Navigation */}
             <nav className="dashboard-tabs">
                 {leftTabs.map(tab => (
-                    <button
-                        key={tab.id}
-                        className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-                        onClick={() => setActiveTab(tab.id)}
-                    >
-                        {tab.label}
-                    </button>
+                    <button key={tab.id} className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`} onClick={() => setActiveTab(tab.id)}>{tab.label}</button>
                 ))}
-
-                <button
-                    className={`tab-btn run-control ${activeTab === 'runcontrol' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('runcontrol')}
-                >
-                    Control
-                </button>
-
+                <button className={`tab-btn run-control ${activeTab === 'runcontrol' ? 'active' : ''}`} onClick={() => setActiveTab('runcontrol')}>Control</button>
                 {rightTabs.map(tab => (
-                    <button
-                        key={tab.id}
-                        className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-                        onClick={() => setActiveTab(tab.id)}
-                    >
-                        {tab.label}
-                    </button>
+                    <button key={tab.id} className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`} onClick={() => setActiveTab(tab.id)}>{tab.label}</button>
                 ))}
             </nav>
 
@@ -101,12 +110,12 @@ export function DashboardNew() {
             <div className="tab-content">
                 {/* CONTROL TAB */}
                 {activeTab === 'runcontrol' && (
-                    <div className="control-tab">
-                        {/* Scenario Selection */}
-                        <section className="control-scenarios">
-                            <header className="section-title">
-                                <h2>Attack Scenarios</h2>
-                                <span className="subtitle">Select a scenario to simulate</span>
+                    <div className="control-layout">
+                        {/* Left: Scenario List */}
+                        <aside className="scenario-sidebar">
+                            <header className="sidebar-header">
+                                <h2>Scenarios</h2>
+                                <span className="scenario-count">{scenarios.length}</span>
                             </header>
                             <div className="scenario-list">
                                 {scenarios.map(scenario => (
@@ -115,131 +124,209 @@ export function DashboardNew() {
                                         className={`scenario-item ${selectedScenario === scenario.id ? 'active' : ''} severity-${scenario.severity}`}
                                         onClick={() => setSelectedScenario(scenario.id)}
                                     >
-                                        <span className="scenario-name">{scenario.name}</span>
-                                        <span className="scenario-author">{scenario.author}</span>
+                                        <div className="scenario-info">
+                                            <span className="scenario-name">{scenario.name}</span>
+                                            <span className="scenario-author">{scenario.author}</span>
+                                        </div>
+                                        <span className={`severity-dot ${scenario.severity}`}></span>
                                     </button>
                                 ))}
                             </div>
-                        </section>
+                        </aside>
 
-                        {/* Metric Categories - Large Cards */}
-                        <section className="control-categories">
-                            <header className="section-title">
-                                <h2>Monitoring Categories</h2>
-                                <span className="subtitle">Click to view detailed metrics</span>
-                            </header>
-                            <div className="category-cards-large">
-                                {/* Category 1: EV & Charging Status */}
-                                <button className="category-card-large" onClick={() => setActiveTab('evcharging')}>
-                                    <div className="card-header">
-                                        <div className="card-icon-large ev-icon">
-                                            <Zap size={32} />
+                        {/* Right: Main Content */}
+                        <main className="control-main">
+                            {/* Sticky Scenario Header */}
+                            {selectedScenarioData && (
+                                <header className="scenario-header">
+                                    <div className="scenario-meta">
+                                        <h1>{selectedScenarioData.name}</h1>
+                                        <span className={`status-badge ${isRunning ? 'running' : 'paused'}`}>
+                                            {isRunning ? 'Running' : 'Ready'}
+                                        </span>
+                                    </div>
+                                    <div className="scenario-kpis">
+                                        <div className="kpi">
+                                            <span className="kpi-label">Threat Level</span>
+                                            <span className={`kpi-value ${selectedScenarioData.severity}`}>
+                                                {selectedScenarioData.severity.toUpperCase()}
+                                            </span>
                                         </div>
-                                        <div className="card-title">
-                                            <h3>EV & Charging Status</h3>
-                                            <p>Real-time monitoring of vehicle and charging infrastructure</p>
+                                        <div className="kpi">
+                                            <span className="kpi-label">Runtime</span>
+                                            <span className="kpi-value mono">{formatRunTime(runTime)}</span>
+                                        </div>
+                                        <div className="kpi">
+                                            <span className="kpi-label">Alerts</span>
+                                            <span className="kpi-value">0</span>
                                         </div>
                                     </div>
-                                    <div className="card-metrics-grid">
-                                        <div className="metric-item"><Gauge size={16} /> Voltage & Current</div>
-                                        <div className="metric-item"><Battery size={16} /> Battery SoC</div>
-                                        <div className="metric-item"><Zap size={16} /> Energy (kWh)</div>
-                                        <div className="metric-item"><Cpu size={16} /> CAN Commands</div>
-                                        <div className="metric-item"><AlertTriangle size={16} /> SoC Anomaly</div>
-                                        <div className="metric-item"><Database size={16} /> DTC Logs</div>
+                                    <div className="scenario-actions">
+                                        <button className={`action-btn ${isRunning ? 'pause' : 'play'}`} onClick={() => setIsRunning(!isRunning)}>
+                                            {isRunning ? <><Pause size={16} /> Pause</> : <><Play size={16} /> Start</>}
+                                        </button>
+                                        <button className="action-btn secondary">
+                                            <FileText size={16} /> Export
+                                        </button>
                                     </div>
-                                </button>
+                                </header>
+                            )}
 
-                                {/* Category 2: Cyber-Physical Consistency */}
-                                <button className="category-card-large" onClick={() => setActiveTab('cyberphysical')}>
-                                    <div className="card-header">
-                                        <div className="card-icon-large cyber-icon">
-                                            <Shield size={32} />
-                                        </div>
-                                        <div className="card-title">
-                                            <h3>Cyber-Physical Consistency</h3>
-                                            <p>Cross-validation between protocol and physical data</p>
-                                        </div>
-                                    </div>
-                                    <div className="card-metrics-grid">
-                                        <div className="metric-item"><Activity size={16} /> Speed vs Charge</div>
-                                        <div className="metric-item"><MapPin size={16} /> GPS vs Station ID</div>
-                                        <div className="metric-item"><Zap size={16} /> VPP vs Grid</div>
-                                        <div className="metric-item"><Battery size={16} /> Discharge Power</div>
-                                    </div>
-                                </button>
+                            {!selectedScenarioData && (
+                                <div className="no-scenario">
+                                    <Shield size={48} />
+                                    <h2>Select a Scenario</h2>
+                                    <p>Choose an attack scenario from the list to start simulation</p>
+                                </div>
+                            )}
 
-                                {/* Category 3: Network & Protocol */}
-                                <button className="category-card-large" onClick={() => setActiveTab('network')}>
-                                    <div className="card-header">
-                                        <div className="card-icon-large network-icon">
-                                            <Wifi size={32} />
+                            {/* Category Cards */}
+                            {selectedScenarioData && (
+                                <div className="category-overview">
+                                    {/* EV & Charging */}
+                                    <article className="category-panel" onClick={() => setActiveTab('evcharging')}>
+                                        <header className="category-header">
+                                            <div className="category-icon ev"><Zap size={24} /></div>
+                                            <div className="category-title">
+                                                <h3>EV & Charging Status</h3>
+                                                <p>Real-time vehicle metrics</p>
+                                            </div>
+                                            <div className="status-chips">
+                                                <span className="chip normal">4 Normal</span>
+                                                <span className="chip warning">1 Watch</span>
+                                            </div>
+                                        </header>
+                                        <div className="tiles-preview">
+                                            <div className="tile-mini"><Gauge size={14} /> 400V / 125A</div>
+                                            <div className="tile-mini"><Battery size={14} /> SoC 67%</div>
+                                            <div className="tile-mini"><Zap size={14} /> 28.4 kWh</div>
                                         </div>
-                                        <div className="card-title">
-                                            <h3>Network & Protocol</h3>
-                                            <p>CSMS level monitoring and protocol anomalies</p>
+                                    </article>
+
+                                    {/* Cyber-Physical */}
+                                    <article className="category-panel" onClick={() => setActiveTab('cyberphysical')}>
+                                        <header className="category-header">
+                                            <div className="category-icon cyber"><Shield size={24} /></div>
+                                            <div className="category-title">
+                                                <h3>Cyber-Physical</h3>
+                                                <p>Protocol vs sensor validation</p>
+                                            </div>
+                                            <div className="status-chips">
+                                                <span className="chip normal">3 Normal</span>
+                                            </div>
+                                        </header>
+                                        <div className="tiles-preview">
+                                            <div className="tile-mini"><Activity size={14} /> Speed: OK</div>
+                                            <div className="tile-mini"><MapPin size={14} /> GPS: Match</div>
+                                            <div className="tile-mini"><Zap size={14} /> VPP: Normal</div>
                                         </div>
-                                    </div>
-                                    <div className="card-metrics-grid">
-                                        <div className="metric-item"><Radio size={16} /> IP Cloning</div>
-                                        <div className="metric-item"><Shield size={16} /> Signature Errors</div>
-                                        <div className="metric-item"><Activity size={16} /> Command Frequency</div>
-                                        <div className="metric-item"><Clock size={16} /> Heartbeat Flapping</div>
-                                        <div className="metric-item"><Database size={16} /> Diagnostics Size</div>
-                                        <div className="metric-item"><AlertTriangle size={16} /> Access Anomalies</div>
-                                    </div>
-                                </button>
-                            </div>
-                        </section>
+                                    </article>
+
+                                    {/* Network */}
+                                    <article className="category-panel" onClick={() => setActiveTab('network')}>
+                                        <header className="category-header">
+                                            <div className="category-icon network"><Wifi size={24} /></div>
+                                            <div className="category-title">
+                                                <h3>Network & Protocol</h3>
+                                                <p>CSMS monitoring</p>
+                                            </div>
+                                            <div className="status-chips">
+                                                <span className="chip normal">5 Normal</span>
+                                            </div>
+                                        </header>
+                                        <div className="tiles-preview">
+                                            <div className="tile-mini"><Radio size={14} /> No Clones</div>
+                                            <div className="tile-mini"><Shield size={14} /> PKI: OK</div>
+                                            <div className="tile-mini"><Clock size={14} /> HB: Stable</div>
+                                        </div>
+                                    </article>
+                                </div>
+                            )}
+                        </main>
                     </div>
                 )}
 
                 {/* EV & CHARGING TAB */}
                 {activeTab === 'evcharging' && (
-                    <div className="detail-tab">
+                    <div className="detail-page">
                         <header className="detail-header">
-                            <div className="detail-icon ev-icon"><Zap size={28} /></div>
-                            <div>
+                            <div className="header-icon ev"><Zap size={28} /></div>
+                            <div className="header-text">
                                 <h1>EV & Charging Status</h1>
                                 <p>Real-time vehicle and charging infrastructure metrics</p>
                             </div>
+                            <div className="header-chips">
+                                <span className="chip normal">4</span>
+                                <span className="chip warning">1</span>
+                                <span className="chip critical">0</span>
+                            </div>
                         </header>
-                        <div className="metrics-grid">
-                            <div className="metric-card">
-                                <Gauge size={24} />
-                                <h3>Voltage & Current</h3>
-                                <p>Real-time electrical parameters of charging session</p>
-                                <div className="metric-value">-- V / -- A</div>
+                        <div className="metrics-grid-3">
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Gauge size={20} />
+                                    <span className="tile-title">Voltage & Current</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">400V / 125A</span>
+                                    <Sparkline trend="stable" color="var(--accent-success)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Battery size={24} />
-                                <h3>Battery SoC</h3>
-                                <p>State of Charge reported by vehicle</p>
-                                <div className="metric-value">-- %</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Battery size={20} />
+                                    <span className="tile-title">Battery SoC</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">67%</span>
+                                    <div className="progress-bar"><div className="progress-fill" style={{ width: '67%' }}></div></div>
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <AlertTriangle size={24} />
-                                <h3>SoC Anomaly Detection</h3>
-                                <p>Deviation from expected SoC curve</p>
-                                <div className="metric-value status-normal">Normal</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <AlertTriangle size={20} />
+                                    <span className="tile-title">SoC Anomaly</span>
+                                    <span className="status-dot warning"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value warning">+2.3% deviation</span>
+                                    <Sparkline trend="up" color="var(--accent-warning)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Zap size={24} />
-                                <h3>Energy Delivered</h3>
-                                <p>Total energy transferred (MeterValues)</p>
-                                <div className="metric-value">-- kWh</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Zap size={20} />
+                                    <span className="tile-title">Energy Delivered</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">28.4 kWh</span>
+                                    <Sparkline trend="up" color="var(--accent-success)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Cpu size={24} />
-                                <h3>CAN Bus Commands</h3>
-                                <p>In-vehicle network command conflicts</p>
-                                <div className="metric-value status-normal">No Conflicts</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Cpu size={20} />
+                                    <span className="tile-title">CAN Commands</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">No Conflicts</span>
+                                    <Sparkline trend="stable" color="var(--accent-success)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Database size={24} />
-                                <h3>DTC Logs</h3>
-                                <p>Vehicle diagnostic trouble codes</p>
-                                <div className="metric-value">0 Active</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Database size={20} />
+                                    <span className="tile-title">DTC Logs</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">0 Active</span>
+                                    <span className="tile-sub">Last check: 2s ago</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -247,38 +334,63 @@ export function DashboardNew() {
 
                 {/* CYBER-PHYSICAL TAB */}
                 {activeTab === 'cyberphysical' && (
-                    <div className="detail-tab">
+                    <div className="detail-page">
                         <header className="detail-header">
-                            <div className="detail-icon cyber-icon"><Shield size={28} /></div>
-                            <div>
+                            <div className="header-icon cyber"><Shield size={28} /></div>
+                            <div className="header-text">
                                 <h1>Cyber-Physical Consistency</h1>
-                                <p>Cross-validation between protocol and physical sensor data</p>
+                                <p>Cross-validation between protocol and physical data</p>
+                            </div>
+                            <div className="header-chips">
+                                <span className="chip normal">4</span>
+                                <span className="chip warning">0</span>
+                                <span className="chip critical">0</span>
                             </div>
                         </header>
-                        <div className="metrics-grid">
-                            <div className="metric-card">
-                                <Activity size={24} />
-                                <h3>Speed vs Charge State</h3>
-                                <p>Detect charging while vehicle is moving</p>
-                                <div className="metric-value status-normal">Consistent</div>
+                        <div className="metrics-grid-3">
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Activity size={20} />
+                                    <span className="tile-title">Speed vs Charge</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">Consistent</span>
+                                    <span className="tile-sub">Vehicle stationary</span>
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <MapPin size={24} />
-                                <h3>GPS vs Station ID</h3>
-                                <p>Location validation against station registry</p>
-                                <div className="metric-value status-normal">Matched</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <MapPin size={20} />
+                                    <span className="tile-title">GPS vs Station ID</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">Matched</span>
+                                    <span className="tile-sub">Station: CS-0042</span>
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Zap size={24} />
-                                <h3>VPP Capacity vs Grid</h3>
-                                <p>Virtual Power Plant vs actual grid readings</p>
-                                <div className="metric-value">-- MW</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Zap size={20} />
+                                    <span className="tile-title">VPP vs Grid</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">2.4 MW</span>
+                                    <Sparkline trend="stable" color="var(--accent-success)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Battery size={24} />
-                                <h3>Discharge Power Validation</h3>
-                                <p>CS discharge vs EMS demand comparison</p>
-                                <div className="metric-value status-normal">Normal</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Battery size={20} />
+                                    <span className="tile-title">Discharge Power</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">Normal</span>
+                                    <span className="tile-sub">EMS demand matched</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -286,50 +398,85 @@ export function DashboardNew() {
 
                 {/* NETWORK TAB */}
                 {activeTab === 'network' && (
-                    <div className="detail-tab">
+                    <div className="detail-page">
                         <header className="detail-header">
-                            <div className="detail-icon network-icon"><Wifi size={28} /></div>
-                            <div>
+                            <div className="header-icon network"><Wifi size={28} /></div>
+                            <div className="header-text">
                                 <h1>Network & Protocol</h1>
-                                <p>CSMS level monitoring, protocol anomalies and authorization</p>
+                                <p>CSMS level monitoring and protocol anomalies</p>
+                            </div>
+                            <div className="header-chips">
+                                <span className="chip normal">6</span>
+                                <span className="chip warning">0</span>
+                                <span className="chip critical">0</span>
                             </div>
                         </header>
-                        <div className="metrics-grid">
-                            <div className="metric-card">
-                                <Radio size={24} />
-                                <h3>IP Cloning Detection</h3>
-                                <p>Same ID from multiple IP addresses</p>
-                                <div className="metric-value status-normal">No Clones</div>
+                        <div className="metrics-grid-3">
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Radio size={20} />
+                                    <span className="tile-title">IP Cloning</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">No Clones</span>
+                                    <span className="tile-sub">1 active connection</span>
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Shield size={24} />
-                                <h3>Signature Validation</h3>
-                                <p>PKI and digital signature errors</p>
-                                <div className="metric-value">0 Errors</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Shield size={20} />
+                                    <span className="tile-title">PKI Validation</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">0 Errors</span>
+                                    <span className="tile-sub">Cert valid: 89 days</span>
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Activity size={24} />
-                                <h3>Command Frequency</h3>
-                                <p>Abnormal OCPP command patterns</p>
-                                <div className="metric-value status-normal">Normal</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Activity size={20} />
+                                    <span className="tile-title">Command Frequency</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">Normal</span>
+                                    <Sparkline trend="stable" color="var(--accent-success)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Clock size={24} />
-                                <h3>Heartbeat Flapping</h3>
-                                <p>Inconsistent status notifications</p>
-                                <div className="metric-value status-normal">Stable</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Clock size={20} />
+                                    <span className="tile-title">Heartbeat</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">Stable</span>
+                                    <span className="tile-sub">30s interval</span>
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <Database size={24} />
-                                <h3>Diagnostics Payload</h3>
-                                <p>Unusual message sizes (beaconing)</p>
-                                <div className="metric-value">-- bytes</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <Database size={20} />
+                                    <span className="tile-title">Diagnostics Size</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">1.2 KB</span>
+                                    <Sparkline trend="stable" color="var(--accent-success)" />
+                                </div>
                             </div>
-                            <div className="metric-card">
-                                <AlertTriangle size={24} />
-                                <h3>Access Anomalies</h3>
-                                <p>Operator login from unusual locations</p>
-                                <div className="metric-value status-normal">None</div>
+                            <div className="metric-tile">
+                                <div className="tile-header">
+                                    <AlertTriangle size={20} />
+                                    <span className="tile-title">Access Anomalies</span>
+                                    <span className="status-dot normal"></span>
+                                </div>
+                                <div className="tile-body">
+                                    <span className="tile-value">None</span>
+                                    <span className="tile-sub">GeoIP: matched</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -337,10 +484,10 @@ export function DashboardNew() {
 
                 {/* LOGS TAB */}
                 {activeTab === 'logs' && (
-                    <div className="logs-tab">
-                        <section className="panel full-height">
+                    <div className="logs-page">
+                        <section className="panel">
                             <header className="panel-header">
-                                <h2>Recent Logs</h2>
+                                <h2>System Logs</h2>
                                 <span className="panel-badge">{logs.length}</span>
                             </header>
                             <div className="panel-content">
@@ -352,28 +499,7 @@ export function DashboardNew() {
                                             <span className="log-message">{log.message}</span>
                                         </div>
                                     ))}
-                                    {logs.length === 0 && (
-                                        <div className="logs-empty">No logs yet</div>
-                                    )}
                                 </div>
-                            </div>
-                        </section>
-                    </div>
-                )}
-
-                {/* ANALYTICS TAB */}
-                {activeTab === 'analytics' && (
-                    <div className="analytics-tab">
-                        <section className="panel full-height">
-                            <header className="panel-header">
-                                <h2>Analytics</h2>
-                            </header>
-                            <div className="panel-content analytics-placeholder">
-                                <div className="placeholder-icon">
-                                    <BarChart3 size={48} />
-                                </div>
-                                <h3>Coming Soon</h3>
-                                <p>Analytics and metrics will be displayed here</p>
                             </div>
                         </section>
                     </div>
