@@ -38,7 +38,7 @@ const documents: Document[] = [
         ],
         icon: Database,
         severity: 'high',
-        author: 'BSG Research Team'
+        author: 'Kardelen Demir'
     },
     {
         id: 'firmware-dos',
@@ -52,7 +52,7 @@ const documents: Document[] = [
         ],
         icon: Cpu,
         severity: 'critical',
-        author: 'BSG Research Team'
+        author: 'Betül Altunyuva'
     },
     {
         id: 'ocpp-beaconing',
@@ -66,7 +66,7 @@ const documents: Document[] = [
         ],
         icon: Radio,
         severity: 'high',
-        author: 'BSG Research Team'
+        author: 'Göksu Kayar'
     },
     {
         id: 'digital-twin',
@@ -80,9 +80,10 @@ const documents: Document[] = [
         ],
         icon: Shield,
         severity: 'medium',
-        author: 'BSG Research Team'
+        author: 'Mehmet Erdem Abacı'
     }
 ];
+
 
 export function Documents() {
     return (
