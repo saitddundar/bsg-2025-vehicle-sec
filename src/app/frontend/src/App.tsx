@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
+import { Scenarios } from './pages/Scenarios';
 import './App.css';
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
+      case 'scenarios':
+        return <Scenarios />;
       case 'home':
       default:
         return <Home />;

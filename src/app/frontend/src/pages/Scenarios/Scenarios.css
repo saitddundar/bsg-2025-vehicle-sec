@@ -1,0 +1,146 @@
+.scenarios-page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.scenarios-header {
+    margin-bottom: 32px;
+}
+
+.scenarios-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.scenarios-header .subtitle {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+/* Grid */
+.scenarios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card */
+.scenario-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.scenario-card:hover {
+    border-color: var(--text-dim);
+    transform: translateY(-2px);
+}
+
+.scenario-card.severity-critical {
+    border-left: 3px solid var(--accent-danger);
+}
+
+.scenario-card.severity-high {
+    border-left: 3px solid var(--accent-warning);
+}
+
+.scenario-card.severity-medium {
+    border-left: 3px solid var(--accent-primary);
+}
+
+/* Icon */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-hover);
+    border-radius: 10px;
+    flex-shrink: 0;
+    color: var(--accent-primary);
+}
+
+.severity-critical .card-icon {
+    color: var(--accent-danger);
+}
+
+.severity-high .card-icon {
+    color: var(--accent-warning);
+}
+
+/* Content */
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-titles {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.card-titles h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.title-jp {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    opacity: 0.7;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Meta */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.severity-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.severity-badge.critical {
+    background: rgba(248, 113, 113, 0.15);
+    color: var(--accent-danger);
+}
+
+.severity-badge.high {
+    background: rgba(251, 191, 36, 0.15);
+    color: var(--accent-warning);
+}
+
+.severity-badge.medium {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-primary);
+}
+
+.author {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
