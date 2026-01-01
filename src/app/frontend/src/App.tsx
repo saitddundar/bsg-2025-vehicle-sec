@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
-import { Scenarios } from './pages/Scenarios';
+import { Documents } from './pages/Documents';
 import './App.css';
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
-      case 'scenarios':
-        return <Scenarios />;
+      case 'docs':
+        return <Documents />;
       case 'home':
       default:
         return <Home />;
@@ -25,3 +25,4 @@ function App() {
 }
 
 export default App;
+
