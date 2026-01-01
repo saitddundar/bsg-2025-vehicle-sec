@@ -1,6 +1,7 @@
 export { SimulationCard } from './SimulationCard';
 export { LogViewer } from './LogViewer';
 export { Header } from './Header';
+export { Layout } from './Layout';
 export { VehicleInfo } from './VehicleInfo';
 export { SimulationDock } from './SimulationDock';
 export { VehicleDetails } from './VehicleDetails';

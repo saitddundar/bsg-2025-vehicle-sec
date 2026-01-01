@@ -1,0 +1,116 @@
+/* Layout Container */
+.haru-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--bg-main);
+}
+
+/* Header */
+.haru-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.haru-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+/* Body (Sidebar + Main) */
+.haru-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.haru-sidebar {
+    width: 200px;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.2s ease;
+    flex-shrink: 0;
+}
+
+.haru-sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-dim);
+    transition: all 0.15s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background: var(--bg-hover);
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-primary);
+}
+
+.nav-item.active svg {
+    color: var(--accent-primary);
+}
+
+.haru-sidebar.collapsed .nav-item {
+    justify-content: center;
+    padding: 10px;
+}
+
+.haru-sidebar.collapsed .nav-item span {
+    display: none;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    padding: 12px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    transition: all 0.15s ease;
+}
+
+.sidebar-toggle:hover {
+    background: var(--bg-hover);
+    color: var(--text-main);
+}
+
+/* Main Content */
+.haru-main {
+    flex: 1;
+    overflow: auto;
+    padding: 24px;
+}

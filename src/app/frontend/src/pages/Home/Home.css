@@ -1,0 +1,33 @@
+.home-page {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-hero {
+    text-align: center;
+}
+
+.home-title {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+}
+
+.title-en {
+    font-size: 5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px;
+}
+
+.title-jp {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    opacity: 0.7;
+}
