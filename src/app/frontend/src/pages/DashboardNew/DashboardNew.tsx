@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import {
-    Activity, Shield, Zap,
+    Shield, Zap,
     Wifi,
     Play, Pause, FileText, Search
 } from 'lucide-react';
@@ -81,7 +81,7 @@ export function DashboardNew() {
     const [search, setSearch] = useState('');
     const [systemHealth, setSystemHealth] = useState(87);
     const [riskLevel, setRiskLevel] = useState<'low' | 'medium' | 'high' | 'critical'>('medium');
-    const [eventStreamExpanded, setEventStreamExpanded] = useState(false);
+
 
     const selectedScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId), [selectedScenarioId]);
 
@@ -117,17 +117,21 @@ export function DashboardNew() {
                         "Encryption handshake complete",
                         "New session token generated"
                     ];
-                    addLog(messages[Math.floor(Math.random() * messages.length)], 'info');
-                    if (logs.length > 0 && !eventStreamExpanded) {
-                        setEventStreamExpanded(true);
-                    }
+                    const message = messages[Math.floor(Math.random() * messages.length)];
+                    const newLog: LogEntry = {
+                        id: Math.random().toString(36).substr(2, 9),
+                        timestamp: new Date().toLocaleTimeString('en-GB', { hour12: false }),
+                        level: 'info',
+                        message
+                    };
+                    setLogs(prev => [newLog, ...prev].slice(0, 50));
                 }
                 // Simulate system health changes
                 setSystemHealth(prev => Math.max(50, Math.min(100, prev + (Math.random() - 0.5) * 2)));
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [isRunning, logs.length, eventStreamExpanded]);
+    }, [isRunning]);
 
     const formatRunTime = (seconds: number) => {
         const m = Math.floor(seconds / 60);
@@ -138,16 +142,6 @@ export function DashboardNew() {
     const filteredScenarios = useMemo(() => {
         return scenarios.filter(s => s.name.toLowerCase().includes(search.toLowerCase()) || s.author.toLowerCase().includes(search.toLowerCase()));
     }, [search]);
-
-    const addLog = (message: string, level: 'info' | 'warn' | 'error' = 'info') => {
-        const newLog: LogEntry = {
-            id: Math.random().toString(36).substr(2, 9),
-            timestamp: new Date().toLocaleTimeString('en-GB', { hour12: false }),
-            level,
-            message
-        };
-        setLogs(prev => [newLog, ...prev].slice(0, 50));
-    };
 
     return (
         <div className="dashboard-container">
@@ -181,16 +175,16 @@ export function DashboardNew() {
                     <div className="sidebar-header-compact">
                         <span className="sidebar-title-compact"><Shield size={12} /> SCENARIOS</span>
                         <span className="sidebar-count">{scenarios.length}</span>
-                        </div>
+                    </div>
                     <div className="search-container-compact">
                         <Search size={12} className="search-icon" />
-                            <input
-                                type="text"
+                        <input
+                            type="text"
                             className="sidebar-search-compact"
                             placeholder="Search..."
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                            />
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
                     </div>
                     <div className="scenario-list-compact custom-scrollbar">
                         {filteredScenarios.map(s => (
@@ -213,81 +207,112 @@ export function DashboardNew() {
                 <main className="content-area-center">
                     {activeTab === 'control' ? (
                         <div className="control-central-view-compact">
-                            {/* System State Core - Centered */}
-                            <div className="system-state-core-center">
-                                <div className="core-container">
-                                    <div className="core-ring outer-ring" />
-                                    <div className="core-ring middle-ring" />
-                                    <div className="core-inner">
-                                        <div className="core-value">{systemHealth}</div>
-                                        <div className="core-label">SYSTEM HEALTH</div>
-                                        <div className="core-status">
-                                            <div className={`core-status-dot ${systemHealth > 80 ? 'healthy' : systemHealth > 60 ? 'warning' : 'critical'}`} />
-                                            <span>{systemHealth > 80 ? 'OPERATIONAL' : systemHealth > 60 ? 'DEGRADED' : 'CRITICAL'}</span>
-                                        </div>
+                            {/* V2G Power Grid Visualization */}
+                            <div className="v2g-power-grid">
+                                {/* Power Grid Node */}
+                                <div className="grid-node">
+                                    <div className="node-icon-wrapper grid-icon">
+                                        <svg viewBox="0 0 40 40" className="node-svg">
+                                            <circle cx="20" cy="20" r="18" fill="none" stroke="var(--accent-cyber)" strokeWidth="2" />
+                                            <path d="M10 20 L15 12 L20 20 L25 12 L30 20" fill="none" stroke="var(--accent-cyber)" strokeWidth="2" strokeLinecap="round" />
+                                            <path d="M10 28 L15 20 L20 28 L25 20 L30 28" fill="none" stroke="var(--accent-cyber)" strokeWidth="2" strokeLinecap="round" />
+                                        </svg>
                                     </div>
+                                    <span className="node-label">POWER GRID</span>
+                                    <span className="node-value">230V / 50Hz</span>
+                                </div>
+
+                                {/* Energy Flow Line 1 */}
+                                <div className="energy-flow-line">
+                                    <div className="flow-track"></div>
+                                    <div className={`flow-pulse pulse-1 ${isRunning ? 'active' : ''}`}></div>
+                                    <div className={`flow-pulse pulse-2 ${isRunning ? 'active' : ''}`}></div>
+                                    <div className={`flow-pulse pulse-3 ${isRunning ? 'active' : ''}`}></div>
+                                </div>
+
+                                {/* EVSE Station Node */}
+                                <div className="grid-node station-node">
+                                    <div className="node-icon-wrapper station-icon">
+                                        <svg viewBox="0 0 40 40" className="node-svg">
+                                            <rect x="8" y="6" width="24" height="28" rx="3" fill="none" stroke="var(--accent-ev)" strokeWidth="2" />
+                                            <rect x="12" y="10" width="16" height="8" rx="1" fill="rgba(255,214,0,0.2)" stroke="var(--accent-ev)" strokeWidth="1" />
+                                            <circle cx="20" cy="26" r="4" fill="var(--accent-ev)" className="station-port-glow" />
+                                            <text x="20" y="13" textAnchor="middle" fill="var(--accent-ev)" fontSize="4" fontWeight="bold">{systemHealth.toFixed(0)}%</text>
+                                        </svg>
+                                    </div>
+                                    <span className="node-label">EVSE STATION</span>
+                                    <span className="node-value">DC 50kW</span>
+                                </div>
+
+                                {/* Energy Flow Line 2 */}
+                                <div className="energy-flow-line">
+                                    <div className="flow-track"></div>
+                                    <div className={`flow-pulse pulse-1 ${isRunning ? 'active' : ''}`}></div>
+                                    <div className={`flow-pulse pulse-2 ${isRunning ? 'active' : ''}`}></div>
+                                    <div className={`flow-pulse pulse-3 ${isRunning ? 'active' : ''}`}></div>
+                                </div>
+
+                                {/* Vehicle Node */}
+                                <div className="grid-node vehicle-node">
+                                    <div className="node-icon-wrapper vehicle-icon">
+                                        <svg viewBox="0 0 50 30" className="node-svg vehicle">
+                                            <rect x="5" y="8" width="40" height="16" rx="4" fill="var(--accent-ev)" opacity="0.8" />
+                                            <rect x="10" y="4" width="30" height="8" rx="2" fill="var(--accent-ev)" opacity="0.6" />
+                                            <rect x="13" y="6" width="10" height="4" rx="1" fill="rgba(100,200,255,0.5)" />
+                                            <rect x="27" y="6" width="10" height="4" rx="1" fill="rgba(100,200,255,0.5)" />
+                                            <circle cx="12" cy="24" r="4" fill="#333" />
+                                            <circle cx="38" cy="24" r="4" fill="#333" />
+                                        </svg>
+                                    </div>
+                                    <span className="node-label">ELECTRIC VEHICLE</span>
+                                    <span className="node-value">SoC: {systemHealth.toFixed(0)}%</span>
                                 </div>
                             </div>
 
-                            {/* Charts Section */}
-                            <div className="charts-section">
-                                <div className="chart-card">
-                                    <div className="chart-header">
-                                        <Zap size={16} className="chart-icon ev-icon" />
-                                        <span className="chart-title">Energy Flow</span>
+                            {/* Status Metrics Bar */}
+                            <div className="status-metrics-bar">
+                                <div className="metric-card">
+                                    <span className="metric-label">Power Flow</span>
+                                    <span className="metric-value">{isRunning ? '48.2' : '0.0'} <small>kW</small></span>
+                                </div>
+                                <div className="metric-card">
+                                    <span className="metric-label">Battery</span>
+                                    <div className="battery-indicator">
+                                        <div className="battery-fill" style={{ width: `${systemHealth}%` }}></div>
                                     </div>
-                                    <div className="chart-body">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <AreaChart data={mockTimeSeries.slice(0, 12)}>
-                                                <defs>
-                                                    <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
-                                                        <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.3} />
-                                                        <stop offset="95%" stopColor="var(--accent-ev)" stopOpacity={0} />
-                                                    </linearGradient>
-                                                </defs>
-                                                <XAxis dataKey="time" hide />
-                                                <YAxis hide />
-                                                <Tooltip />
-                                                <Area type="monotone" dataKey="soc" stroke="var(--accent-ev)" strokeWidth={2} fillOpacity={1} fill="url(#energyGradient)" />
-                                            </AreaChart>
-                                        </ResponsiveContainer>
-                                    </div>
+                                    <span className="metric-value-small">{systemHealth.toFixed(0)}%</span>
+                                </div>
+                                <div className="metric-card">
+                                    <span className="metric-label">Session</span>
+                                    <span className="metric-value">{formatRunTime(runTime)}</span>
+                                </div>
+                                <div className="metric-card status-card">
+                                    <div className={`status-indicator-dot ${isRunning ? 'active' : ''}`}></div>
+                                    <span className="status-text">{isRunning ? 'CHARGING' : 'STANDBY'}</span>
                                 </div>
                             </div>
 
-                            {/* Event Stream - Collapsible */}
-                            <div className={`event-stream-timeline-compact ${eventStreamExpanded || logs.length > 0 ? 'expanded' : 'collapsed'}`}>
-                                <div className="event-stream-header-compact" onClick={() => setEventStreamExpanded(!eventStreamExpanded)}>
-                                    <div className="stream-header-left">
-                                        <Activity size={14} />
-                                        <span>EVENT STREAM</span>
-                                        {logs.length > 0 && <span className="event-count">({logs.length})</span>}
-                                    </div>
-                                    <div className="stream-header-right">
-                                        <div className={`live-indicator ${isRunning ? 'active' : ''}`} />
-                                        <span className="live-text">{isRunning ? 'LIVE' : 'STANDBY'}</span>
-                                    </div>
+                            {/* Event Log Section */}
+                            <div className="event-log-section">
+                                <div className="section-header-small">
+                                    <span>SYSTEM EVENTS</span>
+                                    <span className="event-count-badge">{logs.length}</span>
                                 </div>
-                                {(eventStreamExpanded || logs.length > 0) && (
-                                    <div className="event-stream-content-compact custom-scrollbar">
-                                        {logs.length > 0 ? (
-                                            logs.map(l => (
-                                                <div key={l.id} className="event-log-row-compact">
-                                                    <span className="event-timestamp">{l.timestamp}</span>
-                                                    <span className={`event-source ${l.level}`}>
-                                                        {l.level === 'info' ? 'SYS' : l.level === 'warn' ? 'IDS' : 'FIREWALL'}
-                                                    </span>
-                                                    <span className="event-message">{l.message}</span>
-                                                </div>
-                                            ))
-                                        ) : (
-                                            <div className="event-stream-empty">
-                                                <Activity size={24} style={{ opacity: 0.3 }} />
-                                                <span>Waiting for telemetry...</span>
+                                <div className="event-list-scroll">
+                                    {logs.length > 0 ? (
+                                        logs.slice(0, 8).map(log => (
+                                            <div key={log.id} className={`event-item ${log.level}`}>
+                                                <span className="event-time">{log.timestamp}</span>
+                                                <span className="event-type">{log.level === 'info' ? 'SYS' : log.level === 'warn' ? 'WARN' : 'ERR'}</span>
+                                                <span className="event-msg">{log.message}</span>
                                             </div>
-                                        )}
-                                    </div>
-                                )}
+                                        ))
+                                    ) : (
+                                        <div className="empty-events">
+                                            <span>Waiting for events...</span>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     ) : activeTab === 'ev' ? (
@@ -373,7 +398,7 @@ export function DashboardNew() {
                     ) : activeTab === 'logs' ? (
                         <div className="detail-view">
                             <div className="detail-header">
-                                <Activity size={24} className="detail-icon" />
+                                <FileText size={24} className="detail-icon" />
                                 <div>
                                     <h1 className="detail-title">SYSTEM LOGS</h1>
                                     <p className="detail-subtitle">Real-time Event Logging</p>

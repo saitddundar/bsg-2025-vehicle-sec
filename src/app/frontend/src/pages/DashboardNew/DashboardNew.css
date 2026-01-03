@@ -1,5 +1,3 @@
-
-
 .dashboard-container {
     display: flex;
     flex-direction: column;
@@ -396,6 +394,7 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
@@ -500,10 +499,13 @@
 }
 
 @keyframes glow-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         box-shadow: 0 0 10px var(--accent-cyber), 0 0 20px var(--accent-cyber);
     }
+
     50% {
         opacity: 0.7;
         box-shadow: 0 0 15px var(--accent-cyber), 0 0 30px var(--accent-cyber);
@@ -1153,10 +1155,13 @@
 }
 
 @keyframes risk-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         box-shadow: 0 0 0 0 currentColor;
     }
+
     50% {
         opacity: 0.7;
         box-shadow: 0 0 0 6px transparent;
@@ -1164,11 +1169,14 @@
 }
 
 @keyframes risk-pulse-critical {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
         box-shadow: 0 0 0 0 currentColor, 0 0 10px currentColor;
     }
+
     50% {
         opacity: 0.8;
         transform: scale(1.1);
@@ -1497,7 +1505,209 @@
     margin-left: 4px;
 }
 
-/* System State Core - Centered */
+/* Charging Animation - Centered */
+.charging-animation-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    min-height: 300px;
+}
+
+.charging-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.charging-ring {
+    position: absolute;
+    border: 2px solid var(--border-subtle);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.charging-ring.outer-ring {
+    width: 280px;
+    height: 280px;
+    animation: slow-rotate 25s linear infinite;
+    border-color: var(--accent-ev);
+    opacity: 0.4;
+}
+
+.charging-ring.middle-ring {
+    width: 220px;
+    height: 220px;
+    animation: slow-rotate-reverse 20s linear infinite;
+    border-color: var(--accent-ev);
+    opacity: 0.3;
+}
+
+.charging-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 180px;
+    height: 180px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.charging-vehicle {
+    width: 120px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: vehicle-pulse 2s ease-in-out infinite;
+}
+
+.vehicle-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px var(--accent-ev));
+}
+
+@keyframes vehicle-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+.charging-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.charging-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.charging-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-ev), #FFE066);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px var(--accent-ev);
+    position: relative;
+    overflow: hidden;
+}
+
+.charging-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: charging-shimmer 2s infinite;
+}
+
+@keyframes charging-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.charging-value {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-ev);
+    text-shadow: 0 0 10px var(--accent-ev);
+    line-height: 1;
+}
+
+.charging-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.charging-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.charging-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.charging-status-dot.charging {
+    background: var(--accent-ev);
+    box-shadow: 0 0 8px var(--accent-ev);
+    animation: charging-pulse 1.5s ease-in-out infinite;
+}
+
+.charging-status-dot.warning {
+    background: var(--status-warning);
+    box-shadow: 0 0 8px var(--status-warning);
+    animation: risk-pulse 2s ease-in-out infinite;
+}
+
+.charging-status-dot.critical {
+    background: var(--status-danger);
+    box-shadow: 0 0 8px var(--status-danger);
+    animation: risk-pulse-critical 1s ease-in-out infinite;
+}
+
+@keyframes charging-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--accent-ev), 0 0 10px var(--accent-ev);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+        box-shadow: 0 0 0 4px transparent, 0 0 20px var(--accent-ev);
+    }
+}
+
+/* System State Core - Centered (Old - Keep for compatibility) */
 .system-state-core-center {
     display: flex;
     align-items: center;
@@ -1513,8 +1723,377 @@
     position: relative;
     overflow: hidden;
     padding: 24px;
-    gap: 24px;
+    gap: 20px;
 }
+
+/* ============================================
+   EV CHARGING SCENE - HORIZONTAL LAYOUT
+   ============================================ */
+
+.ev-charging-scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 40px 20px;
+    min-height: 220px;
+    position: relative;
+}
+
+/* Electric Vehicle */
+.ev-vehicle-wrapper {
+    position: relative;
+    width: 220px;
+    height: 120px;
+    z-index: 2;
+}
+
+.ev-car-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 10px 30px rgba(255, 214, 0, 0.2));
+}
+
+.headlight-glow {
+    animation: headlight-pulse 2s ease-in-out infinite;
+}
+
+@keyframes headlight-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px #FFE066);
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 15px #FFE066);
+    }
+}
+
+.port-indicator {
+    animation: port-blink 1s ease-in-out infinite;
+}
+
+@keyframes port-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.ev-shadow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+/* Energy Flow Container */
+.energy-flow-container {
+    position: relative;
+    width: 140px;
+    height: 80px;
+    z-index: 1;
+}
+
+.cable-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cable-inner {
+    animation: cable-glow 2s ease-in-out infinite;
+}
+
+@keyframes cable-glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 5px var(--accent-ev));
+        opacity: 1;
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px var(--accent-ev));
+        opacity: 0.8;
+    }
+}
+
+/* Energy Particles */
+.energy-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-ev);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-ev), 0 0 20px var(--accent-ev);
+    z-index: 5;
+}
+
+.energy-particle.particle-1 {
+    animation: particle-flow 2s linear infinite;
+    animation-delay: 0s;
+}
+
+.energy-particle.particle-2 {
+    animation: particle-flow 2s linear infinite;
+    animation-delay: 0.4s;
+}
+
+.energy-particle.particle-3 {
+    animation: particle-flow 2s linear infinite;
+    animation-delay: 0.8s;
+}
+
+.energy-particle.particle-4 {
+    animation: particle-flow 2s linear infinite;
+    animation-delay: 1.2s;
+}
+
+.energy-particle.particle-5 {
+    animation: particle-flow 2s linear infinite;
+    animation-delay: 1.6s;
+}
+
+@keyframes particle-flow {
+    0% {
+        left: 100%;
+        top: 40%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        top: 50%;
+    }
+
+    50% {
+        top: 70%;
+    }
+
+    75% {
+        top: 70%;
+    }
+
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        left: 0%;
+        top: 40%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Charging Station */
+.charging-station-wrapper {
+    position: relative;
+    width: 100px;
+    height: 160px;
+    z-index: 2;
+}
+
+.station-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+.station-screen {
+    animation: screen-flicker 4s ease-in-out infinite;
+}
+
+@keyframes screen-flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    52% {
+        opacity: 1;
+    }
+}
+
+.screen-text {
+    animation: text-glow 2s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 3px var(--accent-ev));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px var(--accent-ev));
+    }
+}
+
+.port-glow {
+    animation: port-glow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes port-glow-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 5px var(--accent-ev));
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 15px var(--accent-ev));
+    }
+}
+
+.status-blink {
+    animation: status-blink-anim 1s ease-in-out infinite;
+}
+
+@keyframes status-blink-anim {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.station-glow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 15px;
+    background: radial-gradient(ellipse at center, rgba(255, 214, 0, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: station-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes station-glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Charging Info Bar */
+.charging-info-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 16px 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-ev);
+    text-shadow: 0 0 10px rgba(255, 214, 0, 0.3);
+}
+
+.info-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-subtle);
+}
+
+.status-item {
+    flex-direction: row;
+    gap: 8px;
+}
+
+.charging-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    transition: all 0.3s;
+}
+
+.charging-status-indicator.active {
+    background: var(--accent-ev);
+    box-shadow: 0 0 10px var(--accent-ev), 0 0 20px var(--accent-ev);
+    animation: charging-indicator-pulse 1s ease-in-out infinite;
+}
+
+@keyframes charging-indicator-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px var(--accent-ev), 0 0 20px var(--accent-ev);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--accent-ev), 0 0 40px var(--accent-ev);
+    }
+}
+
+.info-status {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 
 .charts-section {
     flex: 1;
@@ -1674,6 +2253,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -1683,6 +2263,7 @@
     from {
         transform: rotate(360deg);
     }
+
     to {
         transform: rotate(0deg);
     }
@@ -1817,7 +2398,7 @@
     text-transform: uppercase;
 }
 
-.live-indicator.active + .live-text {
+.live-indicator.active+.live-text {
     color: var(--status-success);
 }
 
@@ -2390,7 +2971,7 @@
     .dashboard-main-layout-three-col {
         grid-template-columns: 220px 1fr 300px;
     }
-    
+
     .dominant-value {
         font-size: 2.5rem;
     }
@@ -2400,4 +2981,376 @@
     .dashboard-main-layout-three-col {
         grid-template-columns: 200px 1fr 280px;
     }
+}
+
+/* ============================================
+   V2G POWER GRID VISUALIZATION
+   ============================================ */
+
+.v2g-power-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 32px 24px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    min-height: 180px;
+}
+
+.grid-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+}
+
+.node-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 2px solid var(--border-subtle);
+    transition: all 0.3s ease;
+}
+
+.node-icon-wrapper.grid-icon {
+    border-color: var(--accent-cyber);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.node-icon-wrapper.station-icon {
+    border-color: var(--accent-ev);
+    box-shadow: 0 0 20px rgba(255, 214, 0, 0.2);
+}
+
+.node-icon-wrapper.vehicle-icon {
+    border-color: var(--accent-ev);
+    box-shadow: 0 0 20px rgba(255, 214, 0, 0.2);
+    width: 90px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.node-svg {
+    width: 40px;
+    height: 40px;
+}
+
+.node-svg.vehicle {
+    width: 50px;
+    height: 30px;
+}
+
+.node-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.node-value {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Energy Flow Lines */
+.energy-flow-line {
+    width: 80px;
+    height: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.flow-track {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--border-subtle);
+    border-radius: 1px;
+}
+
+.flow-pulse {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-ev);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 10px var(--accent-ev);
+}
+
+.flow-pulse.active.pulse-1 {
+    animation: pulse-flow 1.5s linear infinite;
+}
+
+.flow-pulse.active.pulse-2 {
+    animation: pulse-flow 1.5s linear infinite 0.5s;
+}
+
+.flow-pulse.active.pulse-3 {
+    animation: pulse-flow 1.5s linear infinite 1s;
+}
+
+@keyframes pulse-flow {
+    0% {
+        left: 0%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.station-port-glow {
+    animation: port-glow-anim 1.5s ease-in-out infinite;
+}
+
+@keyframes port-glow-anim {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 3px var(--accent-ev));
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 8px var(--accent-ev));
+    }
+}
+
+/* Status Metrics Bar */
+.status-metrics-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.metric-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    min-width: 100px;
+}
+
+.metric-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-ev);
+}
+
+.metric-value small {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.metric-value-small {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.battery-indicator {
+    width: 80px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+}
+
+.battery-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-ev), #FFE066);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 8px var(--accent-ev);
+}
+
+.status-card {
+    flex-direction: row;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+.status-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    transition: all 0.3s;
+}
+
+.status-indicator-dot.active {
+    background: var(--status-success);
+    box-shadow: 0 0 10px var(--status-success);
+    animation: status-pulse-new 1.5s ease-in-out infinite;
+}
+
+@keyframes status-pulse-new {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.status-text {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+/* Event Log Section */
+.event-log-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 150px;
+}
+
+.section-header-small {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-count-badge {
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--accent-primary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+}
+
+.event-list-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.event-item {
+    display: grid;
+    grid-template-columns: 65px 50px 1fr;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.event-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.event-item.info {
+    border-left-color: var(--accent-primary);
+}
+
+.event-item.warn {
+    border-left-color: var(--status-warning);
+}
+
+.event-item.error {
+    border-left-color: var(--status-danger);
+}
+
+.event-time {
+    color: var(--text-dim);
+}
+
+.event-type {
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.event-item.warn .event-type {
+    color: var(--status-warning);
+}
+
+.event-item.error .event-type {
+    color: var(--status-danger);
+}
+
+.event-msg {
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.empty-events {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 80px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    font-style: italic;
 }
