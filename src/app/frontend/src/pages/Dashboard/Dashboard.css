@@ -26,11 +26,21 @@
 
 .sidebar-section {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-subtle);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.section-header {
+    padding: 0.75rem 1rem;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header .label {
+    color: var(--text-muted);
 }
 
 .scenarios-fixed {
@@ -64,16 +74,44 @@
     text-align: left;
     padding: 0.75rem;
     background: var(--bg-main);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-subtle);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.scenario-card-pro:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+}
+
+.scenario-card-pro .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scenario-card-pro .card-top svg {
+    color: var(--text-muted);
+}
+
+.scenario-card-pro.active .card-top svg {
+    color: var(--status-danger);
+}
+
+.scenario-card-pro.selected {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
 }
 
 .scenario-card-pro.active {
-    border-color: var(--accent-primary);
-    background: var(--bg-hover);
+    border-color: var(--status-danger);
+    background: var(--bg-card-hover);
+    box-shadow: 0 0 10px rgba(255, 0, 61, 0.2);
 }
 
 .scen-name {
@@ -85,6 +123,43 @@
 .scen-desc {
     font-size: 0.65rem;
     color: var(--text-dim);
+}
+
+/* Scenario Start Button */
+.scenario-start-btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #1e90ff 100%);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.scenario-start-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.scenario-start-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.scenario-start-btn.running {
+    background: linear-gradient(135deg, var(--status-danger) 0%, #ff4444 100%);
 }
 
 .empty-state-msg {
@@ -110,7 +185,7 @@
 
 .main-section {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-subtle);
     border-radius: 12px;
     flex-shrink: 0;
     min-height: 400px;
@@ -119,8 +194,12 @@
 
 .box-header {
     padding: 0.75rem 1.25rem;
-    background: var(--bg-hover);
-    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.box-header .label {
+    color: var(--text-muted);
 }
 
 .box-body {
@@ -138,25 +217,39 @@
 
 .collapsible-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-subtle);
     border-radius: 8px;
     overflow: hidden;
 }
 
 .card-header {
     padding: 0.6rem 1rem;
-    background: var(--bg-hover);
+    background: var(--bg-panel);
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.card-header:hover {
+    background: var(--bg-card-hover);
+}
+
+.card-header .label {
+    color: var(--text-muted);
+}
+
+.card-header svg {
+    color: var(--accent-primary);
+    transition: transform 0.2s ease;
 }
 
 .console-launcher {
     margin-top: auto;
     padding: 0.75rem;
-    background: var(--bg-hover);
-    border: 1px solid var(--border-color);
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
     border-radius: 8px;
     font-size: 0.75rem;
     font-weight: 700;
@@ -165,6 +258,13 @@
     justify-content: center;
     gap: 0.75rem;
     color: var(--accent-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.console-launcher:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-primary);
 }
 
 /* CONSOLE MODAL */
@@ -190,7 +290,6 @@
     box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
 }
 
-
 .window-header {
     height: 40px;
     padding: 0 1rem;
@@ -198,7 +297,30 @@
     align-items: center;
     justify-content: space-between;
     background: #161b22;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-main);
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.icon-btn-small {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.icon-btn-small:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--status-danger);
 }
 
 .window-content {
@@ -207,7 +329,6 @@
     display: flex;
     flex-direction: column;
 }
-
 
 .label {
     font-size: 0.65rem;

@@ -16,7 +16,7 @@ import {
     stopSimulation,
     connectToSimulationLogs
 } from '../../services/simulationService';
-import { Play, Square, ChevronDown, ChevronRight, X, Terminal } from 'lucide-react';
+import { Play, Square, ChevronDown, ChevronRight, X, Terminal, Zap } from 'lucide-react';
 import type { Simulation, SimulationLog } from '../../types';
 import './Dashboard.css';
 
@@ -32,8 +32,10 @@ export function Dashboard() {
     const [panels, setPanels] = useState({
         intelligence: true,
         diagnostics: true,
-        asset: true
+        asset: true,
+        eventStream: false
     });
+    const [selectedSim, setSelectedSim] = useState<Simulation | null>(null);
 
     const wsRef = useRef<WebSocket | null>(null);
     const [voltage, setVoltage] = useState(230);
@@ -189,17 +191,17 @@ export function Dashboard() {
                         <div className="scenario-limited-list">
                             {availableSims && availableSims.length > 0 ? (
                                 availableSims.map(sim => (
-                                    <button
+                                    <div
                                         key={sim.id}
-                                        className={`scenario-card-pro ${activeSim?.id === sim.id ? 'active' : ''}`}
-                                        onClick={() => handleToggleSim(sim)}
+                                        className={`scenario-card-pro ${activeSim?.id === sim.id ? 'active' : ''} ${selectedSim?.id === sim.id ? 'selected' : ''}`}
+                                        onClick={() => setSelectedSim(sim)}
                                     >
                                         <div className="card-top">
                                             <span className="scen-name">{sim.name}</span>
-                                            {activeSim?.id === sim.id ? <Square size={12} fill="currentColor" /> : <Play size={12} />}
+                                            {activeSim?.id === sim.id ? <Square size={12} /> : <Play size={12} />}
                                         </div>
                                         <p className="scen-desc">{sim.description}</p>
-                                    </button>
+                                    </div>
                                 ))
                             ) : (
                                 <div className="empty-state-msg">
@@ -207,8 +209,19 @@ export function Dashboard() {
                                 </div>
                             )}
 
-
-
+                            {/* Scenario Start/Stop Button */}
+                            {selectedSim && (
+                                <button
+                                    className={`scenario-start-btn ${activeSim?.id === selectedSim.id ? 'running' : ''}`}
+                                    onClick={() => handleToggleSim(selectedSim)}
+                                >
+                                    {activeSim?.id === selectedSim.id ? (
+                                        <><Square size={14} /> Stop Simulation</>
+                                    ) : (
+                                        <><Zap size={14} /> Start Scenario</>
+                                    )}
+                                </button>
+                            )}
                         </div>
                     </section>
 
@@ -295,8 +308,8 @@ export function Dashboard() {
             <BottomBar events={events} />
 
             {showConsole && (
-                <div className="console-overlay">
-                    <div className="console-window">
+                <div className="console-overlay" onClick={() => setShowConsole(false)}>
+                    <div className="console-window" onClick={(e) => e.stopPropagation()}>
                         <header className="window-header">
                             <div className="header-title">
                                 <Terminal size={14} style={{ marginRight: '8px' }} />
@@ -309,7 +322,6 @@ export function Dashboard() {
                         </div>
                     </div>
                 </div>
-
             )}
         </div>
     );
