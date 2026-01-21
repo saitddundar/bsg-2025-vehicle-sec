@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import {
     Shield, Zap,
     Wifi,
-    Play, Pause, FileText, Search
+    Play, Pause, FileText, Search, Activity, AlertTriangle
 } from 'lucide-react';
 import {
     AreaChart, Area, ResponsiveContainer,
@@ -22,6 +22,7 @@ interface Scenario {
     status: 'normal' | 'suspicious' | 'attack';
     description?: string;
     anomalyType?: string;
+    attackVector?: string;
 }
 
 interface LogEntry {
@@ -160,6 +161,7 @@ export function DashboardNew() {
                     <button className={`nav-item-compact ${activeTab === 'cyber' ? 'active' : ''}`} onClick={() => setActiveTab('cyber')}>Cyber-Physical</button>
                     <button className={`nav-item-compact ${activeTab === 'control' ? 'active' : ''}`} onClick={() => setActiveTab('control')}>Control Central</button>
                     <button className={`nav-item-compact ${activeTab === 'network' ? 'active' : ''}`} onClick={() => setActiveTab('network')}>Network</button>
+                    <button className={`nav-item-compact ${activeTab === 'analytics' ? 'active' : ''}`} onClick={() => setActiveTab('analytics')}>Analytics</button>
                     <button className={`nav-item-compact ${activeTab === 'logs' ? 'active' : ''}`} onClick={() => setActiveTab('logs')}>Logs</button>
                 </div>
                 <div className="nav-right">
@@ -423,6 +425,109 @@ export function DashboardNew() {
                                         <div className="logs-empty">No logs available</div>
                                     )}
                                 </div>
+                            </div>
+                        </div>
+                    ) : activeTab === 'analytics' ? (
+                        <div className="detail-view">
+                            <div className="detail-header">
+                                <Activity size={24} className="detail-icon" style={{ color: 'var(--accent-primary)' }} />
+                                <div>
+                                    <h1 className="detail-title">THREAT ANALYTICS</h1>
+                                    <p className="detail-subtitle">Attack Pattern Analysis & Detection Metrics</p>
+                                </div>
+                            </div>
+                            <div className="detail-content">
+                                {/* Threat Stats Grid */}
+                                <div className="analytics-grid">
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(255, 0, 61, 0.15)' }}>
+                                            <AlertTriangle size={24} style={{ color: 'var(--status-danger)' }} />
+                                        </div>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Active Threats</span>
+                                            <span className="analytics-value">{anomalyData.activeThreats}</span>
+                                        </div>
+                                    </div>
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(255, 184, 0, 0.15)' }}>
+                                            <Shield size={24} style={{ color: 'var(--status-warning)' }} />
+                                        </div>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Anomalies Detected</span>
+                                            <span className="analytics-value">{logs.filter(l => l.level === 'error' || l.level === 'warn').length}</span>
+                                        </div>
+                                    </div>
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(0, 255, 148, 0.15)' }}>
+                                            <Activity size={24} style={{ color: 'var(--status-success)' }} />
+                                        </div>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">System Score</span>
+                                            <span className="analytics-value">{(100 - anomalyData.energyFlowAnomaly).toFixed(0)}%</span>
+                                        </div>
+                                    </div>
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(56, 189, 248, 0.15)' }}>
+                                            <Wifi size={24} style={{ color: 'var(--accent-primary)' }} />
+                                        </div>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Network Health</span>
+                                            <span className="analytics-value">{anomalyData.networkLatency < 100 ? 'GOOD' : 'DEGRADED'}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Attack Timeline Chart */}
+                                <div className="detail-chart-container" style={{ marginTop: '24px' }}>
+                                    <span className="mini-box-label">Attack Pattern Timeline</span>
+                                    <ResponsiveContainer width="100%" height="85%">
+                                        <AreaChart data={timeSeriesData}>
+                                            <defs>
+                                                <linearGradient id="attackGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="5%" stopColor="var(--status-danger)" stopOpacity={0.4} />
+                                                    <stop offset="95%" stopColor="var(--status-danger)" stopOpacity={0} />
+                                                </linearGradient>
+                                                <linearGradient id="normalGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="5%" stopColor="var(--status-success)" stopOpacity={0.3} />
+                                                    <stop offset="95%" stopColor="var(--status-success)" stopOpacity={0} />
+                                                </linearGradient>
+                                            </defs>
+                                            <XAxis dataKey="time" stroke="var(--text-dim)" fontSize={10} />
+                                            <YAxis stroke="var(--text-dim)" fontSize={10} />
+                                            <Tooltip
+                                                contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }}
+                                                labelStyle={{ color: 'var(--text-main)' }}
+                                            />
+                                            <Area type="monotone" dataKey="value" stroke="var(--status-success)" strokeWidth={2} fillOpacity={1} fill="url(#normalGradient)" name="Normal Traffic" />
+                                            <Area type="monotone" dataKey="anomalous" stroke="var(--status-danger)" strokeWidth={2} fillOpacity={1} fill="url(#attackGradient)" name="Anomalous" />
+                                        </AreaChart>
+                                    </ResponsiveContainer>
+                                </div>
+
+                                {/* Scenario Analysis */}
+                                {selectedScenario && (
+                                    <div className="scenario-analysis" style={{ marginTop: '24px', padding: '16px', background: 'var(--bg-card)', borderRadius: '8px', border: '1px solid var(--border-subtle)' }}>
+                                        <h3 style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' }}>CURRENT SCENARIO ANALYSIS</h3>
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                                            <div>
+                                                <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Attack Vector</span>
+                                                <p style={{ fontSize: '0.85rem', color: 'var(--text-main)', marginTop: '4px' }}>{selectedScenario.attackVector || 'Protocol Manipulation'}</p>
+                                            </div>
+                                            <div>
+                                                <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Severity Level</span>
+                                                <p style={{ fontSize: '0.85rem', color: selectedScenario.severity === 'critical' ? 'var(--status-danger)' : 'var(--status-warning)', marginTop: '4px', textTransform: 'uppercase', fontWeight: 700 }}>{selectedScenario.severity}</p>
+                                            </div>
+                                            <div>
+                                                <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Energy Impact</span>
+                                                <p style={{ fontSize: '0.85rem', color: 'var(--text-main)', marginTop: '4px' }}>{anomalyData.energyFlowAnomaly.toFixed(1)}% deviation</p>
+                                            </div>
+                                            <div>
+                                                <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Network Impact</span>
+                                                <p style={{ fontSize: '0.85rem', color: 'var(--text-main)', marginTop: '4px' }}>{anomalyData.networkLatency.toFixed(0)}ms latency</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ) : (
