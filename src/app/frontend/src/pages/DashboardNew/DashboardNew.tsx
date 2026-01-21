@@ -10,6 +10,7 @@ import {
     BarChart, Bar
 } from 'recharts';
 import './DashboardNew.css';
+import { scenarioConfigs, generateAnomalyData, generateScenarioLog, generateScenarioTimeSeries } from '../../utils/scenarioData';
 
 // --- Types ---
 
@@ -19,6 +20,8 @@ interface Scenario {
     author: string;
     severity: 'critical' | 'high' | 'medium' | 'low';
     status: 'normal' | 'suspicious' | 'attack';
+    description?: string;
+    anomalyType?: string;
 }
 
 interface LogEntry {
@@ -28,32 +31,9 @@ interface LogEntry {
     message: string;
 }
 
-// --- Mock Data ---
+// --- Data ---
 
-const scenarios: Scenario[] = [
-    { id: 'v2g-mod', name: 'V2G Protocol Manipulation', author: 'Sait Dundar', severity: 'critical', status: 'attack' },
-    { id: 'phantom-soc', name: 'Phantom SoC Report', author: 'Kardelen Demir', severity: 'high', status: 'suspicious' },
-    { id: 'firmware-pdos', name: 'Firmware P-DoS Attack', author: 'Betül Altunyuva', severity: 'critical', status: 'normal' },
-    { id: 'ocpp-stealth', name: 'OCPP Stealth Beaconing', author: 'Göksu Kayar', severity: 'high', status: 'normal' },
-    { id: 'digital-twin', name: 'Digital Twin Spoofing', author: 'Mehmet Erdem Abacı', severity: 'medium', status: 'normal' },
-    { id: 'siren-attack', name: 'Siren Attack', author: 'BSG Team', severity: 'critical', status: 'normal' },
-    { id: 'disp-manip', name: 'Display Manipulation', author: 'BSG Team', severity: 'medium', status: 'normal' },
-    { id: 'charge-move', name: 'Charging While Moving', author: 'BSG Team', severity: 'high', status: 'normal' },
-    { id: 'ghost-ecu', name: 'Ghost ECU Injection', author: 'BSG Team', severity: 'critical', status: 'normal' },
-];
-
-const mockTimeSeries = Array.from({ length: 24 }, (_, i) => ({
-    time: `${i}:00`,
-    value: Math.floor(Math.random() * 50) + 100,
-    anomalous: Math.random() > 0.8 ? Math.floor(Math.random() * 20) : 0,
-    soc: 80 - i * 0.5 + (Math.random() - 0.5) * 2
-}));
-
-const mockScatterData = Array.from({ length: 50 }, () => ({
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    z: Math.random() * 10
-}));
+const scenarios: Scenario[] = scenarioConfigs;
 
 // --- Sub-components ---
 
@@ -82,8 +62,32 @@ export function DashboardNew() {
     const [systemHealth, setSystemHealth] = useState(87);
     const [riskLevel, setRiskLevel] = useState<'low' | 'medium' | 'high' | 'critical'>('medium');
 
+    // Dynamic data based on scenario
+    const [anomalyData, setAnomalyData] = useState(generateAnomalyData('v2g-mod', false));
+    const [timeSeriesData, setTimeSeriesData] = useState(generateScenarioTimeSeries('v2g-mod', false));
+    const [scatterData] = useState(() => Array.from({ length: 50 }, () => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        z: Math.random() * 10
+    })));
+
 
     const selectedScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId), [selectedScenarioId]);
+
+    // Update scenario-specific data when scenario changes
+    useEffect(() => {
+        if (selectedScenarioId) {
+            // Switch tab to control when scenario changes
+            setActiveTab('control');
+            // Reset simulation
+            setIsRunning(false);
+            setRunTime(0);
+            setLogs([]);
+            // Update data
+            setAnomalyData(generateAnomalyData(selectedScenarioId, false));
+            setTimeSeriesData(generateScenarioTimeSeries(selectedScenarioId, false));
+        }
+    }, [selectedScenarioId]);
 
     // Update risk level based on selected scenario
     useEffect(() => {
@@ -102,36 +106,37 @@ export function DashboardNew() {
         }
     }, [selectedScenario]);
 
-    // Timer & Log Simulation
+    // Timer & Log Simulation with scenario-specific data
     useEffect(() => {
         let interval: ReturnType<typeof setInterval>;
-        if (isRunning) {
+        if (isRunning && selectedScenarioId) {
             interval = setInterval(() => {
                 setRunTime(t => t + 1);
-                // Simulate periodic logs
-                if (Math.random() > 0.7) {
-                    const messages = [
-                        "V2G packet received [SAP_0x42]",
-                        "Consistency check passed for CPU_0",
-                        "Heartbeat stable @ 10Hz",
-                        "Encryption handshake complete",
-                        "New session token generated"
-                    ];
-                    const message = messages[Math.floor(Math.random() * messages.length)];
+
+                // Update anomaly data
+                setAnomalyData(generateAnomalyData(selectedScenarioId, true));
+                setTimeSeriesData(generateScenarioTimeSeries(selectedScenarioId, true));
+
+                // Generate scenario-specific logs
+                if (Math.random() > 0.65) {
+                    const message = generateScenarioLog(selectedScenarioId);
+                    const isAnomaly = message.includes('⚠️') || message.includes('FAIL') || message.includes('anomaly');
                     const newLog: LogEntry = {
                         id: Math.random().toString(36).substr(2, 9),
                         timestamp: new Date().toLocaleTimeString('en-GB', { hour12: false }),
-                        level: 'info',
+                        level: isAnomaly ? 'error' : (Math.random() > 0.7 ? 'warn' : 'info'),
                         message
                     };
                     setLogs(prev => [newLog, ...prev].slice(0, 50));
                 }
-                // Simulate system health changes
-                setSystemHealth(prev => Math.max(50, Math.min(100, prev + (Math.random() - 0.5) * 2)));
+
+                // Simulate system health changes based on anomaly level
+                const healthImpact = anomalyData.energyFlowAnomaly / 10;
+                setSystemHealth(prev => Math.max(30, Math.min(100, prev - healthImpact * 0.5 + (Math.random() - 0.3))));
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [isRunning]);
+    }, [isRunning, selectedScenarioId, anomalyData.energyFlowAnomaly]);
 
     const formatRunTime = (seconds: number) => {
         const m = Math.floor(seconds / 60);
@@ -328,7 +333,7 @@ export function DashboardNew() {
                                 <div className="detail-chart-container">
                                     <span className="mini-box-label">Energy Flow Timeline</span>
                                     <ResponsiveContainer width="100%" height="90%">
-                                        <AreaChart data={mockTimeSeries}>
+                                        <AreaChart data={timeSeriesData}>
                                             <defs>
                                                 <linearGradient id="evGradient" x1="0" y1="0" x2="0" y2="1">
                                                     <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.3} />
@@ -361,8 +366,8 @@ export function DashboardNew() {
                                             <XAxis type="number" dataKey="x" name="x" hide />
                                             <YAxis type="number" dataKey="y" name="y" hide />
                                             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                                            <Scatter name="Telemetry" data={mockScatterData} fill="var(--accent-cyber)">
-                                                {mockScatterData.map((_, index) => (
+                                            <Scatter name="Telemetry" data={scatterData} fill="var(--accent-cyber)">
+                                                {scatterData.map((_: any, index: number) => (
                                                     <Cell key={`cell-${index}`} fill={index % 10 === 0 ? 'var(--status-danger)' : 'var(--accent-cyber)'} />
                                                 ))}
                                             </Scatter>
@@ -384,7 +389,7 @@ export function DashboardNew() {
                                 <div className="detail-chart-container">
                                     <span className="mini-box-label">Network Traffic Distribution</span>
                                     <ResponsiveContainer width="100%" height="90%">
-                                        <BarChart data={mockTimeSeries.slice(0, 8)}>
+                                        <BarChart data={timeSeriesData.slice(0, 8)}>
                                             <XAxis dataKey="time" />
                                             <YAxis />
                                             <Tooltip />
@@ -497,22 +502,22 @@ export function DashboardNew() {
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">GPS Verification</span>
                                     <div className="data-status">
-                                        <div className="status-dot-small success" />
-                                        <span className="data-status-text">MATCHED</span>
+                                        <div className={`status-dot-small ${anomalyData.gpsDeviation > 5 ? 'danger' : 'success'}`} />
+                                        <span className="data-status-text">{anomalyData.gpsDeviation > 5 ? 'DEVIATION' : 'MATCHED'}</span>
                                     </div>
                                 </div>
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">CAN Bus Integrity</span>
                                     <div className="data-status">
-                                        <div className="status-dot-small success" />
-                                        <span className="data-status-text">SECURE</span>
+                                        <div className={`status-dot-small ${anomalyData.canBusError ? 'danger' : 'success'}`} />
+                                        <span className="data-status-text">{anomalyData.canBusError ? 'ERROR' : 'SECURE'}</span>
                                     </div>
                                 </div>
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">Firmware Hash</span>
                                     <div className="data-status">
-                                        <div className="status-dot-small warning" />
-                                        <span className="data-status-text">PENDING</span>
+                                        <div className={`status-dot-small ${anomalyData.firmwareHash === 'invalid' ? 'danger' : (anomalyData.firmwareHash === 'pending' ? 'warning' : 'success')}`} />
+                                        <span className="data-status-text">{anomalyData.firmwareHash.toUpperCase()}</span>
                                     </div>
                                 </div>
                             </div>
@@ -527,7 +532,7 @@ export function DashboardNew() {
                             <div className="data-metrics-list">
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">Latency</span>
-                                    <span className="data-metric-value">42<span className="data-metric-unit">ms</span></span>
+                                    <span className="data-metric-value">{anomalyData.networkLatency.toFixed(0)}<span className="data-metric-unit">ms</span></span>
                                 </div>
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">Throughput</span>
@@ -535,7 +540,7 @@ export function DashboardNew() {
                                 </div>
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">Packet Loss</span>
-                                    <span className="data-metric-value">0.02<span className="data-metric-unit">%</span></span>
+                                    <span className="data-metric-value">{anomalyData.packetLoss.toFixed(2)}<span className="data-metric-unit">%</span></span>
                                 </div>
                             </div>
                         </div>
