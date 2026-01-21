@@ -157,10 +157,7 @@ export function DashboardNew() {
                     <span className="nav-logo">EV SECURITY</span>
                 </div>
                 <div className="nav-center">
-                    <button className={`nav-item-compact ${activeTab === 'ev' ? 'active' : ''}`} onClick={() => setActiveTab('ev')}>EV/Charging</button>
-                    <button className={`nav-item-compact ${activeTab === 'cyber' ? 'active' : ''}`} onClick={() => setActiveTab('cyber')}>Cyber-Physical</button>
                     <button className={`nav-item-compact ${activeTab === 'control' ? 'active' : ''}`} onClick={() => setActiveTab('control')}>Control Central</button>
-                    <button className={`nav-item-compact ${activeTab === 'network' ? 'active' : ''}`} onClick={() => setActiveTab('network')}>Network</button>
                     <button className={`nav-item-compact ${activeTab === 'analytics' ? 'active' : ''}`} onClick={() => setActiveTab('analytics')}>Analytics</button>
                     <button className={`nav-item-compact ${activeTab === 'logs' ? 'active' : ''}`} onClick={() => setActiveTab('logs')}>Logs</button>
                 </div>
@@ -319,86 +316,6 @@ export function DashboardNew() {
                                             <span>Waiting for events...</span>
                                         </div>
                                     )}
-                                </div>
-                            </div>
-                        </div>
-                    ) : activeTab === 'ev' ? (
-                        <div className="detail-view">
-                            <div className="detail-header">
-                                <Zap size={24} className="detail-icon ev-icon" />
-                                <div>
-                                    <h1 className="detail-title">EV & CHARGING</h1>
-                                    <p className="detail-subtitle">Energy Logic & VPP Integration</p>
-                                </div>
-                            </div>
-                            <div className="detail-content">
-                                <div className="detail-chart-container">
-                                    <span className="mini-box-label">Energy Flow Timeline</span>
-                                    <ResponsiveContainer width="100%" height="90%">
-                                        <AreaChart data={timeSeriesData}>
-                                            <defs>
-                                                <linearGradient id="evGradient" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.3} />
-                                                    <stop offset="95%" stopColor="var(--accent-ev)" stopOpacity={0} />
-                                                </linearGradient>
-                                            </defs>
-                                            <XAxis dataKey="time" />
-                                            <YAxis />
-                                            <Tooltip />
-                                            <Area type="monotone" dataKey="soc" stroke="var(--accent-ev)" strokeWidth={3} fillOpacity={1} fill="url(#evGradient)" />
-                                        </AreaChart>
-                                    </ResponsiveContainer>
-                                </div>
-                            </div>
-                        </div>
-                    ) : activeTab === 'cyber' ? (
-                        <div className="detail-view">
-                            <div className="detail-header">
-                                <Shield size={24} className="detail-icon cyber-icon" />
-                                <div>
-                                    <h1 className="detail-title">CYBER-PHYSICAL</h1>
-                                    <p className="detail-subtitle">Sensor Consistency & Verification</p>
-                                </div>
-                            </div>
-                            <div className="detail-content">
-                                <div className="detail-chart-container">
-                                    <span className="mini-box-label">Cross-Sensor Correlation</span>
-                                    <ResponsiveContainer width="100%" height="90%">
-                                        <ScatterChart>
-                                            <XAxis type="number" dataKey="x" name="x" hide />
-                                            <YAxis type="number" dataKey="y" name="y" hide />
-                                            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                                            <Scatter name="Telemetry" data={scatterData} fill="var(--accent-cyber)">
-                                                {scatterData.map((_: any, index: number) => (
-                                                    <Cell key={`cell-${index}`} fill={index % 10 === 0 ? 'var(--status-danger)' : 'var(--accent-cyber)'} />
-                                                ))}
-                                            </Scatter>
-                                        </ScatterChart>
-                                    </ResponsiveContainer>
-                                </div>
-                            </div>
-                        </div>
-                    ) : activeTab === 'network' ? (
-                        <div className="detail-view">
-                            <div className="detail-header">
-                                <Wifi size={24} className="detail-icon network-icon" />
-                                <div>
-                                    <h1 className="detail-title">NETWORK</h1>
-                                    <p className="detail-subtitle">Protocol Analysis & Monitoring</p>
-                                </div>
-                            </div>
-                            <div className="detail-content">
-                                <div className="detail-chart-container">
-                                    <span className="mini-box-label">Network Traffic Distribution</span>
-                                    <ResponsiveContainer width="100%" height="90%">
-                                        <BarChart data={timeSeriesData.slice(0, 8)}>
-                                            <XAxis dataKey="time" />
-                                            <YAxis />
-                                            <Tooltip />
-                                            <Bar dataKey="value" fill="var(--bg-hover)" />
-                                            <Bar dataKey="anomalous" fill="var(--status-danger)" />
-                                        </BarChart>
-                                    </ResponsiveContainer>
                                 </div>
                             </div>
                         </div>
