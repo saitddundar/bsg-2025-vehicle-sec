@@ -158,6 +158,7 @@ export function DashboardNew() {
                 </div>
                 <div className="nav-center">
                     <button className={`nav-item-compact ${activeTab === 'control' ? 'active' : ''}`} onClick={() => setActiveTab('control')}>Control Central</button>
+                    <button className={`nav-item-compact ${activeTab === 'simulation' ? 'active' : ''}`} onClick={() => setActiveTab('simulation')}>Simulation</button>
                     <button className={`nav-item-compact ${activeTab === 'analytics' ? 'active' : ''}`} onClick={() => setActiveTab('analytics')}>Analytics</button>
                     <button className={`nav-item-compact ${activeTab === 'logs' ? 'active' : ''}`} onClick={() => setActiveTab('logs')}>Logs</button>
                 </div>
@@ -383,6 +384,48 @@ export function DashboardNew() {
                                         </div>
                                         <span className="analytics-value-large">{anomalyData.networkLatency.toFixed(0)}<small>ms</small></span>
                                         <span className="analytics-label-large">Latency</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ) : activeTab === 'simulation' ? (
+                        <div className="detail-view">
+                            <div className="detail-header">
+                                <Zap size={24} className="detail-icon" style={{ color: 'var(--accent-ev)' }} />
+                                <div>
+                                    <h1 className="detail-title">V2G SIMULATION</h1>
+                                    <p className="detail-subtitle">Grid Destabilization Attack Metrics</p>
+                                </div>
+                            </div>
+                            <div className="detail-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                                <div className="analytics-grid-centered">
+                                    <div className="analytics-card-large">
+                                        <div className="analytics-icon-large" style={{ background: 'rgba(255, 184, 0, 0.15)' }}>
+                                            <Zap size={32} style={{ color: 'var(--accent-ev)' }} />
+                                        </div>
+                                        <span className="analytics-value-large">{anomalyData.energyFlowAnomaly.toFixed(1)}<small>%</small></span>
+                                        <span className="analytics-label-large">Energy Flow Anomaly</span>
+                                    </div>
+                                    <div className="analytics-card-large">
+                                        <div className="analytics-icon-large" style={{ background: 'rgba(255, 0, 61, 0.15)' }}>
+                                            <Activity size={32} style={{ color: 'var(--status-danger)' }} />
+                                        </div>
+                                        <span className="analytics-value-large">{isRunning ? (49.5 + Math.random() * 1).toFixed(2) : '50.00'}<small>Hz</small></span>
+                                        <span className="analytics-label-large">Grid Frequency</span>
+                                    </div>
+                                    <div className="analytics-card-large">
+                                        <div className="analytics-icon-large" style={{ background: 'rgba(56, 189, 248, 0.15)' }}>
+                                            <Shield size={32} style={{ color: 'var(--accent-primary)' }} />
+                                        </div>
+                                        <span className="analytics-value-large">{isRunning ? (220 + Math.random() * 20).toFixed(0) : '230'}<small>V</small></span>
+                                        <span className="analytics-label-large">Grid Voltage</span>
+                                    </div>
+                                    <div className="analytics-card-large">
+                                        <div className="analytics-icon-large" style={{ background: 'rgba(0, 255, 148, 0.15)' }}>
+                                            <Wifi size={32} style={{ color: 'var(--status-success)' }} />
+                                        </div>
+                                        <span className="analytics-value-large">{anomalyData.chargingRate.toFixed(1)}<small>kW</small></span>
+                                        <span className="analytics-label-large">Power Load</span>
                                     </div>
                                 </div>
                             </div>
