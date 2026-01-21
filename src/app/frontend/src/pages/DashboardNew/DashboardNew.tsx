@@ -270,7 +270,7 @@ export function DashboardNew() {
                                         </svg>
                                     </div>
                                     <span className="node-label">ELECTRIC VEHICLE</span>
-                                    <span className="node-value">SoC: {systemHealth.toFixed(0)}%</span>
+                                    <span className="node-value">SoC: {anomalyData.stateOfCharge.toFixed(0)}%</span>
                                 </div>
                             </div>
 
@@ -278,14 +278,14 @@ export function DashboardNew() {
                             <div className="status-metrics-bar">
                                 <div className="metric-card">
                                     <span className="metric-label">Power Flow</span>
-                                    <span className="metric-value">{isRunning ? '48.2' : '0.0'} <small>kW</small></span>
+                                    <span className="metric-value">{isRunning ? anomalyData.chargingRate.toFixed(1) : '0.0'} <small>kW</small></span>
                                 </div>
                                 <div className="metric-card">
                                     <span className="metric-label">Battery</span>
                                     <div className="battery-indicator">
-                                        <div className="battery-fill" style={{ width: `${systemHealth}%` }}></div>
+                                        <div className="battery-fill" style={{ width: `${anomalyData.stateOfCharge}%` }}></div>
                                     </div>
-                                    <span className="metric-value-small">{systemHealth.toFixed(0)}%</span>
+                                    <span className="metric-value-small">{anomalyData.stateOfCharge.toFixed(0)}%</span>
                                 </div>
                                 <div className="metric-card">
                                     <span className="metric-label">Session</span>
