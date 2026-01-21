@@ -19,6 +19,11 @@ export interface AnomalyData {
     gpsDeviation: number; // meters
     canBusError: boolean;
     firmwareHash: 'valid' | 'pending' | 'invalid';
+    // EV & Charging metrics
+    stateOfCharge: number; // percentage
+    vppPowerFlow: number; // kW
+    chargingRate: number; // kW
+    activeThreats: number;
 }
 
 export const scenarioConfigs: ScenarioConfig[] = [
@@ -117,18 +122,8 @@ export const scenarioConfigs: ScenarioConfig[] = [
 // Generate scenario-specific anomaly data
 export function generateAnomalyData(scenarioId: string, isRunning: boolean): AnomalyData {
     const config = scenarioConfigs.find(s => s.id === scenarioId);
-    if (!config || !isRunning) {
-        return {
-            energyFlowAnomaly: 0,
-            networkLatency: 42,
-            packetLoss: 0.02,
-            socAnomaly: false,
-            gpsDeviation: 0,
-            canBusError: false,
-            firmwareHash: 'valid'
-        };
-    }
 
+    // Base normal values
     const baseData: AnomalyData = {
         energyFlowAnomaly: 0,
         networkLatency: 42,
@@ -136,8 +131,21 @@ export function generateAnomalyData(scenarioId: string, isRunning: boolean): Ano
         socAnomaly: false,
         gpsDeviation: 0,
         canBusError: false,
-        firmwareHash: 'valid'
+        firmwareHash: 'valid',
+        stateOfCharge: 67,
+        vppPowerFlow: 2.4,
+        chargingRate: 7.2,
+        activeThreats: 0
     };
+
+    if (!config || !isRunning) {
+        return baseData;
+    }
+
+    // Calculate threats based on scenario status
+    let threats = 0;
+    if (config.status === 'attack') threats = 1;
+    else if (config.status === 'suspicious') threats = 0;
 
     switch (config.anomalyType) {
         case 'energy':
@@ -145,7 +153,11 @@ export function generateAnomalyData(scenarioId: string, isRunning: boolean): Ano
                 ...baseData,
                 energyFlowAnomaly: config.status === 'attack' ? 35 + Math.random() * 15 : 5 + Math.random() * 10,
                 socAnomaly: config.id === 'phantom-soc',
-                networkLatency: 45 + Math.random() * 10
+                networkLatency: 45 + Math.random() * 10,
+                stateOfCharge: config.id === 'phantom-soc' ? 82 + Math.random() * 10 : 67 - Math.random() * 10,
+                vppPowerFlow: config.id === 'v2g-mod' ? -5.2 + Math.random() * 3 : 2.4 + Math.random() * 1,
+                chargingRate: config.id === 'v2g-mod' ? 12.5 + Math.random() * 5 : 7.2 + Math.random() * 2,
+                activeThreats: threats
             };
 
         case 'network':
@@ -153,7 +165,9 @@ export function generateAnomalyData(scenarioId: string, isRunning: boolean): Ano
                 ...baseData,
                 networkLatency: 120 + Math.random() * 80,
                 packetLoss: 2.5 + Math.random() * 3,
-                energyFlowAnomaly: 5 + Math.random() * 5
+                energyFlowAnomaly: 5 + Math.random() * 5,
+                chargingRate: 6.8 + Math.random() * 1.5,
+                activeThreats: threats
             };
 
         case 'firmware':
@@ -161,14 +175,20 @@ export function generateAnomalyData(scenarioId: string, isRunning: boolean): Ano
                 ...baseData,
                 firmwareHash: 'invalid',
                 energyFlowAnomaly: 10 + Math.random() * 15,
-                networkLatency: 200 + Math.random() * 100
+                networkLatency: 200 + Math.random() * 100,
+                chargingRate: 3.2 + Math.random() * 2,
+                stateOfCharge: 65 - Math.random() * 5,
+                activeThreats: threats
             };
 
         case 'gps':
             return {
                 ...baseData,
                 gpsDeviation: 50 + Math.random() * 100,
-                energyFlowAnomaly: 25 + Math.random() * 20
+                energyFlowAnomaly: 25 + Math.random() * 20,
+                chargingRate: config.id === 'charge-move' ? 0 : 7.2,
+                stateOfCharge: config.id === 'charge-move' ? 45 + Math.random() * 10 : 67,
+                activeThreats: threats
             };
 
         case 'can':
@@ -176,14 +196,18 @@ export function generateAnomalyData(scenarioId: string, isRunning: boolean): Ano
                 ...baseData,
                 canBusError: true,
                 networkLatency: 85 + Math.random() * 40,
-                energyFlowAnomaly: 15 + Math.random() * 25
+                energyFlowAnomaly: 15 + Math.random() * 25,
+                chargingRate: 6.5 + Math.random() * 2,
+                activeThreats: threats
             };
 
         case 'display':
             return {
                 ...baseData,
                 networkLatency: 55 + Math.random() * 20,
-                energyFlowAnomaly: 8 + Math.random() * 10
+                energyFlowAnomaly: 8 + Math.random() * 10,
+                chargingRate: 7.0 + Math.random() * 1,
+                activeThreats: threats
             };
     }
 

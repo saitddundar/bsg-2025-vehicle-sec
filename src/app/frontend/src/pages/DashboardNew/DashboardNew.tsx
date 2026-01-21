@@ -465,7 +465,7 @@ export function DashboardNew() {
                                 </div>
                                 <div className="data-metric-item">
                                     <span className="data-metric-label">Active Threats</span>
-                                    <span className="data-metric-value">{selectedScenario?.status === 'attack' ? '1' : '0'}</span>
+                                    <span className="data-metric-value">{anomalyData.activeThreats}</span>
                                 </div>
                             </div>
                         </div>
@@ -479,15 +479,15 @@ export function DashboardNew() {
                             <div className="data-metrics-list">
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">State of Charge</span>
-                                    <span className="data-metric-value-large">67<span className="data-metric-unit">%</span></span>
+                                    <span className="data-metric-value-large">{anomalyData.stateOfCharge.toFixed(0)}<span className="data-metric-unit">%</span></span>
                                 </div>
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">VPP Power Flow</span>
-                                    <span className="data-metric-value-large">2.4<span className="data-metric-unit">kW</span></span>
+                                    <span className="data-metric-value-large">{anomalyData.vppPowerFlow.toFixed(1)}<span className="data-metric-unit">kW</span></span>
                                 </div>
                                 <div className="data-metric-row">
                                     <span className="data-metric-label">Charging Rate</span>
-                                    <span className="data-metric-value-large">7.2<span className="data-metric-unit">kW</span></span>
+                                    <span className="data-metric-value-large">{anomalyData.chargingRate.toFixed(1)}<span className="data-metric-unit">kW</span></span>
                                 </div>
                             </div>
                         </div>
