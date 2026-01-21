@@ -2598,8 +2598,8 @@
 
 /* Right Panel - Data Panel */
 .data-panel {
-    width: 320px;
-    min-width: 320px;
+    width: 360px;
+    min-width: 360px;
     background: var(--bg-panel);
     border-left: 1px solid var(--border-subtle);
     display: flex;

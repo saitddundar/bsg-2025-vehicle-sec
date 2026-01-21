@@ -72,6 +72,9 @@ export function DashboardNew() {
         z: Math.random() * 10
     })));
 
+    // Realtime chart data for simulation
+    const [realtimeData, setRealtimeData] = useState<{ time: string; energy: number; frequency: number; voltage: number }[]>([]);
+
 
     const selectedScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId), [selectedScenarioId]);
 
@@ -115,8 +118,21 @@ export function DashboardNew() {
                 setRunTime(t => t + 1);
 
                 // Update anomaly data
-                setAnomalyData(generateAnomalyData(selectedScenarioId, true));
+                const newAnomalyData = generateAnomalyData(selectedScenarioId, true);
+                setAnomalyData(newAnomalyData);
                 setTimeSeriesData(generateScenarioTimeSeries(selectedScenarioId, true));
+
+                // Update realtime chart data
+                setRealtimeData(prev => {
+                    const timeStr = new Date().toLocaleTimeString('en-GB', { hour12: false }).slice(3);
+                    const newPoint = {
+                        time: timeStr,
+                        energy: newAnomalyData.energyFlowAnomaly,
+                        frequency: 50 + (Math.random() - 0.5) * newAnomalyData.energyFlowAnomaly / 10,
+                        voltage: 230 + (Math.random() - 0.5) * 20
+                    };
+                    return [...prev, newPoint].slice(-30); // Keep last 30 points
+                });
 
                 // Generate scenario-specific logs
                 if (Math.random() > 0.65) {
@@ -132,7 +148,7 @@ export function DashboardNew() {
                 }
 
                 // Simulate system health changes based on anomaly level
-                const healthImpact = anomalyData.energyFlowAnomaly / 10;
+                const healthImpact = newAnomalyData.energyFlowAnomaly / 10;
                 setSystemHealth(prev => Math.max(30, Math.min(100, prev - healthImpact * 0.5 + (Math.random() - 0.3))));
             }, 1000);
         }
@@ -397,35 +413,66 @@ export function DashboardNew() {
                                     <p className="detail-subtitle">Grid Destabilization Attack Metrics</p>
                                 </div>
                             </div>
-                            <div className="detail-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-                                <div className="analytics-grid-centered">
-                                    <div className="analytics-card-large">
-                                        <div className="analytics-icon-large" style={{ background: 'rgba(255, 184, 0, 0.15)' }}>
-                                            <Zap size={32} style={{ color: 'var(--accent-ev)' }} />
+                            <div className="detail-content">
+                                {/* Realtime Chart */}
+                                <div className="detail-chart-container" style={{ height: '280px', marginBottom: '24px' }}>
+                                    <span className="mini-box-label">Realtime Energy Flow Anomaly</span>
+                                    <ResponsiveContainer width="100%" height="85%">
+                                        <AreaChart data={realtimeData}>
+                                            <defs>
+                                                <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.4} />
+                                                    <stop offset="95%" stopColor="var(--accent-ev)" stopOpacity={0} />
+                                                </linearGradient>
+                                            </defs>
+                                            <XAxis dataKey="time" stroke="var(--text-dim)" fontSize={10} />
+                                            <YAxis stroke="var(--text-dim)" fontSize={10} domain={[0, 60]} />
+                                            <Tooltip
+                                                contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '8px' }}
+                                                labelStyle={{ color: 'var(--text-main)' }}
+                                            />
+                                            <Area type="monotone" dataKey="energy" stroke="var(--accent-ev)" strokeWidth={2} fillOpacity={1} fill="url(#energyGradient)" name="Energy Anomaly %" />
+                                        </AreaChart>
+                                    </ResponsiveContainer>
+                                </div>
+
+                                {/* Metric Cards */}
+                                <div className="analytics-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', marginTop: '16px' }}>
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(255, 184, 0, 0.15)' }}>
+                                            <Zap size={24} style={{ color: 'var(--accent-ev)' }} />
                                         </div>
-                                        <span className="analytics-value-large">{anomalyData.energyFlowAnomaly.toFixed(1)}<small>%</small></span>
-                                        <span className="analytics-label-large">Energy Flow Anomaly</span>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Energy Anomaly</span>
+                                            <span className="analytics-value">{anomalyData.energyFlowAnomaly.toFixed(1)}%</span>
+                                        </div>
                                     </div>
-                                    <div className="analytics-card-large">
-                                        <div className="analytics-icon-large" style={{ background: 'rgba(255, 0, 61, 0.15)' }}>
-                                            <Activity size={32} style={{ color: 'var(--status-danger)' }} />
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(255, 0, 61, 0.15)' }}>
+                                            <Activity size={24} style={{ color: 'var(--status-danger)' }} />
                                         </div>
-                                        <span className="analytics-value-large">{isRunning ? (49.5 + Math.random() * 1).toFixed(2) : '50.00'}<small>Hz</small></span>
-                                        <span className="analytics-label-large">Grid Frequency</span>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Frequency</span>
+                                            <span className="analytics-value">{realtimeData.length > 0 ? realtimeData[realtimeData.length - 1].frequency.toFixed(2) : '50.00'}Hz</span>
+                                        </div>
                                     </div>
-                                    <div className="analytics-card-large">
-                                        <div className="analytics-icon-large" style={{ background: 'rgba(56, 189, 248, 0.15)' }}>
-                                            <Shield size={32} style={{ color: 'var(--accent-primary)' }} />
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(56, 189, 248, 0.15)' }}>
+                                            <Shield size={24} style={{ color: 'var(--accent-primary)' }} />
                                         </div>
-                                        <span className="analytics-value-large">{isRunning ? (220 + Math.random() * 20).toFixed(0) : '230'}<small>V</small></span>
-                                        <span className="analytics-label-large">Grid Voltage</span>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Voltage</span>
+                                            <span className="analytics-value">{realtimeData.length > 0 ? realtimeData[realtimeData.length - 1].voltage.toFixed(0) : '230'}V</span>
+                                        </div>
                                     </div>
-                                    <div className="analytics-card-large">
-                                        <div className="analytics-icon-large" style={{ background: 'rgba(0, 255, 148, 0.15)' }}>
-                                            <Wifi size={32} style={{ color: 'var(--status-success)' }} />
+                                    <div className="analytics-card">
+                                        <div className="analytics-icon" style={{ background: 'rgba(0, 255, 148, 0.15)' }}>
+                                            <Wifi size={24} style={{ color: 'var(--status-success)' }} />
                                         </div>
-                                        <span className="analytics-value-large">{anomalyData.chargingRate.toFixed(1)}<small>kW</small></span>
-                                        <span className="analytics-label-large">Power Load</span>
+                                        <div className="analytics-info">
+                                            <span className="analytics-label">Power Load</span>
+                                            <span className="analytics-value">{anomalyData.chargingRate.toFixed(1)}kW</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
