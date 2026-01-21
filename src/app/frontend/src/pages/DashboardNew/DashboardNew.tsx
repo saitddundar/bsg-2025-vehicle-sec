@@ -73,7 +73,8 @@ export function DashboardNew() {
     })));
 
     // Realtime chart data for simulation
-    const [realtimeData, setRealtimeData] = useState<{ time: string; energy: number; frequency: number; voltage: number }[]>([]);
+    const [realtimeData, setRealtimeData] = useState<{ time: string; energy: number; frequency: number; voltage: number; power: number }[]>([]);
+    const [selectedMetric, setSelectedMetric] = useState<'energy' | 'frequency' | 'voltage' | 'power'>('energy');
 
 
     const selectedScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId), [selectedScenarioId]);
@@ -129,7 +130,8 @@ export function DashboardNew() {
                         time: timeStr,
                         energy: newAnomalyData.energyFlowAnomaly,
                         frequency: 50 + (Math.random() - 0.5) * newAnomalyData.energyFlowAnomaly / 10,
-                        voltage: 230 + (Math.random() - 0.5) * 20
+                        voltage: 230 + (Math.random() - 0.5) * 20,
+                        power: newAnomalyData.chargingRate
                     };
                     return [...prev, newPoint].slice(-30); // Keep last 30 points
                 });
@@ -410,35 +412,48 @@ export function DashboardNew() {
                                 <Zap size={24} className="detail-icon" style={{ color: 'var(--accent-ev)' }} />
                                 <div>
                                     <h1 className="detail-title">V2G SIMULATION</h1>
-                                    <p className="detail-subtitle">Grid Destabilization Attack Metrics</p>
+                                    <p className="detail-subtitle">Grid Destabilization Attack Metrics - Click cards to change chart</p>
                                 </div>
                             </div>
                             <div className="detail-content">
-                                {/* Realtime Chart */}
+                                {/* Realtime Chart - Shows selected metric */}
                                 <div className="detail-chart-container" style={{ height: '280px', marginBottom: '24px' }}>
-                                    <span className="mini-box-label">Realtime Energy Flow Anomaly</span>
+                                    <span className="mini-box-label">
+                                        Realtime {selectedMetric === 'energy' ? 'Energy Anomaly' : selectedMetric === 'frequency' ? 'Grid Frequency' : selectedMetric === 'voltage' ? 'Grid Voltage' : 'Power Load'}
+                                    </span>
                                     <ResponsiveContainer width="100%" height="85%">
                                         <AreaChart data={realtimeData}>
                                             <defs>
-                                                <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="5%" stopColor="var(--accent-ev)" stopOpacity={0.4} />
-                                                    <stop offset="95%" stopColor="var(--accent-ev)" stopOpacity={0} />
+                                                <linearGradient id="metricGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="5%" stopColor={selectedMetric === 'energy' ? 'var(--accent-ev)' : selectedMetric === 'frequency' ? 'var(--status-danger)' : selectedMetric === 'voltage' ? 'var(--accent-primary)' : 'var(--status-success)'} stopOpacity={0.4} />
+                                                    <stop offset="95%" stopColor={selectedMetric === 'energy' ? 'var(--accent-ev)' : selectedMetric === 'frequency' ? 'var(--status-danger)' : selectedMetric === 'voltage' ? 'var(--accent-primary)' : 'var(--status-success)'} stopOpacity={0} />
                                                 </linearGradient>
                                             </defs>
                                             <XAxis dataKey="time" stroke="var(--text-dim)" fontSize={10} />
-                                            <YAxis stroke="var(--text-dim)" fontSize={10} domain={[0, 60]} />
+                                            <YAxis stroke="var(--text-dim)" fontSize={10} domain={selectedMetric === 'energy' ? [0, 60] : selectedMetric === 'frequency' ? [48, 52] : selectedMetric === 'voltage' ? [200, 260] : [0, 30]} />
                                             <Tooltip
                                                 contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: '8px' }}
                                                 labelStyle={{ color: 'var(--text-main)' }}
                                             />
-                                            <Area type="monotone" dataKey="energy" stroke="var(--accent-ev)" strokeWidth={2} fillOpacity={1} fill="url(#energyGradient)" name="Energy Anomaly %" />
+                                            <Area
+                                                type="monotone"
+                                                dataKey={selectedMetric}
+                                                stroke={selectedMetric === 'energy' ? 'var(--accent-ev)' : selectedMetric === 'frequency' ? 'var(--status-danger)' : selectedMetric === 'voltage' ? 'var(--accent-primary)' : 'var(--status-success)'}
+                                                strokeWidth={2}
+                                                fillOpacity={1}
+                                                fill="url(#metricGradient)"
+                                            />
                                         </AreaChart>
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Metric Cards */}
+                                {/* Clickable Metric Cards */}
                                 <div className="analytics-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', marginTop: '16px' }}>
-                                    <div className="analytics-card">
+                                    <div
+                                        className={`analytics-card ${selectedMetric === 'energy' ? 'active' : ''}`}
+                                        onClick={() => setSelectedMetric('energy')}
+                                        style={{ cursor: 'pointer', border: selectedMetric === 'energy' ? '2px solid var(--accent-ev)' : undefined }}
+                                    >
                                         <div className="analytics-icon" style={{ background: 'rgba(255, 184, 0, 0.15)' }}>
                                             <Zap size={24} style={{ color: 'var(--accent-ev)' }} />
                                         </div>
@@ -447,7 +462,11 @@ export function DashboardNew() {
                                             <span className="analytics-value">{anomalyData.energyFlowAnomaly.toFixed(1)}%</span>
                                         </div>
                                     </div>
-                                    <div className="analytics-card">
+                                    <div
+                                        className={`analytics-card ${selectedMetric === 'frequency' ? 'active' : ''}`}
+                                        onClick={() => setSelectedMetric('frequency')}
+                                        style={{ cursor: 'pointer', border: selectedMetric === 'frequency' ? '2px solid var(--status-danger)' : undefined }}
+                                    >
                                         <div className="analytics-icon" style={{ background: 'rgba(255, 0, 61, 0.15)' }}>
                                             <Activity size={24} style={{ color: 'var(--status-danger)' }} />
                                         </div>
@@ -456,7 +475,11 @@ export function DashboardNew() {
                                             <span className="analytics-value">{realtimeData.length > 0 ? realtimeData[realtimeData.length - 1].frequency.toFixed(2) : '50.00'}Hz</span>
                                         </div>
                                     </div>
-                                    <div className="analytics-card">
+                                    <div
+                                        className={`analytics-card ${selectedMetric === 'voltage' ? 'active' : ''}`}
+                                        onClick={() => setSelectedMetric('voltage')}
+                                        style={{ cursor: 'pointer', border: selectedMetric === 'voltage' ? '2px solid var(--accent-primary)' : undefined }}
+                                    >
                                         <div className="analytics-icon" style={{ background: 'rgba(56, 189, 248, 0.15)' }}>
                                             <Shield size={24} style={{ color: 'var(--accent-primary)' }} />
                                         </div>
@@ -465,13 +488,17 @@ export function DashboardNew() {
                                             <span className="analytics-value">{realtimeData.length > 0 ? realtimeData[realtimeData.length - 1].voltage.toFixed(0) : '230'}V</span>
                                         </div>
                                     </div>
-                                    <div className="analytics-card">
+                                    <div
+                                        className={`analytics-card ${selectedMetric === 'power' ? 'active' : ''}`}
+                                        onClick={() => setSelectedMetric('power')}
+                                        style={{ cursor: 'pointer', border: selectedMetric === 'power' ? '2px solid var(--status-success)' : undefined }}
+                                    >
                                         <div className="analytics-icon" style={{ background: 'rgba(0, 255, 148, 0.15)' }}>
                                             <Wifi size={24} style={{ color: 'var(--status-success)' }} />
                                         </div>
                                         <div className="analytics-info">
                                             <span className="analytics-label">Power Load</span>
-                                            <span className="analytics-value">{anomalyData.chargingRate.toFixed(1)}kW</span>
+                                            <span className="analytics-value">{realtimeData.length > 0 ? realtimeData[realtimeData.length - 1].power.toFixed(1) : '0.0'}kW</span>
                                         </div>
                                     </div>
                                 </div>
